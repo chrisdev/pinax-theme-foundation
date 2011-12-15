@@ -103,12 +103,12 @@ def find_package_data(
     return out
 
 
-PACKAGE = "pinax_theme_bootstrap"
-NAME = "pinax-theme-bootstrap"
-DESCRIPTION = "a theme for Pinax based on Twitter's Bootstrap"
-AUTHOR = "James Tauber"
-AUTHOR_EMAIL = "jtauber@jtauber.com"
-URL = "http://github.com/pinax/pinax-theme-bootstrap"
+PACKAGE = "pinax_theme_foundation"
+NAME = "pinax-theme-foundation"
+DESCRIPTION = "a theme for Pinax based on Zurb's Foundation"
+AUTHOR = "Chris Clarke"
+AUTHOR_EMAIL = "cclarke@chrisdev.com"
+URL = "http://github.com/chrisdev/pinax-theme-foundation"
 VERSION = __import__(PACKAGE).__version__
 
 
