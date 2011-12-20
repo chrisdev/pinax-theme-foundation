@@ -1,0 +1,21 @@
+A Pinax theme based on Zurb's Foundation
+==========================================
+
+Quick Start
+-----------
+
+Include "pinax-theme-foundation" in your requirements file and
+"pinax_theme_foundation" in your INSTALLED APPS.
+
+Make sure both template loaders and staticfiles finders includes
+app directories.
+
+Site name comes from Sites fixture.
+
+Your "site_base.html" should extend "theme_base.html" and should provide
+"footer" and "nav" blocks (the latter should just be a ul of li of a links).
+
+Your pages should have blocks "head_title" and "body" and should extend
+"site_base.html".
+
+The url name "home" should be defined as the homepage.
