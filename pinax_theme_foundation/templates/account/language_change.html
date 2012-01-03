@@ -1,0 +1,22 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load foundations_tags %}
+
+{% block head_title %}{% trans "Language" %}{% endblock %}
+
+{% block body %}
+    <h3>{% trans "Language" %}</h3>
+    
+    <p>{% trans "This site can be used in your preferred language." %}</p>
+    
+    <form method="POST" action="">
+        {% csrf_token %}
+        <fieldset>
+            {{ form|as_foundation }}
+        </fieldset>
+        <div class="actions">
+            <button type="submit" class="button medium radius nice">{% trans "Change my language" %}</button>
+        </div>
+    </form>
+{% endblock %}

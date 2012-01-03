@@ -10,7 +10,7 @@
 {% block body_class %}account{% endblock %}
 
 {% block subnav %}
-    <h2>{% trans "Account" %}</h2>
+    <h3>{% trans "Account" %}</h3>
     <ul>
         <li><a href="{% url acct_email %}">{% trans "Email Addresses" %}</a></li>
         {% ifsetting ACCOUNT_USE_OPENID %}

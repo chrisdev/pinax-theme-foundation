@@ -7,7 +7,6 @@
 
 {% block body %}
 	
-	<div class="container">
     	<div class="row">
     		<div class="ten columns">
 				<h3>{% trans "Email Addresses" %}</h3>
@@ -73,14 +72,14 @@
 					{% csrf_token %}
 					<fieldset>
 						{{ add_email_form|as_foundation }}
-					      
+						<br>    
 						<input type="hidden" name="action" value="add"/>
 						<button type="submit" class="button medium radius nice">{% trans "Add" %}</button>
+						<br>
 					</fieldset>
 				</form>
 			</div>
 		</div>
-	</div>
     
 {% endblock %}
 

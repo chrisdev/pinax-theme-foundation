@@ -18,6 +18,7 @@
                     {{ field.label|safe }}
                 </label>
                     {{ field }}
+                    <br>
                     {% for error in field.errors %}
                         <small>{{ error }}</small>
                     {% endfor %}
