@@ -47,7 +47,11 @@
         
         {% block body_base %}
             <div class="container">
-                {% include "_messages.html" %}
+                <div class="row">
+                	<div class="ten columns">
+                		{% include "_messages.html" %}
+                	</div>
+                </div>
                 {% block body %}
                 {% endblock %}
             </div>
