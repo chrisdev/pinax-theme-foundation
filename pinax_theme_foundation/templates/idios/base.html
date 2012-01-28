@@ -6,6 +6,7 @@
 
 {% block subnav %}
     {% if user.is_authenticated %}
+        <h3>{% trans "Profile" %}</h3>
         <ul>
             <li><a href="{% url profile_detail user.username %}">{% trans "Your Profile" %}</a></li>
             <li><a href="{% url profile_list %}">{% trans "All Profiles" %}</a></li>

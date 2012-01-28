@@ -31,9 +31,9 @@
 								</div>
 								<div class="eight columns">	
 									<strong class="right">
-										<ul class="nav-bar">
-											{% block nav %}{% endblock %}
+										<ul class="nav-bar">											
 											{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+											{% block nav %}{% endblock %}
 										</ul>
 									</strong>
 								</div>
@@ -53,6 +53,7 @@
                 	</div>
                 </div>
                 {% block body %}
+                
                 {% endblock %}
             </div>
         {% endblock %}

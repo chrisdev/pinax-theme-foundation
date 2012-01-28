@@ -3,17 +3,19 @@
 {% load i18n %}
 
 {% block body_base %}
-    <div class="container">
-        {% include "_messages.html" %}
+    <div class="container">   
         <div class="row">
-            <div class="three columns">
-                {% block subnav %}
-                {% endblock %}
-            </div>
-            <div class="nine columns">
-                {% block body %}
-                {% endblock %}
-            </div>
+        	<div class="eleven columns centered">
+        	 	{% include "_messages.html" %}
+				<div class="three columns">
+					{% block subnav %}
+					{% endblock %}
+				</div>
+				<div class="nine columns">
+					{% block body %}
+					{% endblock %}
+				</div>
+        	</div>
         </div>
     </div>
 {% endblock %}
