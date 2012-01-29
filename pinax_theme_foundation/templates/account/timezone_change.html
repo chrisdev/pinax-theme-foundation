@@ -1,0 +1,24 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load foundations_tags %}
+
+{% block head_title %}{% trans "Timezone" %}{% endblock %}
+
+{% block body %}
+  
+	<h2>{% trans "Timezone" %}</h2>
+	
+	<p>{% trans "This site can localize all times into your preferred timezone. Change your timezone below." %}</p>
+	
+	<form class="nice" method="POST" action="">
+		{% csrf_token %}
+		<fieldset>
+			{{ form|as_foundation }}
+		</fieldset>
+		<div class="actions">
+			<button type="submit" class="button medium radius nice">{% trans "Change my timezone" %}</button>
+		</div>
+	</form>
+
+{% endblock %}

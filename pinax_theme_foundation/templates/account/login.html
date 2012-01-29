@@ -1,0 +1,77 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+{% load foundations_tags %}
+{% load ifsetting_tag %}
+{% load account_tags %}
+
+{% block head_title %}{% trans "Login" %}{% endblock %}
+
+{% block body %}
+    
+    <div class="row">
+    	<div class="ten columns">
+			<h2>{% trans "Log In" %}</h2>
+			
+			{% if user.is_authenticated %}
+				{% user_display user as user_display %}
+				<div class="alert-box warning">{% trans "Note" %}: {% blocktrans %}you are already logged in as {{ user_display }}.{% endblocktrans %}
+					<a href="" class="close">&times;</a>
+				</div>
+			{% else %}
+				{% ifsetting ACCOUNT_OPEN_SIGNUP %}
+				{% url acct_signup as signup_url %}
+				<p>{% blocktrans %}Don't have an account? <a href="{{ signup_url }}">Sign up</a>!{% endblocktrans %}</p>
+				{% endifsetting %}
+				<p>
+					<a href="{% url acct_passwd_reset %}">{% trans "Forgot password?" %}</a>
+				</p>
+			{% endif %}
+			
+			<form class="nice" method="POST" action="{% url acct_login %}" autocapitalize="off">
+				{% csrf_token %}
+				<fieldset>
+					{{ form|as_foundation }}
+				</fieldset>
+				{% if redirect_field_value %}
+					<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+				{% endif %}
+				<div class="actions">
+					<button type="submit" class="button medium radius nice">{% trans "Log in" %}</button>
+				</div>
+			</form>
+			
+			{% ifsetting ACCOUNT_USE_OPENID %}
+			<h2>{% trans "Or sign in with your OpenID" %}:</h2>
+			<form class="nice" action="/openid/register/" method="POST" autocapitalize="off">
+				{% csrf_token %}
+				<fieldset>
+					{% if url_required %}
+						<label class="{% if field.errors %}red{% endif %}" for="id_username">* OpenID Identifier</label>
+						<input class="openid" type="text" name="openid_url" />
+					{% else %}
+						<label class="{% if field.errors %}red{% endif %}" for="id_username">* OpenID Identifier</label>
+						<input class="openid" type="text" name="openid_url" />
+					{% endif %}
+					<div class="actions">
+						<input type="submit" value="{% trans 'Log in' %}" class="button medium radius nice" />
+					</div>
+				</fieldset>
+			</form>
+			{% endifsetting %}
+			
+			{% if request.user.is_authenticated %}
+				<div><a href="{% url acct_logout %}?next={{ request.path }}">logout</a></div>
+			{% endif %}
+			
+			<p>{% blocktrans %}If you have any trouble logging in to your account, contact us at <a href="mailto:{{ CONTACT_EMAIL }}">{{ CONTACT_EMAIL }}</a>.{% endblocktrans %}</p>
+		</div>
+	</div>
+{% endblock %}
+			
+{% block extra_body %}
+	<script>
+		$("#id_username").focus();
+	</script>
+{% endblock %}
+	

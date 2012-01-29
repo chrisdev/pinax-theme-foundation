@@ -544,7 +544,7 @@
 	input.large, textarea.large { width: 434px; }
 
 	/* Fieldsets */
-	form fieldset { padding: 9px 9px 2px 9px; border: solid 1px #ddd; margin: 18px 0; }
+	form fieldset { padding: 9px 9px 9px 9px; border: solid 1px #ddd; margin: 18px 0; }
 
 	/* Inlined Radio & Checkbox */
 	.form-field input[type=radio], div.form-field input[type=checkbox] { display: inline; width:auto; margin-bottom:0; }
