@@ -13,10 +13,93 @@
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
-.topbar {
-    background: none repeat scroll 0 0 #222222;
-    border-bottom: 4px solid #00A5FF;
-    padding: 5px 7px 4px;
+ 
+ 
+/* -----------------------------------------
+   Foundation-specific presentation CSS
+----------------------------------------- */
+
+
+body { padding-bottom: 60px; }
+.row { max-width: 1200px; }
+
+div.foundation-header { margin: 0 0 40px 0; padding: 30px 0 0 0; border-bottom: solid 1px #ccc; }
+div.foundation-header h1 { margin-bottom: 0; padding: 0; }
+div.foundation-header h1 a { color: #181818; }
+div.foundation-header h1 a:hover { color: #181818; }
+div.foundation-header .subheader { margin-bottom: 9px; }
+
+div.highlight { margin-bottom: 12px; }
+
+#mobileNav { padding: 6px 10px; position: absolute; top: -5px; right: -5px; }
+#navModal { padding-bottom: 10px; }
+#navModal dl.tabs { margin-left: -20px; margin-right: -20px; margin-bottom: 0; }
+#navModal dl.tabs dd a { padding-top: 10px; padding-bottom: 10px; background: rgba(255,255,255,0.5); }
+
+img.beta { position: absolute; top: 0px; right: 0px; }
+
+/* Footer */
+footer.row {
+  margin-top: 80px;
+  border-top: solid 1px #e6e6e6;
+  padding-top: 20px; }
+footer.row h6 {
+  color: #6f6f6f;
+  font-size: 14px;
+  font-size: 1.4rem;
+  margin-bottom: 4px; }
+footer.row p {
+  color: #626262;
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 18px; }
+footer.row a {
+  color: #222222; }
+footer.row a:hover {
+  text-decoration: underline; }
+  
+
+
+.row.display { background: #f4f4f4; margin-bottom: 10px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; }
+.row.display .column, .row.display .columns { background: #e7e7e7; font-size: 11px; text-indent: 3px; padding-top: 6px; padding-bottom: 6px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; }
+
+/* ZURB bar */
+#zurBar {
+  background: #222222;
+  border-bottom: solid 4px #00a5ff;
+  padding: 15px 20px 13px 20px; }
+  
+@media handheld, only screen and (max-width: 767px) {
+  #zurBar {
+    padding-left: 20px;
+    padding-right: 20px; }
+}
+
+#zurBar h1, #zurBar h2 {
+  margin-bottom: 0;
+  line-height: 1; }
+#zurBar h1 {
+  color: white;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: 800; }
+#zurBar h1 a { color: #fff; font-weight: bold; }
+#zurBar h2 a {
+  text-indent: -99999px;
+  display: block;
+  width: 82px;
+  height: 14px;
+  background: url('../images/by-zurb.png'); }
+  
+
+#zurBar strong { display: block; margin: 0; padding: 0; height: 14px; line-height: 14px; position: relative; bottom: 4px; }
+#zurBar strong a {
+  line-height: 14px;
+  color: #fff;
+  font-weight: 500;
+  padding-right: 12px;
+}
+#zurBar strong a.button { padding: 4px 10px; font-weight: bold; }
 
 
 /* -----------------------------------------
