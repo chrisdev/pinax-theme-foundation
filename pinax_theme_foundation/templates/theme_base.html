@@ -15,7 +15,15 @@
 	<link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" />
 	<link rel="apple-touch-icon" href="{{STATIC_URL}}images/apple-touch-icon.png" />
 	
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/foundation.css"> <!--Combined and Compressed -->
+	<!-- <link rel="stylesheet" href="{{ STATIC_URL }}css/foundation.css"> Combined and Compressed -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/forms.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/globals.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/mobile.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/orbit.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/reveal.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/typography.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/ui.css">
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/app.css">
 	
 	<!--[if lt IE 9]>
@@ -26,6 +34,15 @@
 	<script src="{{ STATIC_URL }}js/jquery-1.7.min.js"></script>
 	<script src="{{ STATIC_URL }}js/jquery.form.js"></script>
 	<script src="{{ STATIC_URL }}js/foundation.js"></script>
+	<script src="{{ STATIC_URL }}js/modernizr.foundation.js"></script>
+	<script src="{{ STATIC_URL }}js/app.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery.customforms.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery.min.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery.orbit.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery.placeholder.min.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery.reveal.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery.tooltips.js"></script>
+	
 	
 	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
@@ -49,8 +66,8 @@
 						</div>
 						<div class="eight columns hide-on-phones">	
 							<strong class="right">											
-									{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
 									{% block nav %}{% endblock %}
+									{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}									
 							</strong>
 						</div>
 						</div>

@@ -1,8 +1,11 @@
+{% load i18n %}
 {% load ifsetting_tag %}
     
     {% if user.is_authenticated %}
             <a href"#">{{ user }}</a>
 			<a href="{% url acct_email %}">Account</a>
+			<a href="{% url profile_detail user.username %}">{% trans "Profile" %}</a>
+            <a href="{% url notification_notices %}">{% trans "Notices" %}{% if notice_unseen_count %} ({{ notice_unseen_count }}){% endif %}</a>
 			{% if user.is_staff %}
 			<a href="{% url admin:index %}">Admin</a>
 			{% endif %}
