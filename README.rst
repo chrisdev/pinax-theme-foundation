@@ -3,8 +3,12 @@ Zurb Foundation Theme for Pinax
 ===============================
 A theme for Pinax 0.9 based on Zurb Foundation. Zurb Foundation is a popular CSS framework that is built on a 
 responsive grid that accommodates devices with a variety of screen sizes.
-Documentation on Foundation can be found at [here](http://foundation.zurb.com/docs/)
+Documentation on Foundation can be found at http://foundation.zurb.com/docs/
 
+Authors
+-------
+* `Christopher Clarke: https://github.com/chrisdev'_.
+* `Kewsi Aguillera: https://github.com/kaguillera' _.
 
 Quickstart
 -----------
