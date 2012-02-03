@@ -4,9 +4,11 @@
 
 {% block head_title %}{% trans "Edit Profile" %}{% endblock %}
 
+{% block active_your_profile %}active{% endblock %}
+
 {% block body %}
     
-    <h2>{% trans "Edit Profile" %}</h2>
+    <h3>{% trans "Edit Profile" %}</h3>
     
     {% include "idios/_profile_form.html" %}
     

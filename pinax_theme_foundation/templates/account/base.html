@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load ifsetting_tag %}
+{% load foundations_tags %}
 
 {% block extra_head %}
     <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/account.css" />
@@ -9,24 +10,26 @@
 
 {% block body_class %}account{% endblock %}
 
+
 {% block subnav %}
-    <h3>{% trans "Account" %}</h3>
-    <ul>
-        <li><a href="{% url acct_email %}">{% trans "Email Addresses" %}</a></li>
+    
+     <dl class="nice vertical tabs">
+     <dd><h3>{% trans "Account" %}</h3></dd>
+		    <dd><a class="{% block active_acct_email %}{% endblock %}" href="{% url acct_email %}">{% trans "Email Addresses" %}</a></dd>
         {% ifsetting ACCOUNT_USE_OPENID %}
-            <li><a href="/openid/associations/">{% trans "OpenID Associations" %}</a></li>
+            <dd><a class="{% active_page request "^/openid/associations/$" %}" href="/openid/associations/">{% trans "OpenID Associations" %}</a></dd>
         {% endifsetting %}
         {% if user.password %}
-        <li><a href="{% url acct_passwd %}">{% trans "Change Password" %}</a></li>
+        <dd><a class="{% block active_acct_passwd %}{% endblock %}" href="{% url acct_passwd %}">{% trans "Change Password" %}</a></dd>
         {% else %}
-        <li><a href="{% url acct_passwd_set %}">{% trans "Set Password" %}</a></li>
+        <dd><a class="{% block active_acct_passwd_set %}{% endblock %}" href="{% url acct_passwd_set %}">{% trans "Set Password" %}</a></dd>
         {% endif %}
         {% if user.password and request.openids %}
-        <li><a href="{% url acct_passwd_delete %}">{% trans "Delete Password" %}</a></li>
+        <dd><a class="{% block active_acct_passwd_det %}{% endblock %}" href="{% url acct_passwd_delete %}">{% trans "Delete Password" %}</a></dd>
         {% endif %}
         {% ifsetting USE_I18N %}
-            <li><a href="{% url acct_language_change %}">{% trans "Language" %}</a></li>
+            <dd><a class="{% block active_acct_language_change %}{% endblock %}" href="{% url acct_language_change %}">{% trans "Language" %}</a></dd>
         {% endifsetting %}
-        <li><a href="{% url acct_timezone_change %}">{% trans "Timezone" %}</a></li>
-    </ul>
+        <dd><a class="{% block active_acct_timezone_change %}{% endblock %}" href="{% url acct_timezone_change %}">{% trans "Timezone" %}</a></dd>
+    </dl>
 {% endblock %}

@@ -1,0 +1,11 @@
+{% load account_tags %}
+<ul class="vcard">
+        {% if profile.name %}
+            <li class="fn"><a href="{% url profile_detail profile.user.username %}">{{ profile.name }} </a></li>
+            <li class="nickname">({% user_display profile.user %})</li>
+        {% else %}
+            <li class="nickname"><a href="{% url profile_detail profile.user.username %}">{% user_display profile.user %}</a></li>
+        {% endif %}
+        {% if profile.location %}<li class="org">{{ profile.location }}</li>{% endif %}
+        {% if profile.website %}<li><a class="url" href="{{ profile.website }}">{{ profile.website }}</a></li>{% endif %}
+</ul>
