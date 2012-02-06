@@ -1,16 +1,17 @@
 {% extends "subnav_base.html" %}
 
 {% load i18n %}
+{% load foundations_tags %}
 
 {% block body_class %}profile{% endblock %}
 
 {% block subnav %}
     {% if user.is_authenticated %}
-        <h3>{% trans "Profile" %}</h3>
-        <ul>
-            <li><a href="{% url profile_detail user.username %}">{% trans "Your Profile" %}</a></li>
-            <li><a href="{% url profile_list %}">{% trans "All Profiles" %}</a></li>
-        </ul>
+        <dl class="nice vertical tabs">
+          <dt><h3>{% trans "Profile" %}</h3></dt>
+		  <dd><a class="{% block active_your_profile %}{% endblock %}" href="{% url profile_detail user.username %}">{% trans "Your Profile" %}</a></dd>
+		  <dd><a class="{% block active_profiles %}{% endblock %}" href="{% url profile_list %}">{% trans "All Profiles" %}</a></dd>
+		</dl>
     {% else %}
         &nbsp;
     {% endif %}

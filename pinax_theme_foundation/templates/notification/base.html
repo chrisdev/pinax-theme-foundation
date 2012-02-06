@@ -9,9 +9,9 @@
 {% block body_class %}notices{% endblock %}
 
 {% block subnav %}
-    <h3>{% trans "Notices" %}</h3>
-    <ul>
-        <li><a href="{% url notification_notices %}">{% trans "Notices" %}</a></li>
-        <li><a href="{% url notification_notice_settings %}">{% trans "Settings" %}</a></li>
-    </ul>
+    <dl class="nice vertical tabs">
+    <dd><h3>{% trans "Notices" %}</h3></dd>  
+        <dd><a class="{% block active_notices %}{% endblock %}" href="{% url notification_notices %}">{% trans "Notices" %}</a></dd>
+        <dd><a class="{% block active_notice_settings %}{% endblock %}" href="{% url notification_notice_settings %}">{% trans "Settings" %}</a></dd>
+    </dl>
 {% endblock %}

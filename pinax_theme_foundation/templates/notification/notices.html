@@ -7,6 +7,8 @@
 
 {% block head_title %}{% trans "All Notices" %}{% endblock %}
 
+{% block active_notices %}active{% endblock %}
+
 {% block body %}
     
     {% autopaginate notices %}
@@ -19,19 +21,23 @@
         {% regroup notices by added.date as notices_by_date %}
         
         {% for date in notices_by_date %}
-            <h3 class="notice_date">{{ date.grouper|naturalday:_("MONTH_DAY_FORMAT")|capfirst }}</h3>
-            
-            {% for notice in date.list %}
-                {% if notice.is_unseen %}
-                    <div class="unseen_notice">
-                {% else %}
-                    <div class="notice">
-                {% endif %}
-                    <span class="notice_type">[{% trans notice.notice_type.display %}]</span>
-                    <span class="notice_message">{{ notice.message|safe }}</span>
-                    <span class="notice_time">{{ notice.added|localtime:account.timezone|time:"P" }}</span>
-                </div>
-            {% endfor %}
+        	<div class="row display">
+				<div class="twelve columns">
+					<h3 class="notice_date">{{ date.grouper|naturalday:_("MONTH_DAY_FORMAT")|capfirst }}</h3>
+					
+					{% for notice in date.list %}
+						{% if notice.is_unseen %}
+							<div class="unseen_notice">
+						{% else %}
+							<div class="notice">
+						{% endif %}
+							<span class="notice_type">[{% trans notice.notice_type.display %}]</span>
+							<span class="notice_message">{{ notice.message|safe }}</span>
+							<span class="notice_time">{{ notice.added|localtime:account.timezone|time:"P" }}</span>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
         {% endfor %}
         
         {% paginate %}
