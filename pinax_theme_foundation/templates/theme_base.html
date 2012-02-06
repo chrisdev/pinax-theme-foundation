@@ -63,6 +63,13 @@
 		{% block topbar %} 
 			<div class="row">       
 				<div class="four columns">
+				    <a href="#" id="mobileNav" data-reveal-id="navModal" class="small nice button show-on-phones">
+				    {% if user.is_authenticated %}
+				        {{user}}
+			            {% else %}
+				         Login/SignUp
+				    {% endif %}
+				    </a>
 				    <h1><a href="{% url home %}">{{ SITE_NAME }}</a></h1>
 				</div>
 				<div class="eight columns hide-on-phones">	
@@ -95,6 +102,10 @@
 	
         {% endblock %}
         </footer>
+	<div id="navModal" class="reveal-modal">
+	  {% block account_bar_phone %}{% include "_account_bar_mobile.html" %}{% endblock %}
+	  <a class="close-reveal-modal">&#215;</a>
+	</div>
         {% block extra_body_base %}
             {% block extra_body %}{% endblock %}
         {% endblock %}
