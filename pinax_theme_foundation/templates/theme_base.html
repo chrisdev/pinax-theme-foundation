@@ -84,15 +84,14 @@
         {% endblock %}
          <div class="container">
         {% block body_base %}
-           
-	<div class="row">
-		<div class="ten columns">
-		   {% include "_messages.html" %}
-		</div>
-	</div>
-                {% block body %}
-                
-                {% endblock %}
+           <div class="row">
+				<div class="ten columns">
+				   {% include "_messages.html" %}
+				</div>
+			</div>
+			{% block body %}
+			
+			{% endblock %}
         {% endblock %}
         
         {% block footer_base %}
