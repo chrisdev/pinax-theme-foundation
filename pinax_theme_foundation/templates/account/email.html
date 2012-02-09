@@ -74,11 +74,9 @@
 					{% csrf_token %}
 					<fieldset>
 						{{ add_email_form|as_foundation }}
-						<br>    
-						<input type="hidden" name="action" value="add"/>
-						<button type="submit" class="button medium radius nice">{% trans "Add" %}</button>
-						<br>
 					</fieldset>
+						<input type="hidden" name="action" value="add"/>
+						<button type="submit" class="button medium radius nice">{% trans "Add Email" %}</button>
 				</form>
 			</div>
 		</div>

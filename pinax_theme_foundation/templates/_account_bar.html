@@ -2,7 +2,7 @@
 {% load ifsetting_tag %}
     
     {% if user.is_authenticated %}
-            <a href"#">{{ user }}</a>
+            <a href"#">{{ user }}</a> 
 		<a href="{% url acct_email %}">Account</a>
 		{% if user.is_staff %}
 		    <a href="{% url admin:index %}">Admin</a>
