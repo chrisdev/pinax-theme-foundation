@@ -3,8 +3,9 @@
 {% load i18n %}
 
 {% block body_base %}
-
-        {% include "_messages.html" %}
+	<div class="row">
+		<div class="ten columns centered">
+        	{% include "_messages.html" %}
 			<div class="row">
 				<div class="twelve columns">							
 					<div class="panel">
@@ -44,8 +45,8 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed viverra dui. Aenean blandit faucibus tincidunt. Phasellus fermentum elit ut erat varius cursus. Nunc posuere mauris sit amet enim congue quis elementum lectus tincidunt. Cras vel tempus metus.</p>
 					<p><a class="nice medium radius blue button" href="#">View details &raquo;</a></p>
 				{% endblock %}
-				</div>
-			
+				</div>			
 			</div>
 		</div>
+	</div>
 {% endblock %}

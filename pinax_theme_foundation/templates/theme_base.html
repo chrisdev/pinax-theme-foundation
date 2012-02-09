@@ -6,35 +6,40 @@
 <!--[if gt IE 8]><!--><html lang="{{ LANGUAGE_CODE}}"> <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
-    <title>{% block head_title_base %}{% if SITE_NAME %}{{ SITE_NAME }} : {% endif %}{% block head_title %}{% endblock %}{% endblock %}</title>
-    <!-- Set the viewport width to device width for mobile -->
-    {% block viewport %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% endblock %} 
-    
-        <!-- HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-	     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+    <title>
+    	{% block head_title_base %}
+    		{% if SITE_NAME %} {{ SITE_NAME }} : {% endif %}
+    		{% block head_title %}{% endblock %}
+    	{% endblock %}
+    </title>
 	
+	<!-- Set the viewport width to device width for mobile -->
+	{% block viewport %}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	{% endblock %} 
+	
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
 	{% block style_base %}
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/forms.css">
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/globals.css">
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css">
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/mobile.css">
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/orbit.css">
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/reveal.css">
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/typography.css">
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/ui.css">
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/app.css">
-	<!--[if lt IE 9]>
-		<link rel="stylesheet" href="{{STATIC_URL}}css/ie.css">
-	<![endif]-->
-	 {% block extra_style %}{% endblock %}
-      {% endblock %}
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/forms.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/globals.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/mobile.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/orbit.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/reveal.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/typography.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/ui.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/app.css">
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="{{STATIC_URL}}css/ie.css">
+		<![endif]-->
+	 	{% block extra_style %}{% endblock %}
+    {% endblock %}
 	
-	
-      {% block script_base %}
+    {% block script_base %}
 		<script src="{{ STATIC_URL }}js/jquery.min.js"></script>
 		<script src="{{ STATIC_URL }}js/modernizr.foundation.js"></script>
 		<!-- Combine and Compress These JS Files -->
@@ -45,71 +50,65 @@
 		<script src="{{ STATIC_URL }}js/jquery.tooltips.js"></script>
 		<!-- End Combine and Compress These JS Files -->
 		<script src="{{ STATIC_URL }}js/app.js"></script>
-	         {% block extra_script %}{% endblock %}
+	    {% block extra_script %}{% endblock %}
 	{% endblock %}
-	
-	
-	
-	
 	
 	{% block extra_head_base %}
 		{% block extra_head %}{% endblock %}
 	{% endblock %}
-</head>
     <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
         
         {% block topbar_base %}
             <div id="zurBar" class="container">   
-		{% block topbar %} 
-			<div class="row">       
-				<div class="four columns">
-				    <a href="#" id="mobileNav" data-reveal-id="navModal" class="small nice button show-on-phones">
-				    {% if user.is_authenticated %}
-				        {{user}}
-			            {% else %}
-				         Login/SignUp
-				    {% endif %}
-				    </a>
-				    <h1><a href="{% url home %}">{{ SITE_NAME }}</a></h1>
+			{% block topbar %} 
+				<div class="row">       
+					<div class="four columns">
+						<a href="#" id="mobileNav" data-reveal-id="navModal" class="small nice button show-on-phones">
+							{% if user.is_authenticated %}
+								{{user}}
+								{% else %}
+								 Login/SignUp
+							{% endif %}
+						</a>
+						<h1><a href="{% url home %}">{{ SITE_NAME }}</a></h1>
+					</div>
+					<div class="eight columns hide-on-phones">	
+						<strong class="right">											
+								{% block nav %}{% endblock %}
+								{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}									
+						</strong>
+					</div>
 				</div>
-				<div class="eight columns hide-on-phones">	
-					<strong class="right">											
-							{% block nav %}{% endblock %}
-							{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}									
-					</strong>
-				</div>
-			</div>
-		{% endblock %}
+			{% endblock %}
             </div>
         {% endblock %}
-         <div class="container">
-        {% block body_base %}
-           
-	<div class="row">
-		<div class="ten columns">
-		   {% include "_messages.html" %}
+         
+        <div class="container">
+			{% block body_base %}
+				<div class="row">
+					<div class="ten columns">
+					   {% include "_messages.html" %}
+					</div>
+				</div>
+				{% block body %}	{% endblock %}
+			{% endblock %}
+			
+			{% block footer_base %}
+				<footer class="row">
+					{% block footer %}	{% endblock %}
+				</footer>
+			{% endblock %}
+		  	
+		  	{% if "pinax.apps.account" in settings.INSTALLED_APPS %}
+		  		<div id="navModal" class="reveal-modal">
+					{% block account_bar_phone %}{% include "_account_bar_mobile.html" %}{% endblock %}
+					<a class="close-reveal-modal">&#215;</a>
+				</div>
+        	{% endif %}
+			
+			{% block extra_body_base %}
+				{% block extra_body %}	{% endblock %}
+			{% endblock %}
 		</div>
-	</div>
-                {% block body %}
-                
-                {% endblock %}
-        {% endblock %}
-        
-        {% block footer_base %}
-	<footer class="row">
-	
-	  {% block footer %}{% endblock %}
-	
-        {% endblock %}
-        </footer>
-	<div id="navModal" class="reveal-modal">
-	  {% block account_bar_phone %}{% include "_account_bar_mobile.html" %}{% endblock %}
-	  <a class="close-reveal-modal">&#215;</a>
-	</div>
-        {% block extra_body_base %}
-            {% block extra_body %}{% endblock %}
-        {% endblock %}
-	
-     </div>
     </body>
 </html>

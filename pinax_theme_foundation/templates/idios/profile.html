@@ -12,19 +12,20 @@
     
     <h2>{% blocktrans %}Profile for {{ page_user_display }}{% endblocktrans %}</h2>
     
-    {% include "idios/_profile_info.html" %}
+    {% include "profiles/_profile_info.html" %}
     
     {% if is_me %}
-        <p><a href="{% url profile_edit %}" class="btn">Edit profile</a></p>
+        <p><a href="{% url profile_edit %}" class="button medium radius nice">Edit profile</a></p>
     {% endif %}
 {% endblock %}
 
 {% block extra_body %}
-    <script>
-        $(function() {
-            $("#edit-profile-box").modal({
-                backdrop: true
-            });
-        });
-    </script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		 $('#myButton').click(function(e) {
+			  e.preventDefault();
+			  $('#myModal').reveal();
+		 });
+	});
+</script
 {% endblock %}

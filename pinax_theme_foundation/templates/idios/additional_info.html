@@ -1,0 +1,22 @@
+{% extends "site_base.html" %}
+
+{% load foundations_tags %}
+
+{% block head_title %}Additional Info{% endblock %}
+
+{% block active_your_profile %}active{% endblock %}
+ 
+{% block body %}
+    <h2>Additional Info</h2>
+    <p>Please fill out the following form so we know a little about you.</p>
+    
+    <form class="nice" method="POST" action="">
+        {% csrf_token %}
+        <fieldset>
+            {{ form|as_foundation }}
+        </fieldset>
+        <div class="actions">
+            <button type="submit" class="button medium radius nice">Submit</button>
+        </div>
+    </form>
+{% endblock %}
