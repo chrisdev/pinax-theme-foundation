@@ -108,10 +108,35 @@ position: absolute;
 top: -5px;
 right: -5px;
 }
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
 
+/* -----------------------------------------
+  a SubNav implementation using UL like  dl.sub-nav 
+----------------------------------------- */
+.subNav ul{
+  	display: block;
+    width: auto;
+    overflow: hidden;
+    margin: -4px 0 0px -9px;
+    padding-top: 4px;
+  }
+
+  .subNav li {
+    float: left;
+    display: inline;
+    margin-left: 9px;
+    margin-bottom: 4px;
+  }
+
+  .subNav li a {
+    text-decoration: none;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+  }
+  .subNav li.active a {
+    background: #00A6FC;
+    color: #fff;
+    padding: 3px 9px;
+  }
 
 
 

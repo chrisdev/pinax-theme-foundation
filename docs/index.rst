@@ -50,8 +50,5 @@ and include your form using the following markup: ::
  
 Todo / Issues
 --------------
-* build additional templates for other Pinax-related apps
-* Find a proper solution to the top navigation bar. The Foundation framework does not currently contain a top navigation bar we are currently
-  using the "zurBar" foun on the document site. This bar does no support drop down items
-* Add responive tags to starter templates to fully support mobile devices
-* Add templates for all the standard Pinax   apps.
+* Add more support for mobile devices
+* Try to get the foundation modals (reveal) to support Ajax 

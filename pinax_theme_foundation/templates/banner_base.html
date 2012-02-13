@@ -6,8 +6,10 @@
 	<div class="row">
 		<div class="ten columns centered">
         	{% include "_messages.html" %}
-			<div class="row">
-				<div class="twelve columns">							
+        </div>
+     </div>
+	<div class="row">
+		<div class="ten columns centered">							
 					<div class="panel">
 						{% block banner %}
 							<h1>Hello, world!</h1>
@@ -15,9 +17,9 @@
 							<p><a class="btn primary large">Learn more &raquo;</a></p>   
 						{% endblock %}
 					</div>
-				</div>
-			</div>
-			<div class="row">
+		  </div>
+	</div>
+	<div class="row">
 				<div class="three columns">
 				{% block column-1 %}
 					<h2>Heading</h2>
@@ -46,7 +48,5 @@
 					<p><a class="nice medium radius blue button" href="#">View details &raquo;</a></p>
 				{% endblock %}
 				</div>			
-			</div>
-		</div>
 	</div>
 {% endblock %}

@@ -62,8 +62,8 @@
             <div id="zurBar" class="container">   
 			{% block topbar %} 
 				<div class="row">       
-					<div class="four columns">
-						<a href="#" id="mobileNav" data-reveal-id="navModal" class="small nice button show-on-phones">
+					<div class="two columns">
+						<a href="#" id="mobileNav" data-reveal-id="accModal" class="small nice button show-on-phones">
 							{% if user.is_authenticated %}
 								{{user}}
 								{% else %}
@@ -72,9 +72,13 @@
 						</a>
 						<h1><a href="{% url home %}">{{ SITE_NAME }}</a></h1>
 					</div>
-					<div class="eight columns hide-on-phones">	
+					<div class="four columns">
+					     <div class="subNav">
+					       {% block nav %}{% endblock %}
+					     </div>
+					</div>
+					<div class="six columns hide-on-phones">	
 						<strong class="right">											
-								{% block nav %}{% endblock %}
 								{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}									
 						</strong>
 					</div>
@@ -85,12 +89,10 @@
          
         <div class="container">
 			{% block body_base %}
-				<div class="row">
-					<div class="ten columns">
-					   {% include "_messages.html" %}
-					</div>
+			    <div class="row">
+				{% include "_messages.html" %}
+				{% block body %}{% endblock %}
 				</div>
-				{% block body %}	{% endblock %}
 			{% endblock %}
 			
 			{% block footer_base %}
@@ -100,7 +102,7 @@
 			{% endblock %}
 		  	
 		  	{% if "pinax.apps.account" in settings.INSTALLED_APPS %}
-		  		<div id="navModal" class="reveal-modal">
+		  		<div id="accModal" class="reveal-modal">
 					{% block account_bar_phone %}{% include "_account_bar_mobile.html" %}{% endblock %}
 					<a class="close-reveal-modal">&#215;</a>
 				</div>

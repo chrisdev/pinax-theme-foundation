@@ -5,9 +5,9 @@
    <h3>{{user}}</h3>
    <dd><a href="{% url acct_email %}">Account</a></dd>
    {% if user.is_staff %}
-	<dd><a href="{% url admin:index %}">Admin</a></dd>
+	   <dd><a href="{% url admin:index %}">Admin</a></dd>
     {% endif %}
-       <dd><a href="{% url acct_logout %}">Log out</a></dd>
+    <dd><a href="{% url acct_logout %}">Log out</a></dd>      
 {% else %}
 	 <dd><a href="{% url acct_login %}">Log In</a></dd>
         {% ifsetting ACCOUNT_OPEN_SIGNUP %}
