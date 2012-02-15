@@ -10,8 +10,8 @@ Documentation on Foundation can be found at http://foundation.zurb.com/docs/
 
 Authors
 --------
-* `Christopher Clarke https://github.com/chrisdev'_.
-* `Kewsi Aguillera https://github.com/kaguillera' _.
+*  Christopher Clarke https://github.com/chrisdev
+*  Kewsi Aguillera https://github.com/kaguillera
 
 Quickstart
 -----------
@@ -52,9 +52,7 @@ and include your form using the following markup: ::
  
 Todo / Issues
 --------------
-* Build additional templates for other Pinax-related apps
-* Find a proper solution to the top navigation bar. The Foundation framework does not currently contain a top navigation bar we are currently
-  using the "zurBar" foun on the document site. This bar does no support drop down items
+* 
 * Add responive tags to starter templates to fully support mobile devices
 
 
