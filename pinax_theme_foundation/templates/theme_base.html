@@ -61,40 +61,45 @@
         
         {% block topbar_base %}
             <div id="zurBar" class="container">   
-			{% block topbar %} 
-				<div class="row">       
-					<div class="two columns">
-					      {% if account %}
-						   <a href="#" id="mobileNav" data-reveal-id="accModal" class="small nice button show-on-phones">
-							{% if user.is_authenticated %}
-								{{user}}
-							{% else %}
-							     Login/SignUp 
-							{% endif %}
-						   </a>
-						   {% endif %}
-						<h1><a href="{% url home %}">{{ SITE_NAME }}</a></h1>
+				{% block topbar %} 
+					<div class="row">       
+						<div class="two columns">
+							  {% if account %}
+							   <a href="#" id="mobileNav" data-reveal-id="accModal" class="small nice button show-on-phones">
+								{% if user.is_authenticated %}
+									{{user}}
+								{% else %}
+									 Login/SignUp 
+								{% endif %}
+							   </a>
+							   {% endif %}
+							<h1><a href="{% url home %}">{{ SITE_NAME }}</a></h1>
+						</div>
+						<div class="four columns">
+							 <div class="subNav">
+							   {% block nav %}{% endblock %}
+							 </div>
+						</div>
+						<div class="six columns hide-on-phones">	
+							<strong class="right">											
+									{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}									
+							</strong>
+						</div>
 					</div>
-					<div class="four columns">
-					     <div class="subNav">
-					       {% block nav %}{% endblock %}
-					     </div>
-					</div>
-					<div class="six columns hide-on-phones">	
-						<strong class="right">											
-								{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}									
-						</strong>
-					</div>
-				</div>
-			{% endblock %}
+				{% endblock %}
             </div>
         {% endblock %}
          
         <div class="container">
 			{% block body_base %}
 			    <div class="row">
-				{% include "_messages.html" %}
-				{% block body %}{% endblock %}
+					<div class="ten columns centered">
+						<br />
+						{% include "_messages.html" %}
+					</div>
+				</div>
+			    <div class="row">					
+					{% block body %}{% endblock %}
 				</div>
 			{% endblock %}
 			
@@ -103,11 +108,11 @@
 					{% block footer %}	{% endblock %}
 				</footer>
 			{% endblock %}
-		  	        {% if account %}
-		  		<div id="accModal" class="reveal-modal">
-					{% block account_bar_phone %}{% include "_account_bar_mobile.html" %}{% endblock %}
-					<a class="close-reveal-modal">&#215;</a>
-				</div>
+		  	  	{% if account %}
+		  			<div id="accModal" class="reveal-modal">
+						{% block account_bar_phone %}{% include "_account_bar_mobile.html" %}{% endblock %}
+						<a class="close-reveal-modal">&#215;</a>
+					</div>
 				{% endif %}
 			{% block extra_body_base %}
 				{% block extra_body %}	{% endblock %}
