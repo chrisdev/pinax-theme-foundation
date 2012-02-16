@@ -12,9 +12,23 @@
     <h2>{% trans "All Profiles" %}</h2>
     
     {% autopaginate profiles %}
+		<div class="row">
 		{% for profile in profiles %}
-			{% include "profiles/_profile_item.html" %}
+			<div class="five columns">
+				<div class="panel">
+					{% include "profiles/_profile_item.html" %}
+				</div>
+			</div>
+			{% if forloop.counter|divisibleby:"2" %}
+				</div>
+				<div class="row">
+			{% endif %}
+		{% empty %}
+    		<div class="eight columns centered">
+    			<h5>Sorry, no Profiles in this list!</h5>
+    		</div>
 		{% endfor %}
+		</div>
     {% paginate %}
     
 {% endblock %}
