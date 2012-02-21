@@ -15,17 +15,19 @@
     {% include "profiles/_profile_info.html" %}
     
     {% if is_me %}
-        <p><a href="{% url profile_edit %}" class="button medium radius nice">Edit profile</a></p>
+        <p><a id="edit-profile-box" href="{% url profile_edit %}" class="button medium radius nice reveal">Edit profile</a></p>
     {% endif %}
 {% endblock %}
 
 {% block extra_body %}
-<script type="text/javascript">
-	$(document).ready(function() {
-		 $('#myButton').click(function(e) {
-			  e.preventDefault();
-			  $('#myModal').reveal();
-		 });
-	});
+<script>
+   $('#edit-profile-box').click(function(event) {
+        event.preventDefault();
+        var $div = $('<div>').addClass('reveal-modal').appendTo('body');
+        $this = $(this);
+        $.get($this.attr('href'), function(data) {
+          return $div.empty().html(data).append('<a class="close-reveal-modal">&#215;</a>').reveal();
+        });
+});
 </script
 {% endblock %}

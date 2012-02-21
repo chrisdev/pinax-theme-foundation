@@ -1,9 +1,8 @@
 {% load foundations_tags %}
 {% load i18n %}
-
+<div id="edit-modal">
 <div class="modal-header">
     <h3>{% trans "Edit Profile" %}</h3>
-    <a href="#" class="close modal-close">&times;</a>
 </div>
 
 <form class="nice" method="POST" action="{% url profile_edit %}">
@@ -17,6 +16,7 @@
     
     <div class="modal-footer">
         <button type="submit" class="button medium radius nice">Update</button>
-        <a href="#" class="button white medium radius nice">Cancel</a>
+        <button type="cancel" class="button white medium radius nice">Cancel</button>
     </div>
 </form>
+</div>
