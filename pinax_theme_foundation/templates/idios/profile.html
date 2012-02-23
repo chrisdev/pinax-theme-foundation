@@ -5,7 +5,9 @@
 
 {% block head_title %}{% user_display page_user as page_user_display %}{% blocktrans %}Profile for {{ page_user_display }}{% endblocktrans %}{% endblock %}
 
+
 {% block active_your_profile %}active{% endblock %}
+
 
 {% block body %}
     {% user_display page_user as page_user_display %}
