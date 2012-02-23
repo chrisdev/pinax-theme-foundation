@@ -6,7 +6,9 @@
     <link rel="alternate" type="application/atom+xml" title="Notices Feed" href="{% url notification_feed_for_user %}" />
 {% endblock %}
 
+
 {% block body_class %}notices{% endblock %}
+{% block active_notices_bar %}active{% endblock %}
 
 {% block subnav %}
     <dl class="nice vertical tabs">
