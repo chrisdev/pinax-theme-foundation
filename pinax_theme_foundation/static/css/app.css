@@ -67,7 +67,7 @@ footer.row a:hover {
 #zurBar {
   background: #222222;
   border-bottom: solid 4px #00a5ff;
-  padding: 15px 20px 13px 20px; }
+  padding: 5px 5px 5px 5px; }
   
 @media handheld, only screen and (max-width: 767px) {
   #zurBar {
@@ -143,4 +143,8 @@ right: -5px;
    Page Name 2
 ----------------------------------------- */
 
-
+/* Styles for dropdown inspired from:
+*
+* http://www.justsoftwaresolutions.co.uk/articles/css_menus.html by Anthony Williams
+*
+*/

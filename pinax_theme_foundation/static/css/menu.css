@@ -1,0 +1,75 @@
+
+.dropmenu ul {
+    background: #222;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.dropmenu li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-width: 25%;
+}
+.dropmenu a {
+    background: #222;
+    color: #fff;
+    display: block;
+    font: bold 16px/25px sans-serif;
+    padding: 0 25px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+.dropmenu .dropdown:after {
+    content: ' \25bc';
+}
+.dropmenu li:hover a {
+    background: #222;
+}
+.dropmenu li ul {
+    float: left;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 30px;
+    visibility: hidden;
+    z-index: 1;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+.dropmenu li:hover ul {
+    opacity: 2;
+    top: 30px;
+    visibility: visible;
+}
+.dropmenu li ul li {
+    float: none;
+    width: 100%;
+}
+.dropmenu li ul a:hover {
+    background: #ddd;
+    color: #000;
+}
+
+/* Clearfix */
+
+.cf:after, .cf:before {
+    content:"";
+    display:table;
+}
+.cf:after {
+    clear:both;
+}
+.cf {
+    zoom:1;
+}

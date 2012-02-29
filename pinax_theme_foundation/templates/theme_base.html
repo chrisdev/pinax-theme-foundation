@@ -35,6 +35,7 @@
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/typography.css">
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/ui.css">
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/app.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/menu.css">
 		<!--[if lt IE 9]>
 			<link rel="stylesheet" href="{{STATIC_URL}}css/ie.css">
 		<![endif]-->
@@ -53,6 +54,7 @@
 		<script src="{{ STATIC_URL }}js/jquery.tooltips.js"></script>
 		<!-- End Combine and Compress These JS Files -->
 		<script src="{{ STATIC_URL }}js/app.js"></script>
+		<script src="{{ STATIC_URL }}js/menu.js"></script>
 	    {% block extra_script %}{% endblock %}
 	{% endblock %}
 	
@@ -83,9 +85,7 @@
 							 </div>
 						</div>
 						<div class="six columns hide-on-phones">	
-							<strong class="right">											
-									{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}									
-							</strong>
+									{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
 						</div>
 					</div>
 				{% endblock %}
@@ -110,12 +110,20 @@
 					{% block footer %}	{% endblock %}
 				</footer>
 			{% endblock %}
-		  	  	{% if account %}
-		  			<div id="accModal" class="reveal-modal">
-						{% block account_bar_phone %}{% include "_account_bar_mobile.html" %}{% endblock %}
-						<a class="close-reveal-modal">&#215;</a>
-					</div>
+			{% if account %}
+				<div id="accModal" class="reveal-modal">
+					{% block account_bar_phone %}{% include "_account_bar_mobile.html" %}{% endblock %}
+					<a class="close-reveal-modal">&#215;</a>
+				</div>
+				{% if user.is_authenticated %}
+					<script>
+						$(function() {
+							$('#menu').responsiveMenu({autoArrows: true});
+						})
+					</script>
 				{% endif %}
+			{% endif %}
+			
 			{% block extra_body_base %}
 				{% block extra_body %}	{% endblock %}
 			{% endblock %}
