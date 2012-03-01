@@ -54,7 +54,6 @@
 		<script src="{{ STATIC_URL }}js/jquery.tooltips.js"></script>
 		<!-- End Combine and Compress These JS Files -->
 		<script src="{{ STATIC_URL }}js/app.js"></script>
-		<script src="{{ STATIC_URL }}js/menu.js"></script>
 	    {% block extra_script %}{% endblock %}
 	{% endblock %}
 	
@@ -64,7 +63,7 @@
     <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
         
         {% block topbar_base %}
-            <div id="zurBar" class="container">   
+            <div id="zurBar" class="container fixed-top">   
 				{% block topbar %} 
 					<div class="row">       
 						<div class="two columns">
@@ -84,7 +83,7 @@
 							   {% block nav %}{% endblock %}
 							 </div>
 						</div>
-						<div class="six columns hide-on-phones">	
+						<div class="six columns hide-on-phones right">	
 									{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
 						</div>
 					</div>
@@ -92,7 +91,7 @@
             </div>
         {% endblock %}
          
-        <div class="container">
+        <div id="mainContent" class="container">
 			{% block body_base %}
 			    <div class="row">
 					<div class="ten columns centered">
@@ -115,13 +114,6 @@
 					{% block account_bar_phone %}{% include "_account_bar_mobile.html" %}{% endblock %}
 					<a class="close-reveal-modal">&#215;</a>
 				</div>
-				{% if user.is_authenticated %}
-					<script>
-						$(function() {
-							$('#menu').responsiveMenu({autoArrows: true});
-						})
-					</script>
-				{% endif %}
 			{% endif %}
 			
 			{% block extra_body_base %}

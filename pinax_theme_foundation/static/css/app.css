@@ -38,6 +38,14 @@ div.highlight { margin-bottom: 12px; }
 
 img.beta { position: absolute; top: 0px; right: 0px; }
 
+/* Main Content */
+
+#mainContent {
+	margin-top: 50px;
+} 
+
+
+
 /* Footer */
 footer.row {
   margin-top: 80px;
@@ -67,23 +75,39 @@ footer.row a:hover {
 #zurBar {
   background: #222222;
   border-bottom: solid 4px #00a5ff;
-  padding: 5px 5px 5px 5px; }
-  
+  padding: 15px 20px 13px; 
+  margin-bottom: 18px;
+  overflow: visible;
+}
+
+.fixed-top{
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  }
+
 @media handheld, only screen and (max-width: 767px) {
   #zurBar {
     padding-left: 20px;
-    padding-right: 20px; }
+    padding-right: 20px; 
+    }
 }
 
 #zurBar h1, #zurBar h2 {
   margin-bottom: 0;
-  line-height: 1; }
+  line-height: 1; 
+  }
+  
 #zurBar h1 {
   color: white;
   font-size: 16px;
   font-size: 1.6rem;
-  font-weight: 800; }
+  font-weight: 800; 
+  }
 #zurBar h1 a { color: #fff; font-weight: bold; }
+
 #zurBar h2 a {
   text-indent: -99999px;
   display: block;
@@ -93,12 +117,14 @@ footer.row a:hover {
   
 
 #zurBar strong { display: block; margin: 0; padding: 0; height: 14px; line-height: 14px; position: relative; bottom: 4px; }
+
 #zurBar strong a {
   line-height: 14px;
   color: #fff;
   font-weight: 500;
   padding-right: 12px;
 }
+
 #zurBar strong a.button { padding: 4px 10px; font-weight: bold; }
 
 
@@ -123,8 +149,8 @@ right: -5px;
   .subNav li {
     float: left;
     display: inline;
-    margin-left: 9px;
-    margin-bottom: 4px;
+    margin-right: 20px;
+    margin-bottom: 0px;
   }
 
   .subNav li a {
