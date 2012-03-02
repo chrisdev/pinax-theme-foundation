@@ -1,18 +1,32 @@
 {% load i18n %}
 {% load ifsetting_tag %}
-    
-    {% if user.is_authenticated %}
-            <a href"#">{{ user }}</a> 
-		<a href="{% url acct_email %}">Account</a>
-		{% if user.is_staff %}
-		    <a href="{% url admin:index %}">Admin</a>
-		{% endif %}
-		    <a href="{% url acct_logout %}">Log out</a>
-    {% else %}
-        <a href="{% url acct_login %}">Log In</a>
-        {% ifsetting ACCOUNT_OPEN_SIGNUP %}
-        	<a href="{% url acct_signup %}">Sign Up</a>
-        {% endifsetting %}
-    {% endif %}
+	
+{% if user.is_authenticated %}
+	<div class="dropmenu right">
+		<ul class="cf">
+			<li> <a class="dropdown" href="#">{{ user }}<b class="caret"></b></a> 
+				<ul>
+					<li><a href="{% url acct_email %}">Account</a><i class="icon-user"></i></li>
+					{% if user.is_staff %}
+						<li><a href="{% url admin:index %}">Admin</a></li>
+					{% endif %}
+					<li><a href="{% url acct_logout %}">Log out</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+{% else %}
+	<div class="right">
+		<ul class="subNav">
+			{% spaceless %}
+				<li><a href="{% url acct_login %}">Log In</a></li>
+				{% ifsetting ACCOUNT_OPEN_SIGNUP %}
+					<li><a href="{% url acct_signup %}">Sign Up</a></li>
+				{% endifsetting %}
+			{% endspaceless %}
+		</ul>
+	</div>
+{% endif %}
+
 
 

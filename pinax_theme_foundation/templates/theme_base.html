@@ -35,6 +35,7 @@
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/typography.css">
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/ui.css">
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/app.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/menu.css">
 		<!--[if lt IE 9]>
 			<link rel="stylesheet" href="{{STATIC_URL}}css/ie.css">
 		<![endif]-->
@@ -62,7 +63,7 @@
     <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
         
         {% block topbar_base %}
-            <div id="zurBar" class="container">   
+            <div id="zurBar" class="container fixed-top">   
 				{% block topbar %} 
 					<div class="row">       
 						<div class="two columns">
@@ -82,17 +83,15 @@
 							   {% block nav %}{% endblock %}
 							 </div>
 						</div>
-						<div class="six columns hide-on-phones">	
-							<strong class="right">											
-									{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}									
-							</strong>
+						<div class="six columns hide-on-phones right">	
+									{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
 						</div>
 					</div>
 				{% endblock %}
             </div>
         {% endblock %}
          
-        <div class="container">
+        <div id="mainContent" class="container">
 			{% block body_base %}
 			    <div class="row">
 					<div class="ten columns centered">
@@ -110,12 +109,13 @@
 					{% block footer %}	{% endblock %}
 				</footer>
 			{% endblock %}
-		  	  	{% if account %}
-		  			<div id="accModal" class="reveal-modal">
-						{% block account_bar_phone %}{% include "_account_bar_mobile.html" %}{% endblock %}
-						<a class="close-reveal-modal">&#215;</a>
-					</div>
-				{% endif %}
+			{% if account %}
+				<div id="accModal" class="reveal-modal">
+					{% block account_bar_phone %}{% include "_account_bar_mobile.html" %}{% endblock %}
+					<a class="close-reveal-modal">&#215;</a>
+				</div>
+			{% endif %}
+			
 			{% block extra_body_base %}
 				{% block extra_body %}	{% endblock %}
 			{% endblock %}
