@@ -1,5 +1,5 @@
 # CHANGELOG for Pinax-theme-Foundation
-
+## 0.1.4 (2012/03/004)
  * Added the Fixed top Menubar 
  * Show active links on the menubar (Issue #14)
  * Fixed the repositioning of form when timezone is changed on timezone page 
