@@ -1,62 +1,12 @@
+import codecs
+import os
+import sys
 from setuptools import setup, find_packages
 
-LONG_DESCRIPTION = """
-===============================
-Zurb Foundation Theme for Pinax
-===============================
-A theme for Pinax 0.9 based on Zurb Foundation. Zurb Foundation is a popular CSS framework that is built on a 
-responsive grid that accommodates devices with a variety of screen sizes.
-Documentation on Foundation can be found at http://foundation.zurb.com/docs/
-
-Authors
---------
-*  Christopher Clarke https://github.com/chrisdev
-*  Kewsi Aguillera https://github.com/kaguillera
-
-Quickstart
------------
-Include "pinax-theme-foundation" in your requirements file and "pinax_theme_foundation" in your INSTALLED APPS.
-
-Make sure both template loaders and staticfiles finders includes app directories.
-
-Site name comes from Sites fixture.
-
-Your "site_base.html" should extend "theme_base.html" and should provide "footer" and "nav" blocks (the latter should just be a ul of li of a links).
-
-Your pages should have blocks "head_title" and "body" and should extend "site_base.html".
-
-The url name "home" should be defined as the homepage.
+def read(fname):
+    return codecs.open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 
-Forms
------
-
-This theme ships with a basic template tag for rendering forms that match
-the markup expected by foundation
-
-To style forms, add the following to the top of your template ::
-    
-    {% load foundation_tags %}
-
-and include your form using the following markup: ::
-    
-    <form method="POST" action="">
-        {% csrf_token %}
-        <fieldset class="form-controls">
-            {{ form|as_foundation }}
-        </fieldset>
-        <fieldset class="form-actions">
-            <button type="submit" class="btn primary">Submit</button>
-        </fieldset>
-    </form>
- 
-Todo / Issues
---------------
-* 
-* Add responive tags to starter templates to fully support mobile devices
-
-
-"""
 PACKAGE = "pinax_theme_foundation"
 NAME = "pinax-theme-foundation"
 DESCRIPTION = "Pinax theme based on Zurb's Foundation"
@@ -70,7 +20,7 @@ setup(
     name=NAME,
     version=VERSION,
     description=DESCRIPTION,
-    long_description=LONG_DESCRIPTION,
+    long_description=read('README.rst'),
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     license="MIT",
