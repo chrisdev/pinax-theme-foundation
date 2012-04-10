@@ -75,7 +75,7 @@ footer.row a:hover {
 #zurBar {
   background: #222222;
   border-bottom: solid 4px #00a5ff;
-  padding: 15px 20px 13px; 
+  padding: 10px 20px; 
   margin-bottom: 18px;
   overflow: visible;
 }
@@ -142,8 +142,8 @@ right: -5px;
   	display: block;
     width: auto;
     overflow: hidden;
-    margin: -4px 0 0px -9px;
-    padding-top: 4px;
+    margin: -4px 0;
+    padding: 3px 0;
   }
 
   .subNav li {
