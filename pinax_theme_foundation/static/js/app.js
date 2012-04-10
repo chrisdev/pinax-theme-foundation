@@ -29,7 +29,9 @@ $(document).ready(function () {
 	if (window.location.hash) {
 		activateTab($('a[href="' + window.location.hash + '"]'));
 	}
-
+	
+	
+	
 	/* ALERT BOXES ------------ */
 	$(".alert-box").delegate("a.close", "click", function(event) {
     event.preventDefault();
