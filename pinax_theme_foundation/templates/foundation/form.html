@@ -1,11 +1,6 @@
 {% if form.non_field_errors %}
     <div class="alert-box error">
-        <p>
-         <strong>{{ form_error_title }}</strong>
-<ul>
-{{ form.non_field_errors|unordered_list }}
-</ul>
-</p>
+     {{ form.non_field_errors|join:"<br/>" }}
     </div>
 {% endif %}
 {% for field in form %}
