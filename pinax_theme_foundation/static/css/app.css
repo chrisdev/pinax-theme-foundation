@@ -177,16 +177,16 @@ right: -5px;
 /* Built for Foundation v2.1.5 http://foundation.zurb.com */
 /* Artfully masterminded by ZURB  */
 
-
 .top-bar.platform { height: 20px; line-height: 20px; font-size: 14px; }
 .top-bar.platform .attached { background-color: #222222; font-family: "HelveticaNeue",Helvetica,Arial,"Lucida Grande",sans-serif;  }
 .top-bar.platform .attached a {text-decoration:none;}
-.top-bar.platform .attached>.name { background: url(../images/user_icon.png) no-repeat 4px top transparent; height: 20px; border: none; line-height: 20px; width: 100px; }
+.top-bar.platform .attached>.name { background: url(../images/user_icon.png) no-repeat 15px top transparent; height: 20px; border: none; line-height: 20px; width: 100px; }
 .top-bar.platform .attached>.name small { color: #999; display: block; }
-.top-bar.platform .attached>.name:hover {background-position: 4px 0px;  }
+.top-bar.platform .attached>.name:hover {background-position: 15px 0px;  }
 .top-bar.platform .attached>.name>a.home { display: block; text-indent: -9999px; font-size: 14px !important; color: #fff; }
+.top-bar.platform .attached>.name>a.home>div { margin-left:40px; margin-top:11px; }
 
-.top-bar.platform .attached>.name .dropdown { position: absolute; right: 15px; top: 20px; margin: 0; padding: 8px 0; z-index: 101; background: #222; width: auto; display: none; border-radius: 5px;}
+.top-bar.platform .attached>.name .dropdown { position: absolute; right: 15px; top: 20px; margin: 0; padding: 8px 0; z-index: 101; background: #222; width: auto; display: none;}
 .top-bar.platform.home .attached>.name .dropdown { right: 80px; }
 .top-bar.platform.home .attached>.name .dropdown { background: #222; }
 .top-bar.platform .attached>.name:hover .dropdown { display: block; }
@@ -218,4 +218,15 @@ right: -5px;
   .top-bar.platform .attached>ul.right>li.has-dropdown>a, .top-bar .attached>ul.right>li.has-dropdown>span { background-position: right 4px; }
   .show-on-phones { display: block !important; }
   .top-bar.platform .attached > .name { width: 100% !important; }
+}
+
+
+.arrow-down {
+	
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+
+	border-top: 6px solid #fff;
 }
