@@ -138,6 +138,7 @@ right: -5px;
 /* -----------------------------------------
   a SubNav implementation using UL like  dl.sub-nav 
 ----------------------------------------- */
+/*
 .subNav ul{
   	display: block;
     width: auto;
@@ -155,14 +156,20 @@ right: -5px;
 
   .subNav li a {
     text-decoration: none;
-    -webkit-border-radius: 12px;
+  
+ -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
+
+    font-weight: 600;
+    padding: 3px 9px;
+    color: #fff;
   }
-  .subNav li.active a {
+  .subNav li:hover a {
     background: #00A6FC;
     color: #fff;
-    padding: 3px 9px;
+    
   }
+*/
 
 
 /* -----------------------------------------
@@ -177,56 +184,16 @@ right: -5px;
 /* Built for Foundation v2.1.5 http://foundation.zurb.com */
 /* Artfully masterminded by ZURB  */
 
-.top-bar.platform { height: 20px; line-height: 20px; font-size: 14px; }
-.top-bar.platform .attached { background-color: #222222; font-family: "HelveticaNeue",Helvetica,Arial,"Lucida Grande",sans-serif;  }
-.top-bar.platform .attached a {text-decoration:none;}
-.top-bar.platform .attached>.name { background: url(../images/user_icon.png) no-repeat 15px top transparent; height: 20px; border: none; line-height: 20px; width: 100px; }
-.top-bar.platform .attached>.name small { color: #999; display: block; }
-.top-bar.platform .attached>.name:hover {background-position: 15px 0px;  }
-.top-bar.platform .attached>.name>a.home { display: block; text-indent: -9999px; font-size: 14px !important; color: #fff; }
-.top-bar.platform .attached>.name>a.home>div { margin-left:40px; margin-top:11px; }
-
-.top-bar.platform .attached>.name .dropdown { position: absolute; right: 15px; top: 20px; margin: 0; padding: 8px 0; z-index: 101; background: #222; width: auto; display: none;}
-.top-bar.platform.home .attached>.name .dropdown { right: 80px; }
-.top-bar.platform.home .attached>.name .dropdown { background: #222; }
-.top-bar.platform .attached>.name:hover .dropdown { display: block; }
-
-.top-bar.platform .attached>.name .dropdown>li { display: block; margin: 0; padding: 0 20px; white-space: nowrap; line-height: 1.4; position: relative; }
-.top-bar.platform .attached>.name .dropdown>li.divider { height: 0; padding: 0; border-top: 1px solid #111; border-bottom: 1px solid #333; margin: 6px 0; }
-.top-bar.platform .attached>.name .dropdown>li a { display: block; margin: 0 -20px; padding: 4px 20px; font-weight: normal; }
-.top-bar.platform .attached>.name .dropdown>li label { text-transform: uppercase; font-weight: bold; font-size: 10px; margin: 0 0 8px; color: #999; }
-.top-bar.platform .attached>.name .dropdown>li:hover>a { background: #222222; }
-
-.show-on-phones { display: none !important; }
-
-/* Display different logo on home pages */
-.top-bar.platform.home .attached>.name { background-image: url(../images/user_icon.png); height: 20px; border: none; line-height: 20px; width: 214px; }
-.top-bar.platform.home .attached>.name:hover { background-color: #222; }
-
-@media only screen and (max-width: 767px) {
-  .top-bar.platform.expanded { border-bottom: 3px solid #FB0953; }
-  .top-bar.platform .attached { border-bottom: none; }
-  .top-bar.platform .attached>.name,
-  .top-bar.platform .attached>.name:hover { background-color: #222; width: auto; height: 45px; border-bottom: 3px solid #FB0953; background-position: 0 -90px; }
-  .top-bar.platform.expanded .attached>.name { border-bottom: 1px solid #444; }
-  .top-bar.platform .attached>ul>li.has-dropdown>a, .top-bar .attached>ul>li.has-dropdown>span { background-position: right 10px; }
-  .top-bar .attached > ul > li.active > a + .dropdown { top: 20px; }  
-
-  .top-bar.platform .attached>.name:hover .dropdown { display: none; }
-
-  .top-bar .attached > ul.right > li > a { color: #999; height: 20px; line-height: 20px; }
-  .top-bar.platform .attached>ul.right>li.has-dropdown>a, .top-bar .attached>ul.right>li.has-dropdown>span { background-position: right 4px; }
-  .show-on-phones { display: block !important; }
-  .top-bar.platform .attached > .name { width: 100% !important; }
-}
-
 
 .arrow-down {
-	
 	width: 0;
 	height: 0;
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
 
 	border-top: 6px solid #fff;
+}
+.top-bar {
+    border-bottom: 4px solid #00A5FF;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.098);
 }
