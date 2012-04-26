@@ -75,7 +75,7 @@ footer.row a:hover {
 #zurBar {
   background: #222222;
   border-bottom: solid 4px #00a5ff;
-  padding: 10px 20px; 
+  padding: 5px 20px; 
   margin-bottom: 18px;
   overflow: visible;
 }
@@ -138,6 +138,7 @@ right: -5px;
 /* -----------------------------------------
   a SubNav implementation using UL like  dl.sub-nav 
 ----------------------------------------- */
+/*
 .subNav ul{
   	display: block;
     width: auto;
@@ -155,14 +156,20 @@ right: -5px;
 
   .subNav li a {
     text-decoration: none;
-    -webkit-border-radius: 12px;
+  
+ -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
+
+    font-weight: 600;
+    padding: 3px 9px;
+    color: #fff;
   }
-  .subNav li.active a {
+  .subNav li:hover a {
     background: #00A6FC;
     color: #fff;
-    padding: 3px 9px;
+    
   }
+*/
 
 
 /* -----------------------------------------
@@ -174,3 +181,19 @@ right: -5px;
 * http://www.justsoftwaresolutions.co.uk/articles/css_menus.html by Anthony Williams
 *
 */
+/* Built for Foundation v2.1.5 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+
+
+.arrow-down {
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+
+	border-top: 6px solid #fff;
+}
+.top-bar {
+    border-bottom: 4px solid #00A5FF;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.098);
+}
