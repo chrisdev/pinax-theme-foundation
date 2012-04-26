@@ -103,13 +103,6 @@
 					{% block footer %}	{% endblock %}
 				</footer>
 			{% endblock %}
-			{% if account %}
-				<div id="accModal" class="reveal-modal">
-					{% block account_bar_phone %}{% include "_account_bar_mobile.html" %}{% endblock %}
-					<a class="close-reveal-modal">&#215;</a>
-				</div>
-			{% endif %}
-			
 			{% block extra_body_base %}
 				{% block extra_body %}	{% endblock %}
 			{% endblock %}
