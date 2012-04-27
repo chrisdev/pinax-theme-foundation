@@ -2,22 +2,16 @@
 {% load ifsetting_tag %}
 	
 {% if user.is_authenticated %}
-	<div class="dropmenu right">
-		<ul class="cf">
-			<li> 
-				<a class="dropdown" href="#">
-					<img src="{{STATIC_URL}}images/user_icon.png"/>
-				</a>
-				<ul class="menulist">
-					<li><a href="{% url acct_email %}">Account</a><i class="icon-user"></i></li>
-					{% if user.is_staff %}
-						<li><a href="{% url admin:index %}">Admin</a></li>
-					{% endif %}
-					<li><a href="{% url acct_logout %}">Log&nbsp;out</a></li>
-				</ul>
-			</li>
+	<li class="has-dropdown">
+		<a href="#">{{ user }}</a>
+		<ul class="dropdown">
+			<li><a href="{% url acct_email %}">Account</a></i></li>
+			{% if user.is_staff %}
+					<li><a href="{% url admin:index %}">Admin</a></li>
+			{% endif %}
+			<li><a href="{% url acct_logout %}">Log&nbsp;out</a></li>
 		</ul>
-	</div>
+	</li>
 {% else %}
 	<div class="right">
 		<ul class="subNav">
@@ -30,6 +24,3 @@
 		</ul>
 	</div>
 {% endif %}
-
-
-

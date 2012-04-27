@@ -12,7 +12,7 @@
                 <label for="{{ field.auto_id }}" {% if field.field.required %}class="requiredField"{% endif %}>
                     {{ field.label|safe }}
                 </label>
-                    {{ field }}
+                    {{ field }}           
                     {% for error in field.errors %}
                         <small>{{ error }}</small>
                     {% endfor %}

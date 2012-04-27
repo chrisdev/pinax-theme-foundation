@@ -1,0 +1,16 @@
+
+/* Platform Top Bar */
+.top-bar.platform small {font-size:80%;}
+.top-bar.platform li {line-height:45px;}
+.top-bar.platform.home {margin-bottom:0px;}
+.top-bar .attached { z-index: 191 !important; }
+.top-bar.platform .attached { border-bottom: 3px solid #B8D30B; }
+
+@media only screen and (max-width: 767px) {
+   .top-bar.platform.expanded { border-bottom: 0px; }
+   .top-bar.platform.expanded .attached > .name:hover { border-bottom:1px solid #444; }
+   .top-bar.platform.home .attached > .name {border-bottom: 3px solid #B8D30B;}
+   .top-bar.platform .attached > .name:hover {border-bottom:3px solid #B8D30B;}
+   .top-bar.platform .attached > .name {border-bottom: 3px solid #B8D30B;}
+   .top-bar.platform.home .attached > .name { width: 100%; background-image: url(../../images/top-bar/platform-bar-logo.png); }
+}

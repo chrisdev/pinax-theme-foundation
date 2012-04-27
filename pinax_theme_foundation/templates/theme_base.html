@@ -36,6 +36,9 @@
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/ui.css">
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/app.css">
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/menu.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/foundation.top-bar.css">
+		<!-- <link rel="stylesheet" href="{{ STATIC_URL }}css/platform.top-bar.css"> -->
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/applications.css">
 		<!--[if lt IE 9]>
 			<link rel="stylesheet" href="{{STATIC_URL}}css/ie.css">
 		<![endif]-->
@@ -54,6 +57,7 @@
 		<script src="{{ STATIC_URL }}js/jquery.tooltips.js"></script>
 		<!-- End Combine and Compress These JS Files -->
 		<script src="{{ STATIC_URL }}js/app.js"></script>
+		<script src="{{ STATIC_URL }}js/foundation.top-bar.js"></script>
 	    {% block extra_script %}{% endblock %}
 	{% endblock %}
 	
@@ -63,32 +67,22 @@
     <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
         
         {% block topbar_base %}
-            <div id="zurBar" class="container fixed-top">   
+            <div class="container top-bar">   
 				{% block topbar %} 
-					<div class="row">       
-						<div class="two columns">
-							  {% if account %}
-							   <a href="#" id="mobileNav" data-reveal-id="accModal" class="small nice button show-on-phones">
-								{% if user.is_authenticated %}
-									{{user}}
-								{% else %}
-									 Login/SignUp 
-								{% endif %}
-							   </a>
-							   {% endif %}
-							<h1><a href="{% url home %}">{{ SITE_NAME }}</a></h1>
+					<!-- ZURBar -->
+						<div class="attached">
+							<div class="name">
+								<span><a href="/">{{SITE_NAME}}</a><a href="#" class="toggle-nav"></a></span>
+							</div>	
+							<ul class="right">
+								{% block nav %} {% endblock %}
+								{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+								<li class="hide-on-phones">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+							</ul>
 						</div>
-						<div class="four columns">
-							 <div class="subNav">
-							   {% block nav %}{% endblock %}
-							 </div>
-						</div>
-						<div class="six columns hide-on-phones right">	
-									{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
-						</div>
-					</div>
+					<!-- /ZURBar -->
 				{% endblock %}
-            </div>
+        	</div>
         {% endblock %}
          
         <div id="mainContent" class="container">
@@ -109,13 +103,6 @@
 					{% block footer %}	{% endblock %}
 				</footer>
 			{% endblock %}
-			{% if account %}
-				<div id="accModal" class="reveal-modal">
-					{% block account_bar_phone %}{% include "_account_bar_mobile.html" %}{% endblock %}
-					<a class="close-reveal-modal">&#215;</a>
-				</div>
-			{% endif %}
-			
 			{% block extra_body_base %}
 				{% block extra_body %}	{% endblock %}
 			{% endblock %}
