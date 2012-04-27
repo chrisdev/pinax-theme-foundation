@@ -73,9 +73,9 @@
 						<div class="attached">
 							<div class="name">
 								<span><a href="/">{{SITE_NAME}}</a><a href="#" class="toggle-nav"></a></span>
-							</div>	
+							</div>
+							{% block nav %} {% endblock %}	
 							<ul class="right">
-								{% block nav %} {% endblock %}
 								{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
 								<li class="hide-on-phones">&nbsp;&nbsp;&nbsp;&nbsp;</li>
 							</ul>
