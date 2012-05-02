@@ -13,7 +13,7 @@
 		</ul>
 	</li>
 {% else %}
-		<ul class="subNav">
+		<ul class="subNav hide-on-phones">
 			{% spaceless %}
 				<li style="float: left; padding-left: 10px;"><a style="padding: 8px;" href="{% url acct_login %}"><span class="glyph general">\</span>Log In</a></li>
 				{% ifsetting ACCOUNT_OPEN_SIGNUP %}
@@ -21,4 +21,11 @@
 				{% endifsetting %}
 			{% endspaceless %}
 		</ul>
+		
+		
+		<li class="show-on-phones"><a href="{% url acct_login %}"><span class="glyph general">\</span>Log In</a></li>
+		{% ifsetting ACCOUNT_OPEN_SIGNUP %}
+		<li class="show-on-phones"><a href="{% url acct_signup %}"><span class="glyph general">[</span>Sign Up</a></li>
+		{% endifsetting %}
+		
 {% endif %}
