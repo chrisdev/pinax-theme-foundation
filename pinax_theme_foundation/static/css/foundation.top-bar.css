@@ -14,13 +14,13 @@
 		
 */
 
-	.top-bar { height: 45px; margin: 0 0 30px; padding: 0; line-height: 45px; }
-	.top-bar .attached { position: fixed; top: 0; left: 0; height: 45px; width: 100%; background: #333; border: 0 solid #000; border-width: 0 0 1px; color: #fff; font-family: "Helvetica", Arial, sans-serif; z-index: 39; }
+	.top-bar { height: 45px; margin: 0 0 30px; padding: 0; line-height: 45px; background: none repeat scroll 0 0 #333333; }
+	.top-bar .attached { position: relative; margin: 0 auto; top: 0; left: 0; height: 45px; width: 100%; border: 0 solid #000; border-width: 0; background: none; color: #fff; font-family: "Helvetica", Arial, sans-serif; z-index: 39; }
 	.top-bar a,
 	.top-bar a:hover { color: #fff; font-weight: bold; }
 	
 	/* Styles for the fixed position bar itself */
-	.top-bar .attached>ul { display: block; margin: 0; padding: 0; }
+	.top-bar .attached>ul { display: block; margin: 0; padding: 0; float: right; }
 	.top-bar .attached>ul>li { display: block; height: 45px; float: left; border-right: 1px solid #555; position: relative; }
 	.top-bar .attached>ul>li>a, .top-bar .attached>ul>li>span { display: block; height: 45px; padding: 0 20px; border-right: 1px solid #000; font-weight: bold; }
 	.top-bar .attached>ul>li>a small { font-size: 12px; color: #999; font-weight: normal; }
