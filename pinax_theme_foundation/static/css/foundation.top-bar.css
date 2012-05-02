@@ -36,7 +36,7 @@
 	.top-bar .attached .button { padding: 3px 11px 4px; }
 	
 	/* Move the UL with .right to the right-hand side and adjust border */
-	.top-bar .attached>ul.right>li { border-left: 1px solid #000; border-right: none; }
+	.top-bar .attached>ul.right>li { border-left: 0px solid #000; border-right: none; }
 	.top-bar .attached>ul.right>li>a { border-left: 1px solid #555; border-right: none; }
 	
 	/* Styles for the dropdown elements */

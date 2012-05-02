@@ -15,7 +15,7 @@
 {% else %}
 		<ul class="subNav">
 			{% spaceless %}
-				<li style="float: left; border-left: 1px solid #555555; padding-left: 10px;"><a style="padding: 8px;" href="{% url acct_login %}"><span class="glyph general">\</span>Log In</a></li>
+				<li style="float: left; padding-left: 10px;"><a style="padding: 8px;" href="{% url acct_login %}"><span class="glyph general">\</span>Log In</a></li>
 				{% ifsetting ACCOUNT_OPEN_SIGNUP %}
 				<li  style="float: left;"><a style="padding: 8px;" href="{% url acct_signup %}"><span class="glyph general">[</span>Sign Up</a></li>
 				{% endifsetting %}
