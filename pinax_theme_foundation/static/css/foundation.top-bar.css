@@ -105,7 +105,7 @@
 		.top-bar .attached { background: #333; border-width: 0;  position:fixed; top:0; right:0; left:0;  z-index:999; }
 		.top-bar { overflow: hidden; height: 45px; }
 		.top-bar.expanded { height: auto !important; }
-		.top-bar .attached { left: 0; border-bottom: none; height: auto; background: none; }
+		.top-bar .attached { left: 0; border-bottom: none; height: auto; background: none; position: relative; }
 		.top-bar .attached>ul { float: none; width: 100%; position: static; }
 		.top-bar .attached>.name { display: block; width: 100%; float: none; position: relative; cursor: pointer; }
 		.top-bar .attached>ul>li { display: block; float: none; border-right: none; border-left: none; border-bottom: 1px solid #444; margin: 0; padding: 0; height: auto; position: relative; }
