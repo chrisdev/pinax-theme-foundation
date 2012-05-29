@@ -1,4 +1,5 @@
-$(document).ready(function () {
+/* Foundation v2.2.1 http://foundation.zurb.com */
+jQuery(document).ready(function ($) {
 
 	/* Use this js doc for all application specific JS */
 
@@ -8,14 +9,17 @@ $(document).ready(function () {
 	function activateTab($tab) {
 		var $activeTab = $tab.closest('dl').find('a.active'),
 				contentLocation = $tab.attr("href") + 'Tab';
+				
+		// Strip off the current url that IE adds
+		contentLocation = contentLocation.replace(/^.+#/, '#');
 
 		//Make Tab Active
 		$activeTab.removeClass('active');
 		$tab.addClass('active');
 
-    	//Show Tab Content
+    //Show Tab Content
 		$(contentLocation).closest('.tabs-content').children('li').hide();
-		$(contentLocation).show();
+		$(contentLocation).css('display', 'block');
 	}
 
 	$('dl.tabs').each(function () {
@@ -28,10 +32,9 @@ $(document).ready(function () {
 
 	if (window.location.hash) {
 		activateTab($('a[href="' + window.location.hash + '"]'));
+		$.foundation.customForms.appendCustomMarkup();
 	}
-	
-	
-	
+
 	/* ALERT BOXES ------------ */
 	$(".alert-box").delegate("a.close", "click", function(event) {
     event.preventDefault();
@@ -45,6 +48,9 @@ $(document).ready(function () {
 	/* Remove this and jquery.placeholder.min.js if you don't need :) */
 
 	$('input, textarea').placeholder();
+
+	/* TOOLTIPS ------------ */
+	$(this).tooltips();
 
 
 
@@ -72,7 +78,7 @@ $(document).ready(function () {
 	});
   if (Modernizr.touch) {
     $('.nav-bar>li.has-flyout>a.main').css({
-      'padding-right' : '75px',
+      'padding-right' : '75px'
     });
     $('.nav-bar>li.has-flyout>a.flyout-toggle').css({
       'border-left' : '1px dashed #eee'
@@ -89,5 +95,4 @@ $(document).ready(function () {
 	/* DISABLED BUTTONS ------------- */
 	/* Gives elements with a class of 'disabled' a return: false; */
   
-
 });
