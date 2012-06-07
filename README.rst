@@ -96,13 +96,13 @@ your project style sheet *static/site_sytles.css* ::
 	}
 
 	
-..end-here
+.. end-here
 
 Documentation
 --------------
 
 See the `full documentation`_ for more details.
 
-... _full documentation: http://pinax-theme-foundation.readthedocs.org/
-... _Zurb Foundation: http://foundation.zurb.com/
-... _Pinax: http://
+.. _full documentation: http://pinax-theme-foundation.readthedocs.org/
+.. _Zurb Foundation: http://foundation.zurb.com/
+.. _Pinax: http://pinaxproject.com
