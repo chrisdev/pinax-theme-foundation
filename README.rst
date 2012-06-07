@@ -1,21 +1,50 @@
 ===============================
-Zurb Foundation Theme for Pinax
+A Foundation Theme for Pinax
 ===============================
-A theme for Pinax 0.9 based on Zurb Foundation. Zurb Foundation is a popular CSS framework that is built on a 
-responsive grid that accommodates devices with a variety of screen sizes.
-Documentation on Foundation can be found at http://foundation.zurb.com/docs/
 
-Authors
--------
-* Christopher Clarke https://github.com/chrisdev
-* Kewsi Aguillera https://github.com/kaguillera
+A theme for Pinax 0.9 based on `Zurb Foundation`_.  `Zurb Foundation`_
+is a popular CSS framework that is light weight, but includes all the basics 
+such as a twelve column responsive grid, forms, dialog,navigation tabs, buttons, typography and so on. 
+`Zurb Foundation`_  is not as feature complete as some other frameworks, but this may be one of its advantages. 
+It has been argued that frameworks that provide "everything out of the box" tend to encourage the 
+development of "cookie cutter" sites and apps. 
+You can read more about the ideas behind 
+Foundation  and how to use  it for rapid prototyping 
+`here <http://www.alistapart.com/articles/dive-into-responsive-prototyping-with-foundation>`_.  
 
-In This Version
+
+Contributors
+-------------
+* `Christopher Clarke <https://github.com/chrisdev>`_
+* `Kewsi Aguillera <https://github.com/kaguillera>`_
+* `Lendl Smith <https://github.com/ilendl2>`_
+
+What's New
 --------------------
-We've added a number of major feature requests & bug fixes for this release including:
- * The use Zurb Foundation 2.2.0 which will be the last major release in the 2+ series
- * The top navigation bar is now responsive and can support things like drop down lists. 
- * Modals dialogs now now work with forms where the link and the from are on different pages.
+
+-  Improved top Navbar based on which is based on foundation's `top-bar
+   branch <https://github.com/zurb/foundation/tree/top-bar>`_ .
+-  Inclusion of `zurb symbol icon fonts`_
+-  Inclusion of CSS to support the *`responsive design patterns`_*
+   originally discussed by `Joshnua Johson`_ and implement by `Matt Reimer`_.
+-  Updated documentation and set up a `demo site`_ based on a pinax basic
+   project
+-  Some reorganization of the *theme\_base.html* including:
+
+   -  Moved most the javascript to the bottom of the file
+   -  Use the `static template tag_`
+   -  Using the static assets for released version of `zurb-foundation 2.2.1`_
+
+-  Numerous bug fixes
+
+.. _zurb symbol icon fonts: https://github.com/zurb/foundation-icons
+.. _Zurb Foundation: http://foundation.zurb.com
+.. _responsive design pattern: http://http://designshack.net/articles/css/5-really-useful-responsive-web-design-patterns
+.. _Joshnua Johson: http://designshack.net/author/joshuajohnson/
+.. _Matt Reimer: http://www.raisedeyebrow.com/bm/blog/2012/04/responsive-design-patterns/
+.. _static template tag: https://docs.djangoproject.com/en/dev/howto/static-files/#with-a-template-tag
+.. _zurb-foundation 2.2.1: http://foundation.zurb.com/files/foundation-download-2.2.1.zip
+.. _demo site: http://foundation.chrisdev.com
 
 Quickstart
 -----------
@@ -58,32 +87,22 @@ Your pages should have blocks "head_title" and "body" and should extend "site_ba
 
 The **url** name "home" should be defined as the homepage.
 
-Foundation is 100% responsive so that you may want to add the following to the project style sheet *static/site_sytles.css*
-to handle larger displays::
+On desktop devices the default viewport width is set to 1200px you may prefer something different. 
+To set for example, a 980px wide viewport on desktop devices simply add the following to 
+your project style sheet *static/site_sytles.css* ::
 
 	row {
 	  max-width: 980px; 
 	}
 
+	
+..end-here
 
-Forms
------
+Documentation
+--------------
 
-This theme ships with a basic template tag for rendering forms that match
-the markup expected by foundation
+See the `full documentation`_ for more details.
 
-To style forms, add the following to the top of your template ::
-    
-    {% load foundation_tags %}
-
-and include your form using the following markup: ::
-    
-    <form method="POST" action="">
-        {% csrf_token %}
-        <fieldset class="form-controls">
-            {{ form|as_foundation }}
-        </fieldset>
-        <fieldset class="form-actions">
-            <button type="submit" class="button medium radius nice"">Submit</button>
-        </fieldset>
-    </form>
+... _full documentation: http://pinax-theme-foundation.readthedocs.org/
+... _Zurb Foundation: http://foundation.zurb.com/
+... _Pinax: http://

@@ -1,7 +1,7 @@
 Mobile Visibility
 -----------------
 
-`Foundation <http://foundation.zurb.com/>`_ includes a series of visibility classes that  
+`Zurb Foundation <http://foundation.zurb.com/>`_ includes a series of visibility classes that  
 allow you to hide or display content on various devices using 'show/hide-on-x' where "x" can be 
 a phone,tablet or desktop. For example if we include the following snippet on the line corresponding to the device 
 that you are currently using will be displayed ::
