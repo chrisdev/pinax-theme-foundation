@@ -31,6 +31,7 @@
 		<link  href="{% static  "css/foundation.top-bar.css" %}" rel="stylesheet">
 		<link  href="{% static  "css/app.css" %}" rel="stylesheet">
 		<link  href="{% static "css/foundation.icons.css" %}" rel="stylesheet">
+		<link  href="{% static "css/designs.css" %}" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<link  href="{% static "css/ie.css" %}" rel="stylesheet" >
 		<![endif]-->
@@ -83,7 +84,7 @@
 				</footer>
 			{% endblock %}
 			{% block script_base %}
-				<script src="{% static  "js/jquery.min.js" %}"></script>
+				<script src="{% block jquery_src %}{% static  "js/jquery.min.js" %}{% endblock%}"></script>
 				<script src="{% static  "js/foundation.js" %}"></script>
 				<script src="{% static "js/foundation.top-bar.js" %}"></script>
 				<script src="{% static "js/app.js"  %}"></script>

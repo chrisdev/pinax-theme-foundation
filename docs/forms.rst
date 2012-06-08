@@ -19,4 +19,7 @@ and include your form using the following markup: ::
             <button type="submit" class="button medium radius nice"">Submit</button>
         </fieldset>
     </form>
-    
+
+Find more about foundation forms `here`_
+
+.._here: http://foundation.zurb.com/docs/forms.php

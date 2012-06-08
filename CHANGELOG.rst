@@ -1,7 +1,8 @@
-CHANGELOG for pinax-theme-foundation
-====================================
+==========
+CHANGELOG
+==========
 
-0.1.5 Tip
+Tip
 ------------------
 
 -  Improved top Navbar based on which is based on foundation's `top-bar

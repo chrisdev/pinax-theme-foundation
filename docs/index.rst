@@ -10,13 +10,8 @@ The Details
    
    top-nav-bar
    forms
+   modal
    mobile-visibility
    design-patterns
    changes
    
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
