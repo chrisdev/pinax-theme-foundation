@@ -23,28 +23,9 @@ Contributors
 What's New
 --------------------
 
--  Improved top Navbar based on which is based on foundation's `top-bar branch`_ .
--  Inclusion of `zurb symbol icon fonts`_
--  Inclusion of CSS to support the *`responsive design patterns`_*
-   originally discussed by `Joshnua Johson`_ and implement by `Matt Reimer`_.
--  Updated documentation and set up a `demo site`_ based on a pinax basic
-   project
--  Some reorganization of the *theme\_base.html* including:
+* Support for foundation 3.0 
 
-   -  Moved most the javascript to the bottom of the file
-   -  Use the `static template tag_`
-   -  Using the static assets for released version of `zurb-foundation 2.2.1`_
 
--  Numerous bug fixes
-
-.. _top-bar branch: https://github.com/zurb/foundation/tree/top-bar
-.. _zurb symbol icon fonts: https://github.com/zurb/foundation-icons
-.. _responsive design patterns: http://http://designshack.net/articles/css/5-really-useful-responsive-web-design-patterns
-.. _Joshnua Johson: http://designshack.net/author/joshuajohnson/
-.. _Matt Reimer: http://www.raisedeyebrow.com/bm/blog/2012/04/responsive-design-patterns/
-.. _static template tag: https://docs.djangoproject.com/en/dev/howto/static-files/#with-a-template-tag
-.. _zurb-foundation 2.2.1: http://foundation.zurb.com/files/foundation-download-2.2.1.zip
-.. _demo site: http://foundation.chrisdev.com
 
 Quickstart
 -----------
