@@ -44,6 +44,11 @@
 li.name {
 	border: none;
 	text-align: center;
+	line-height: 38px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	list-style: none;
 }
 
 li.name a{

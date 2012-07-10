@@ -50,8 +50,13 @@
         	<div class="attached">
             	<div class="row"> 
 	            		<ul class="nav-bar">
+	            			<li class="name">
+	            				<a href="/">{{SITE_NAME}}</a><a href="#"></a>
+	            			<li>
 							{% block topbar %} 	
-								{% block nav %}{% endblock %}
+								{% block nav %}
+								{% endblock %}
+								{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
 							{% endblock %}
 						</ul>
         		</div>
