@@ -39,6 +39,7 @@
 	background: none;
 	margin-top: 0px;
 	margin-bottom: 0px;
+	float: right;
 }
 
 li.name {
@@ -48,10 +49,15 @@ li.name {
 	margin: 0;
 	padding: 0;
 	position: relative;
+	float: left;
 	list-style: none;
 }
 
 li.name a{
 	color: #fff;
+}
+
+.attached .mobile-four {
+	padding: 0;
 }
 
