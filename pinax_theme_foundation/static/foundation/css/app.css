@@ -26,3 +26,27 @@
    Page Name 2
 ----------------------------------------- */
 
+.attached {
+	background-color: #4D4D4D;
+	border-bottom: 3px solid #2BA6CB;	
+	margin-bottom: 15px;
+	z-index: 999;
+	left: 0;
+	right: 0;
+}
+
+.nav-bar {
+	background: none;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+li.name {
+	border: none;
+	text-align: center;
+}
+
+li.name a{
+	color: #fff;
+}
+
