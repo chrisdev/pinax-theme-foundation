@@ -1,0 +1,52 @@
+/* CSS to style glyphs */
+.glyph { cursor: default; font-size: 30px; line-height: 1;
+padding-right: 5px;
+padding-left: 5px;
+}
+.glyph.general { font-family: "FoundationIconsGeneral"; }
+.glyph.general-enclosed { font-family: "FoundationIconsGeneralEnclosed"; }
+.glyph.social { font-family: "FoundationIconsSocial"; }
+
+
+/* Foundation Icons General */
+@font-face {
+  font-family: 'FoundationIconsGeneral';
+  src: url(../images/foundation/fonts/foundation-icons-general.eot);
+  src: url(../images/foundation/fonts/foundation-icons-general.eot?#iefix) format('embedded-opentype'),
+       url(../images/foundation/fonts/foundation-icons-general.woff) format('woff'),
+       url(../images/foundation/fonts/foundation-icons-general.ttf) format('truetype'),
+       url(../images/foundation/fonts/foundation-icons-general.svg#FoundationIconsGeneral) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Foundation Icons General Enclosed */
+@font-face {
+    font-family: 'FoundationIconsGeneralEnclosed';
+    src: url(../images/foundation/fonts/foundation-icons-general-enclosed.eot);
+    src: url(../images/foundation/fonts/foundation-icons-general-enclosed.eot?#iefix) format('embedded-opentype'),
+         url(../images/foundation/fonts/foundation-icons-general-enclosed.woff) format('woff'),
+         url(../images/fonts/foundation-icons-general-enclosed.ttf) format('truetype'),
+         url(../images/foundation/fonts/foundation-icons-general-enclosed.svg#FoundationIconsGeneralEnclosed) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Foundation Icons Social */
+@font-face {
+    font-family: 'FoundationIconsSocial';
+    src: url(../images/foundation/fonts/foundation-icons-social.eot);
+    src: url(../images/foundation/fonts/foundation-icons-social.eot?#iefix) format('embedded-opentype'),
+         url(../images/foundation/fonts/foundation-icons-social.woff) format('woff'),
+         url(../images/foundation/fonts/foundation-icons-social.ttf) format('truetype'),
+         url(../images/foundation/fonts/foundation-icons-social.svg#FoundationIconsSocial) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.attached .glyph{
+	font-size: 14px;
+	padding-left: 0px;
+	padding-right: 8px;
+	margin-left: -8px;
+}
