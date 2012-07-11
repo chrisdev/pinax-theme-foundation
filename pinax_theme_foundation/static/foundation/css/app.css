@@ -35,7 +35,7 @@
 	right: 0;
 }
 
-.nav-bar {
+.nav-bar.menu {
 	background: none;
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -60,4 +60,36 @@ li.name a{
 .attached .mobile-four {
 	padding: 0;
 }
+
+input[type="password"], textarea {
+    -moz-transition: all 0.15s linear 0s;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+    color: rgba(0, 0, 0, 0.75);
+    display: block;
+    font-size: 14px;
+    height: 32px;
+    margin: 0 0 12px;
+    padding: 6px;
+    width: 100%;
+    max-width: 400px;
+}
+
+input[type="text"], textarea {
+    -moz-transition: all 0.15s linear 0s;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+    color: rgba(0, 0, 0, 0.75);
+    display: block;
+    font-size: 14px;
+    height: 32px;
+    margin: 0 0 12px;
+    padding: 6px;
+    width: 100%;
+    max-width: 400px;
+}
+
+
 
