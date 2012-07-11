@@ -14,10 +14,10 @@
                 </label>
                     {{ field }}           
                     {% for error in field.errors %}
-                        <small>{{ error }}</small>
+                        <medium>{{ error }}</medium>
                     {% endfor %}
                     {% if field.help_text %}
-                        <small>{{ field.help_text|safe }}</small>
+                        <medium>{{ field.help_text|safe }}</medium>
                     {% endif %}
             {% endif %}
         </div>
