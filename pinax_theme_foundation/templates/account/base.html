@@ -11,10 +11,10 @@
 {% block subnav %}
     
      <dl class="nice vertical tabs">
-     <dd><h3>{% trans "Account" %}</h3></dd>
+     <h3>{% trans "Account" %}</h3>
 		    <dd><a class="{% block active_acct_email %}{% endblock %}" href="{% url acct_email %}">{% trans "Email Addresses" %}</a></dd>
         {% ifsetting ACCOUNT_USE_OPENID %}
-            <dd><a class="{% active_page request "^/openid/associations/$" %}" href="/openid/associations/">{% trans "OpenID Associations" %}</a></dd>
+            <dd><a class="{% block active_page_request %}{% endblock %}" href="/openid/associations/">{% trans "OpenID Associations" %}</a></dd>
         {% endifsetting %}
         {% if user.password %}
         <dd><a class="{% block active_acct_passwd %}{% endblock %}" href="{% url acct_passwd %}">{% trans "Change Password" %}</a></dd>

@@ -51,6 +51,7 @@ li.name {
 	position: relative;
 	float: left;
 	list-style: none;
+	font-weight: 700;
 }
 
 li.name a{
