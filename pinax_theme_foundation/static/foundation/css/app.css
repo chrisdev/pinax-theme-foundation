@@ -26,3 +26,38 @@
    Page Name 2
 ----------------------------------------- */
 
+.attached {
+	background-color: #4D4D4D;
+	border-bottom: 3px solid #2BA6CB;	
+	margin-bottom: 15px;
+	z-index: 999;
+	left: 0;
+	right: 0;
+}
+
+.nav-bar {
+	background: none;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	float: right;
+}
+
+li.name {
+	border: none;
+	text-align: center;
+	line-height: 38px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	float: left;
+	list-style: none;
+}
+
+li.name a{
+	color: #fff;
+}
+
+.attached .mobile-four {
+	padding: 0;
+}
+
