@@ -1,31 +1,3 @@
-/* Artfully masterminded by ZURB  */
-
-/* --------------------------------------------------
-   Table of Contents
------------------------------------------------------
-:: Shared Styles
-:: Page Name 1
-:: Page Name 2
-*/
-
-
-/* -----------------------------------------
-   Shared Styles
------------------------------------------ */
-
-
-
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
-
-
-
-
-/* -----------------------------------------
-   Page Name 2
------------------------------------------ */
-
 .attached {
 	background-color: #4D4D4D;
 	border-bottom: 3px solid #2BA6CB;	
@@ -51,6 +23,7 @@ li.name {
 	position: relative;
 	float: left;
 	list-style: none;
+	font-weight: 700;
 }
 
 li.name a{
@@ -90,6 +63,3 @@ input[type="text"], textarea {
     width: 100%;
     max-width: 400px;
 }
-
-
-
