@@ -18,7 +18,7 @@ Contributors
 -------------
 * `Christopher Clarke <https://github.com/chrisdev>`_
 * `Kewsi Aguillera <https://github.com/kaguillera>`_
-* `Lendl Smith <https://github.com/ilendl2>`_
+* `Lendl R Smith <https://github.com/ilendl2>`_
 
 What's New
 --------------------

@@ -4,13 +4,14 @@
 {% if user.is_authenticated %}
 	<li class="has-flyout">
 		<a href="#">{{ user }}</a>
-		<ul class="flyout">
-			<li><a href="{% url acct_email %}"><span class="glyph social">x</span>Account</a></i></li>
-			{% if user.is_staff %}
-			<li><a href="{% url admin:index %}"><span class="glyph general">a</span>Admin</a></li>
-			{% endif %}
-			<li><a href="{% url acct_logout %}"><span class="glyph general">]</span>Log&nbsp;out</a></li>
-		</ul>
+		<a href="#" class="flyout-toggle"><span> </span></a>
+			<ul class="flyout">
+				<li><a href="{% url acct_email %}"><span class="glyph social">x</span>Account</a></i></li>
+				{% if user.is_staff %}
+				<li><a href="{% url admin:index %}"><span class="glyph general">a</span>Admin</a></li>
+				{% endif %}
+				<li><a href="{% url acct_logout %}"><span class="glyph general">]</span>Log&nbsp;out</a></li>
+			</ul>
 	</li>
 {% else %}
 
