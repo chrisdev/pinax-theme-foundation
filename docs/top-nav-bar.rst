@@ -16,6 +16,7 @@ project's *site\_base.html* inherits from *theme\_base.html*
 
     {% extends "theme_base.html" %}
 
+
 *theme\_base.html* defines the template block *topbar* with the
 following structure.
 
@@ -38,6 +39,7 @@ following structure.
     		</div>
     	</div>
     {% endblock %}
+
 
 This will provide your project with a *nav-bar* (via the "attached" class) which displays the *SITE\_NAME*
 and an account management drop down menu. The account management drop
