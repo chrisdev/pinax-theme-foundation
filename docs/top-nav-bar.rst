@@ -1,9 +1,9 @@
 Top Navbar
 ----------
 
-The current release of foundation, `version
-3 <http://foundation.zurb.com/files/foundation-download-3.zip>`_
-does not provide a *Top Navbar* component similar to the one provided by
+This new release of foundation, `version
+3 <http://foundation.zurb.com/files/foundation-download-e.zip>`_
+has now provided you with a *Navbar* component similar to the one provided by
 `twitter bootstrap <http://twitter.github.com/bootstrap/>`_. As this is
 a requirement for many projects, we have included a *Top Navbar*
 component which is loosely based on `foundation top-bar
@@ -20,21 +20,24 @@ project's *site\_base.html* inherits from *theme\_base.html*
 following structure.
 
 ::
-            {% block topbar_base %}
-            	<div class="attached">
-                	<div class="row"> 	
-            			<li class="name mobile-four">
-            				<a href="/">{{SITE_NAME}}</a><a href="#"></a>
-            			</li>
-            			<ul class="nav-bar menu mobile-four">
-            				{% block topbar %}
-            					{% block nav %}{% endblock %}
-            					{% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
-            				{% endblock %}
-            			</ul>
-            		</div>
-            	</div>
-            {% endblock %}
+   
+    {% block topbar_base %}
+    	<div class="attached">
+        	<div class="row"> 	
+    			<li class="name mobile-four">
+    				<a href="/">{{SITE_NAME}}</a><a href="#"></a>
+    			</li>
+    			<ul class="nav-bar menu mobile-four">
+    				{% block topbar %}
+    					{% block nav %}{% endblock %}
+    					{% block account_bar %}
+    						{% include "_account_bar.html" %}
+    					{% endblock %}
+    				{% endblock %}
+    			</ul>
+    		</div>
+    	</div>
+    {% endblock %}
 
 This will provide your project with a *nav-bar* (via the "attached" class) which displays the *SITE\_NAME*
 and an account management drop down menu. The account management drop
@@ -56,7 +59,6 @@ abstracted from the *\_account\_bar.html* template file
             </ul>
         </li>
     {% endif %}
-        &hellip;
 
 So to create a drop down menu item, simply assign the *li* element the
 *"has-flyout"* class and include an unordered list element with a
@@ -86,4 +88,4 @@ class selector. So adding
 will display the "gear" icon. These are actually `Zurb symbol icon
 font <https://github.com/zurb/foundation-icons>`_ that will scale and
 display nicely on various devices. These can be used any where in your
-project. .
+project.
