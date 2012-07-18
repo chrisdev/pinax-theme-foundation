@@ -75,10 +75,8 @@ Upgrading from Foundation 2 to Foundation 3.0
 
 * pip uninstall pinax-theme-foundation
 * pip install pinax-theme-foundation3
-* navigation doesn't need a "ul" so begin in **{% block nav %}** with your first "li"
 * remove all **max-width** from css sytling
-* change all **show-on** and **hide-on** to **show-for** and **hide-for**
-* change the classes **mobile,tablet and desktop** to **small,medium and large**
+* refer to mobile-visibility on docs to see class changes for mobile visibility
 
 
 Documentation

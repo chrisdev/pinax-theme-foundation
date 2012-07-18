@@ -85,6 +85,7 @@ class selector. So adding
 
      <span class="glyph general">a</span>
 
+
 will display the "gear" icon. These are actually `Zurb symbol icon
 font <https://github.com/zurb/foundation-icons>`_ that will scale and
 display nicely on various devices. These can be used any where in your

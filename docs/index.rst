@@ -12,6 +12,5 @@ The Details
    forms
    modal
    mobile-visibility
-   design-patterns
    changes
    
