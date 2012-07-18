@@ -78,7 +78,7 @@ from the *Top Navbar* for this site
 
 It should be noted that menu items can be embellished with appropriate
 symbol icons by including a span element with the *"glyph general"*
-class selector. So adding
+class selector. So adding :
 
 ::
 
