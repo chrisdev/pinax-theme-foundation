@@ -4,10 +4,7 @@ Top Navbar
 This new release of foundation, `version
 3 <http://foundation.zurb.com/files/foundation-download-e.zip>`_
 has now provided you with a *Navbar* component similar to the one provided by
-`twitter bootstrap <http://twitter.github.com/bootstrap/>`_. As this is
-a requirement for many projects, we have included a *Top Navbar*
-component which is loosely based on `foundation top-bar
-branch <https://github.com/zurb/foundation/tree/top-bar>`_ .
+`twitter bootstrap <http://twitter.github.com/bootstrap/>`_ .
 
 To use the *Top Navbar* in your your project, first ensure that your
 project's *site\_base.html* inherits from *theme\_base.html*
