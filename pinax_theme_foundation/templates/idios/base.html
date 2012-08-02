@@ -9,7 +9,7 @@
 {% block subnav %}
     {% if user.is_authenticated %}
         <dl class="nice vertical tabs">
-          <dt><h3>{% trans "Profile" %}</h3></dt>
+          <h3>{% trans "Profile" %}</h3>
 		  <dd><a class="{% block active_your_profile %}{% endblock %}" href="{% url profile_detail user.username %}">{% trans "Your Profile" %}</a></dd>
 		  <dd><a class="{% block active_profiles %}{% endblock %}" href="{% url profile_list %}">{% trans "All Profiles" %}</a></dd>
 		</dl>

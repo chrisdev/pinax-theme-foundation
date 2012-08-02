@@ -14,17 +14,18 @@ Foundation  and how to use  it for rapid prototyping
 
 .. _Zurb Foundation: http://foundation.zurb.com
 
+
 Contributors
 -------------
 * `Christopher Clarke <https://github.com/chrisdev>`_
 * `Kewsi Aguillera <https://github.com/kaguillera>`_
-* `Lendl Smith <https://github.com/ilendl2>`_
+* `Lendl R Smith <https://github.com/ilendl2>`_
+
 
 What's New
 --------------------
 
 * Support for foundation 3.0 
-
 
 
 Quickstart
@@ -68,19 +69,21 @@ Your pages should have blocks "head_title" and "body" and should extend "site_ba
 
 The **url** name "home" should be defined as the homepage.
 
-On desktop devices the default viewport width is set to 1200px you may prefer something different. 
-To set for example, a 980px wide viewport on desktop devices simply add the following to 
-your project style sheet *static/site_sytles.css* ::
 
-	row {
-	  max-width: 980px; 
-	}
+Upgrading from Foundation 2 to Foundation 3.0
+--------------
 
-	
-.. end-here
+* pip uninstall pinax-theme-foundation
+* pip install pinax-theme-foundation3
+* remove all **max-width** from css sytling
+* refer to mobile-visibility on docs to see class changes for mobile visibility
+
 
 Documentation
 --------------
+
+
+
 
 See the `full documentation`_ for more details.
 

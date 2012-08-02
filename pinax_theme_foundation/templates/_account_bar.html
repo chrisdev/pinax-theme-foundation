@@ -2,30 +2,23 @@
 {% load ifsetting_tag %}
 	
 {% if user.is_authenticated %}
-	<li class="has-dropdown">
+	<li class="has-flyout">
 		<a href="#">{{ user }}</a>
-		<ul class="dropdown">
-			<li><a href="{% url acct_email %}"><span class="glyph social">x</span>Account</a></i></li>
-			{% if user.is_staff %}
-					<li><a href="{% url admin:index %}"><span class="glyph general">a</span>Admin</a></li>
-			{% endif %}
-			<li><a href="{% url acct_logout %}"><span class="glyph general">]</span>Log&nbsp;out</a></li>
-		</ul>
+		<a href="#" class="flyout-toggle"><span> </span></a>
+			<ul class="flyout">
+				<li><a href="{% url acct_email %}"><span class="glyph social">x</span>Account</a></i></li>
+				{% if user.is_staff %}
+				<li><a href="{% url admin:index %}"><span class="glyph general">a</span>Admin</a></li>
+				{% endif %}
+				<li><a href="{% url acct_logout %}"><span class="glyph general">]</span>Log&nbsp;out</a></li>
+			</ul>
 	</li>
 {% else %}
-		<ul class="subNav hide-on-phones">
-			{% spaceless %}
-				<li style="float: left; padding-left: 10px;"><a style="padding: 8px;" href="{% url acct_login %}"><span class="glyph general">\</span>Log In</a></li>
-				{% ifsetting ACCOUNT_OPEN_SIGNUP %}
-				<li  style="float: left;"><a style="padding: 8px;" href="{% url acct_signup %}"><span class="glyph general">[</span>Sign Up</a></li>
-				{% endifsetting %}
-			{% endspaceless %}
-		</ul>
-		
-		
-		<li class="show-on-phones"><a href="{% url acct_login %}"><span class="glyph general">\</span>Log In</a></li>
+
+		<li><a href="{% url acct_login %}"><span class="glyph general">\</span>Log In</a></li>
 		{% ifsetting ACCOUNT_OPEN_SIGNUP %}
-		<li class="show-on-phones"><a href="{% url acct_signup %}"><span class="glyph general">[</span>Sign Up</a></li>
+		<li><a href="{% url acct_signup %}"><span class="glyph general">[</span>Sign Up</a></li>
 		{% endifsetting %}
+		
 		
 {% endif %}
