@@ -2,7 +2,7 @@
 A Zurb Foundation Theme for Pinax
 ==================================
 
-A theme for Pinax 0.9 based on `Zurb Foundation`_.  `Zurb Foundation`_
+Pinax 0.9 based on `Foundation 3`_.  `Zurb Foundation`_
 is a popular CSS framework that is light weight, but includes all the basics 
 such as; a twelve column responsive grid, forms,dialog, navigation tabs, buttons, typography and so on. 
 `Zurb Foundation`_  is not as feature complete as some other frameworks, but this may be one of its advantages. 
