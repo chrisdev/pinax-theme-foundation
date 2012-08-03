@@ -1,10 +1,9 @@
 Top Navbar
 ----------
 
-This new release of foundation, `version
-3 <http://foundation.zurb.com/files/foundation-download-e.zip>`_
-has now provided you with a *Navbar* component similar to the one provided by
-`twitter bootstrap <http://twitter.github.com/bootstrap/>`_ .
+`Foundation 3 <http://foundation.zurb.com/files/foundation-download-e.zip>`_
+now includes a top nav bar includes the main nav options as well as hover dropdowns 
+that support either a list of anchors or arbitrary content (even Grid content).
 
 To use the *Top Navbar* in your your project, first ensure that your
 project's *site\_base.html* inherits from *theme\_base.html*
@@ -38,7 +37,8 @@ following structure.
     {% endblock %}
 
 
-This will provide your project with a *nav-bar* (via the "attached" class) which displays the *SITE\_NAME*
+This will provide your project with a top *nav bar* which is attached to the top of the page
+that  displays the *SITE\_NAME*
 and an account management drop down menu. The account management drop
 down is simply an unordered lists as shown in the following snippet
 abstracted from the *\_account\_bar.html* template file
