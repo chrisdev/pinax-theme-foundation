@@ -22,4 +22,4 @@ and include your form using the following markup: ::
 
 Find more about foundation forms `here`_ .
 
-.._here: http://foundation.zurb.com/docs/forms.php
+.. _here: http://foundation.zurb.com/docs/forms.php
