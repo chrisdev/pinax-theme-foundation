@@ -625,7 +625,17 @@ div.orbit-wrapper div.slider-nav span.left { background: url('../images/foundati
 /* Bullet Nav ---------------------- */
 ul.orbit-bullets { position: absolute; z-index: 30; list-style: none; bottom: -40px; left: 50%; margin-left: -50px; padding: 0; }
 
-ul.orbit-bullets li { float: left; margin-left: 5px; cursor: pointer; color: #999; text-indent: -9999px; background: url('../images/foundation/orbit/bullets.jpg') no-repeat 4px 0; width: 13px; height: 12px; overflow: hidden; }
+ul.orbit-bullets li {
+    background: url("../images/foundation/orbit/bullets.png") no-repeat scroll 4px 0 transparent;
+    color: #999999;
+    cursor: pointer;
+    float: left;
+    height: 12px;
+    margin-left: 5px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 13px;
+}
 
 ul.orbit-bullets li.active { color: #222; background-position: -8px 0; }
 
@@ -640,7 +650,17 @@ div.orbit, div.orbit-wrapper { width: 100% !important; }
 
 ul.orbit-bullets { position: absolute; z-index: 30; list-style: none; bottom: -50px; left: 50%; margin-left: -50px; padding: 0; }
 
-ul.orbit-bullets li { float: left; margin-left: 5px; cursor: pointer; color: #999; text-indent: -9999px; background: url('../images/foundation/orbit/bullets.jpg') no-repeat 4px 0; width: 13px; height: 12px; overflow: hidden; }
+ul.orbit-bullets li {
+    background: url("../images/foundation/orbit/bullets.png") no-repeat scroll 4px 0 transparent;
+    color: #999999;
+    cursor: pointer;
+    float: left;
+    height: 12px;
+    margin-left: 5px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 13px;
+}
 
 ul.orbit-bullets li.has-thumb { background: none; width: 100px; height: 75px; }
 
