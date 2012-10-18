@@ -2,13 +2,32 @@
 CHANGELOG
 ==========
 
+0.1.7 (2012/10/18)
+------------------
+
+- This release supports Foundation 3.1 which includes features such as
+  right-to-left language support, new UI Styles for Progress Bars
+  and Image Thumbs, updated jQuery and so on, read more Foundation 3.1
+  `here <http://foundation.zurb.com/docs/support.php>`_
+- Replaced any of the remnants of our home grown Top Navigation menu
+  with the Foundation 3.1 responsive Top Navigation bar
+- Included Icon Fonts, Responsive Tables and SVG Social Icons
+  Zurb add-ons which are not part of core release
+- Lay the groundwork for supporting the `--template`
+  flag on the `django-admin.py start project` in the next release
+- Other Bug fixes.
+
 0.1.6 (2012/08/02)
 -------------------
 
-- We now support Foundation 3 so you can use features like new Foundation Nav bar 
-- Support for responsive 'tables http://www.zurb.com/playground/responsive-tables`_
-- Simplified the `demo site <http://foundation.chrisdev.com>`_ so that its just the pinax basic site
-- Removed support for responsive design patterns as these ar not compatible not compatible with Foundation 3 release
+- We now support Foundation 3 so you can use features like new
+  the new Top Foundation Nav bar
+- Support for
+  `responsive tables <http://www.zurb.com/playground/responsive-tables>`_
+- Simplified the `demo site <http://foundation.chrisdev.com>`_
+  so that its just the pinax basic site
+- Removed support for responsive design patterns as these were
+  not compatible with Foundation 3 release
 - Updated documentation to reflect Foundation 3
 - Numerous bug fixes.
 
@@ -16,19 +35,17 @@ CHANGELOG
 0.1.5 (2012/06/08)
 ------------------
 
--  Improved top Navbar based on which is based on foundation's `top-bar
-   branch <https://github.com/zurb/foundation/tree/top-bar>`_ .
--  Inclusion of `zurb symbol icon
-   fonts <https://github.com/zurb/foundation-icons>`_.
--  Inclusion of CSS to support the `Responsive Design
-   Pattern <http://designshack.net/articles/css/5-really-useful-responsive-web-design-patterns/>`_
-   originally discussed by `Joshnua
-   Johson <http://designshack.net/author/joshuajohnson/>`_ and implement
-   by `Matt
-   Reimer <http://www.raisedeyebrow.com/bm/blog/2012/04/responsive-design-patterns>`_.
--  Updated documentation set up a `demo site <http://foundation.chrisdev.com>`_ based on a pinax basic
-   project
--  Some reorganization of the *theme\_base.html* including:
+- Improved top Navbar based on which is based on foundation's `top-bar
+  branch <https://github.com/zurb/foundation/tree/top-bar>`_ .
+- Inclusion of `zurb symbol icon
+  fonts <https://github.com/zurb/foundation-icons>`_.
+- Inclusion of CSS to support the `Responsive Design Patterns`_
+  originally discussed by `Joshnua Johson`_ and implemented
+  by `Matt Reimer`_
+- Updated documentation and set up a
+ `demo site <http://foundation.chrisdev.com>`_ based on a Pinax basic
+  project
+- Some reorganization of the *theme\_base.html* including:
 
    -  Moved (where possible) the javascript to the bottom of the file
    -  Use the `static template
@@ -37,6 +54,11 @@ CHANGELOG
       2.2.1 <http://foundation.zurb.com/files/foundation-download-2.2.1.zip>`_
 
 -  Fixed numerous bugs
+
+
+.. _Responsive Design Patterns: http://designshack.net/articles/css/5-really-useful-responsive-web-design-patterns/
+.. _Joshnua Johson: http://designshack.net/author/joshuajohnson/
+.. _Matt Reimer: http://www.raisedeyebrow.com/bm/blog/2012/04/responsive-design-patterns/
 
 0.1.4 (2012/03/004)
 -------------------
