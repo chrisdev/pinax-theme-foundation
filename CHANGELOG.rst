@@ -12,7 +12,7 @@ CHANGELOG
 - Replaced any of the remnants of our home grown Top Navigation menu
   with the Foundation 3.1 responsive Top Navigation bar
 - Included Icon Fonts, Responsive Tables and SVG Social Icons
-  Zurb add-ons which are not part of core release
+  which are not part of core release
 - Lay the groundwork for supporting the `--template`
   flag on the `django-admin.py start project` in the next release
 - Other Bug fixes.
