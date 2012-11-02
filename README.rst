@@ -1,6 +1,6 @@
-==================================
-A Foundation 3 Theme for Pinax
-==================================
+======================================
+A Foundation Theme for Django Projects
+======================================
 
 A Pinax theme + based on `Zurb Foundation`_
 Foundation is a popular CSS framework that is light weight, but includes
@@ -22,95 +22,24 @@ Contributors
 What's New
 ------------
 
-- This release supports Foundation 3.1 which includes features such as
-  right-to-left language support, new UI Styles for Progress Bars
-  and Image Thumbs, updated jQuery and so on, read more about 3.1
-  `here <http://foundation.zurb.com/docs/support.php>`_
-- Fully utilize the Foundation 3.1 responsive Top
-  Navigation bar rather than our home grown solution
-- Included Icon Fonts, Responsive Tables and SVG Social Icons
-  Zurb add-ons which are not part of core release
-- Lay the groundwork for supporting the `--template`
-  flag on the `django-admin.py start project` in the next release
+- Supports the  `--template` for ``django-admin.py startproject``
+- Removed explicit ``Pinax`` dependency. Although it will still work with other
+  pinax style apps such as django-user-account
 
 
 Quickstart
 -----------
-Create a virtual environment for your project and activate it::
-
-    $ virtualenv mysite-env
-    $ source mysite-env/bin/activate
-    (mysite-env)$
-
-Next install Pinax::
-
-    (mysite-env)$ pip install Pinax
-
-Once Pinax is installed use **pinax-admin**  to create a project for your site
-::
-
-    (mysite-env)$ pinax-admin setup_project mysite -b basic mysite
-
-The example above will create a starter Django project in the mysite folder based on the Pinax **basic** project.
-Of course you can use any of the Pinax starter Projects.
-The **basic** project provides features such as account management, user profiles and notifications.
-The starter project also comes with a **theme** or a collection css, javascript files.
-The default theme is based on Twitter Bootstrap.
-
-To use the **Foundation** theme in the project, include "pinax-theme-foundation" in requirements/project.txt.
-Either install the package individually. ::
-
-    pip install pinax-theme-foundation
-
-Or use the requirements file::
-
-    pip install -r requirements/project.txt
-
-
-Next edit the **settings.py** file and
-comment out the entry for "pinax_theme_bootstrap" and add "pinax_theme_foundation" in your INSTALLED APPS::
-
-    # theme
-    #"pinax_theme_bootstrap",
-    "pinax_theme_foundation",
-
-Inside your project run::
-
-    (mysite-env)$ python manage.py syncdb
-    (mysite-env)$ python manage.py runserver
+To Use ::
+    mkvirtualenv mysite
+    pip install Django==1.4.1
+    django-admin.py startproject --template=https://github.com/pinax/pinax-project-account/zipball/master mysite
+    cd mysite
+    pip install -r requirements.txt
+    python manage.py syncdb && python manage.py runserver
 
 
 Templates
 ^^^^^^^^^^
-The Pinax *setup_project* creates a *site_base.html* template which extends *theme_base.html*.
-You own templates should normally inherit from *site_base.html*.  However, due to
-inconsistencies between Bootstrap and Foundation you may need to perform an additional step
-to ensure that the top nav bar is styled properly.
-If have created a **basic** starter project
-edit the generated *site_base.html* to remove the extra
-*ul* tags found in the *{% nav block %}*. In the *basic* project  *{% nav block %}* contains profile and notices dropdown menu items.
-The project  *site_base.html*  will contain ::
-
-    {% block nav %}
-		{% if user.is_authenticated %}
-		<ul>{% spaceless %}
-			<li id="tab_profile"><a href="{% url profile_detail user.username %}">{% trans "Profile" %}</a></li>
-			<li id="tab_notices"><a href="{% url notification_notices %}">{% trans "Notices" %}{% if notice_unseen_count %} ({{ notice_unseen_count }}){% endif %}</a></li>
-			{% endspaceless %}
-		 </ul>
-		{% endif %}
-   {% endblock %}
-
-Remove the *ul* tags so the block looks like ::
-
-	 {% block nav %}
-		{% if user.is_authenticated %}
-			<li id="tab_profile"><a href="{% url profile_detail user.username %}">{% trans "Profile" %}</a></li>
-			<li id="tab_notices"><a href="{% url notification_notices %}">{% trans "Notices" %}{% if notice_unseen_count %} ({{ notice_unseen_count }}){% endif %}</a></li>
-		{% endif %}
-	  % endblock %}
-
-
 
 You should provide your own "footer" template _footer.html
 
@@ -119,7 +48,7 @@ The **url** name "home" should be defined as the homepage.
 
 
 Upgrading Previous Version
----------------------------------------------
+---------------------------
 To upgrade you site start by upgrading to the latest version on pinax-theme-foundation ::
 
     pip install -- upgrade pinax-theme-foundation

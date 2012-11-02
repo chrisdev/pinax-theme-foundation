@@ -1,6 +1,11 @@
 ==========
 CHANGELOG
 ==========
+0.2a2 (2012/11/02)
+------------------
+- Supports the  `--template` for ``django-admin.py startproject``
+- Removed ``Pinax`` dependency. Although it will still work with other
+  pinax style apps such as django-user-account
 
 0.1.7 (2012/10/18)
 ------------------
