@@ -1,82 +1,31 @@
 {% extends "site_base.html" %}
 
+{% load url from future %}
 {% load i18n %}
 {% load foundations_tags %}
-{% load ifsetting_tag %}
-{% load account_tags %}
 
-{% block head_title %}{% trans "Login" %}{% endblock %}
+{% block head_title %}{% trans "Log in" %}{% endblock %}
 
-{% block body_base %}
-    	<div class="row">
-			<div class="ten columns centered">
-				<h2>{% trans "Log In" %}</h2>
-				
-				{% if user.is_authenticated %}
-					{% user_display user as user_display %}
-					<div class="alert-box warning">{% trans "Note" %}: {% blocktrans %}you are already logged in as {{ user_display }}.{% endblocktrans %}
-						<a href="" class="close">&times;</a>
-					</div>
-				{% else %}
-					{% ifsetting ACCOUNT_OPEN_SIGNUP %}
-					{% url acct_signup as signup_url %}
-					<p style="margin-bottom: 5px;">{% blocktrans %}Don't have an account? <a href="{{ signup_url }}">Sign up</a>!{% endblocktrans %}</p>
-					{% endifsetting %}
-					<p style="margin-bottom: 0;">
-						<a href="{% url acct_passwd_reset %}">{% trans "Forgot password?" %}</a>
-					</p>
-				{% endif %}
-				
-				<div class="row">
-					<div class="six columns">
-							<form class="nice" method="POST" action="{% url acct_login %}" autocapitalize="off">
-								{% csrf_token %}
-								<fieldset>
-									{{ form|as_foundation }}
-								</fieldset>
-								{% if redirect_field_value %}
-									<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-								{% endif %}
-								<div class="actions">
-									<button type="submit" class="button medium radius nice">{% trans "Log in" %}</button>
-								</div>
-							</form>
-							
-							{% ifsetting ACCOUNT_USE_OPENID %}
-							<h2>{% trans "Or sign in with your OpenID" %}:</h2>
-							<form class="nice" action="/openid/register/" method="POST" autocapitalize="off">
-								{% csrf_token %}
-								<fieldset>
-									{% if url_required %}
-										<label class="{% if field.errors %}red{% endif %}" for="id_username">* OpenID Identifier</label>
-										<input class="openid" type="text" name="openid_url" />
-									{% else %}
-										<label class="{% if field.errors %}red{% endif %}" for="id_username">* OpenID Identifier</label>
-										<input class="openid" type="text" name="openid_url" />
-									{% endif %}
-									<div class="actions">
-										<input type="submit" value="{% trans 'Log in' %}" class="button medium radius nice" />
-									</div>
-								</fieldset>
-							</form>
-							{% endifsetting %}
-							
-							{% if request.user.is_authenticated %}
-								<div><a href="{% url acct_logout %}?next={{ request.path }}">logout</a></div>
-							{% endif %}
-						</div>
-						
-						<div class="twelve columns">
-							<p>{% blocktrans %}If you have any trouble logging in to your account, contact us at <a href="mailto:{{ CONTACT_EMAIL }}">{{ CONTACT_EMAIL }}</a>.{% endblocktrans %}</p>
-						</div>
-					</div>
-			</div>
-		</div>
+{% block body %}
+    <div class="row">
+        <div class="six columns">
+            <form method="POST" action="{% url "account_login" %}" autocapitalize="off" class="form-horizontal"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+                <legend>{% trans "Log in to an existing account" %}</legend>
+                <fieldset>
+                {% csrf_token %}
+                {{ form|as_foundation }}
+                {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <div class="form-actions">
+                    <a href="{% url "account_password_reset" %}" class="btn">{% trans "Forgot your password?" %}</a>
+                    <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
+                </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="four columns">
+            {% include "account/_login_sidebar.html" %}
+        </div>
+    </div>
 {% endblock %}
-			
-{% block extra_body %}
-	<script>
-		$("#id_username").focus();
-	</script>
-{% endblock %}
-	
