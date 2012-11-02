@@ -1,32 +1,15 @@
 {% extends "subnav_base.html" %}
 
+{% load url from future %}
 {% load i18n %}
-{% load ifsetting_tag %}
-{% load foundations_tags %}
-
 
 {% block body_class %}account{% endblock %}
 
-
 {% block subnav %}
-    
-     <dl class="nice vertical tabs">
-     <h3>{% trans "Account" %}</h3>
-		    <dd><a class="{% block active_acct_email %}{% endblock %}" href="{% url acct_email %}">{% trans "Email Addresses" %}</a></dd>
-        {% ifsetting ACCOUNT_USE_OPENID %}
-            <dd><a class="{% block active_page_request %}{% endblock %}" href="/openid/associations/">{% trans "OpenID Associations" %}</a></dd>
-        {% endifsetting %}
-        {% if user.password %}
-        <dd><a class="{% block active_acct_passwd %}{% endblock %}" href="{% url acct_passwd %}">{% trans "Change Password" %}</a></dd>
-        {% else %}
-        <dd><a class="{% block active_acct_passwd_set %}{% endblock %}" href="{% url acct_passwd_set %}">{% trans "Set Password" %}</a></dd>
-        {% endif %}
-        {% if user.password and request.openids %}
-        <dd><a class="{% block active_acct_passwd_det %}{% endblock %}" href="{% url acct_passwd_delete %}">{% trans "Delete Password" %}</a></dd>
-        {% endif %}
-        {% ifsetting USE_I18N %}
-            <dd><a class="{% block active_acct_language_change %}{% endblock %}" href="{% url acct_language_change %}">{% trans "Language" %}</a></dd>
-        {% endifsetting %}
-        <dd><a class="{% block active_acct_timezone_change %}{% endblock %}" href="{% url acct_timezone_change %}">{% trans "Timezone" %}</a></dd>
-    </dl>
+	<h5 class="subheader">ACCOUNT</h5>
+    <ul class="nav-bar vertical">
+        <li><a href="{% url "account_settings" %}">{% trans "Settings" %}</a></li>
+        <li><a href="{% url "account_password" %}">{% trans "Change password" %}</a></li>
+        <li><a href="{% url "account_delete" %}">{% trans "Delete account" %}</a></li>
+    </ul>
 {% endblock %}

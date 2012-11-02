@@ -1,86 +1,30 @@
 {% extends "site_base.html" %}
 
+{% load url from future %}
 {% load i18n %}
 {% load foundations_tags %}
-{% load ifsetting_tag %}
 
-{% block head_title %}{% trans "Sign Up" %}{% endblock %}
+{% block head_title %}{% trans "Sign up" %}{% endblock %}
 
 {% block body %}
-
-		<div class="row">
-			<div class="ten columns centered">
-				<h2>{% trans "Sign Up" %}</h2>
-				
-				{% if user.is_authenticated %}
-					<p style="margin-bottom: 0;">{% trans "You are already logged in." %}</p>
-				{% else %}
-					<p style="margin-bottom: 0;">{% trans "Already have an account?" %} <a href="{% url acct_login %}">{% trans "Log In" %}</a>!</p>
-				<div class="row">	
-					<div class="six columns">
-						{% if form.is_multipart %}
-							<form class="nice" id="signup_form" enctype="multipart/form-data" method="post" action="{% url acct_signup %}" autocapitalize="off">
-						{% else %}
-							<form class="nice" id="signup_form" method="post" action="{% url acct_signup %}" autocapitalize="off">
-						{% endif %}
-						
-							{% csrf_token %}
-							<fieldset>
-								{{ form|as_foundation }}
-							</fieldset>
-							{% if redirect_field_value %}
-								<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-							{% endif %}
-							<div class="actions">
-								<button type="submit" class="button medium radius nice">{% trans "Sign Up" %}</button>
-							</div>
-							</form>
-							</form>
-				
-						{% ifsetting ACCOUNT_USE_OPENID %}
-						<h2>{% trans "Or sign in with your OpenID" %}:</h2>
-						<form class="nice" action="/openid/register/" method="POST" autocapitalize="off">
-							{% csrf_token %}
-							<fieldset>
-								{% if url_required %}
-									<div class="clearfix">
-										<label for="id_username">* OpenID Identifier</label>
-										<div class="input">
-											<input class="openid" type="text" name="openid_url" />
-										</div>
-									</div>
-								{% else %}
-									<div class="clearfix">
-										<label for="id_username">* OpenID Identifier</label>
-										<div class="input">
-											<input class="openid" type="text" name="openid_url" />
-										</div>
-									</div>
-								{% endif %}
-								<div class="actions">
-									<input type="submit" value="{% trans "Log in" %}" class="button medium radius nice" />
-								</div>
-							</fieldset>
-						</form>
-						{% endifsetting %}
-					</div>
-					<div class="twelve columns">
-						{% url terms as terms_url %}
-						{% url privacy as privacy_url %}
-						<p>{% blocktrans %}By clicking "Sign Up", you are indicating that you have read and agree to the <a href="{{ terms_url }}">Terms of Use</a> and <a href="{{ privacy_url }}">Privacy Policy</a>.{% endblocktrans %}</p>
-						
-						<p>{% blocktrans %}If you have any trouble creating your account, contact us at <a href="mailto:{{ CONTACT_EMAIL }}">{{ CONTACT_EMAIL }}</a>.{% endblocktrans %}</p>
-					{% endif %}
-					</div>
-				</div>
-			</div>
-		</div>
-{% endblock %}
-
-{% block extra_body %}
-    <script type="text/javascript">
-        $(function(){
-            $("#id_username").focus();
-        });
-    </script>
+    <div class="row">
+        <div class="six columns">
+            <form id="signup_form" method="post" action="{% url "account_signup" %}" autocapitalize="off" class="form-horizontal"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+                <legend>{% trans "Sign up" %}</legend>
+                <fieldset>
+                    {% csrf_token %}
+                    {{ form|as_foundation }}
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">{% trans "Sign up" %}</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="four columns">
+            {% include "account/_signup_sidebar.html" %}
+        </div>
+    </div>
 {% endblock %}
