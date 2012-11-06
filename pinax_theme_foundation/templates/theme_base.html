@@ -21,19 +21,25 @@
 	<script src="{% static  "foundation/js/modernizr.foundation.js" %}"></script>
 	
 	<!-- IE Fix for HTML5 Tags -->
-	<!--[if lt IE 9]>
 	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+	<!--[endif]-->
 
-	{% block style_base %}
-		<link href="{% static "foundation/css/foundation.css" %}" rel="stylesheet"> 
-		<link  href="{% static  "foundation/css/app.css" %}" rel="stylesheet">
-		<link  href="{% static "foundation/css/foundation.icons.css" %}" rel="stylesheet">
-		<link  href="{% static "foundation/css/fc-webicons.css" %}" rel="stylesheet">
-		<link  href="{% static "foundation/css/responsive-tables.css" %}" rel="stylesheet">
+	{% block style_base %} 
+		<link href="{% static "foundation/css/app.css" %}" rel="stylesheet">
+		<link href="{% static "foundation/css/foundation.css" %}" rel="stylesheet">
+		<link href="{% static "foundation/css/responsive-tables.css" %}" rel="stylesheet">
+		<link href="{% static "foundation/css/fc-webicons.css" %}" rel="stylesheet">
+		<link href="{% static "foundation/css/fonts/accessibility.css" %}" rel="stylesheet">
+		<link href="{% static "foundation/css/fonts/general_enclosed.css" %}" rel="stylesheet">
+		<link href="{% static "foundation/css/fonts/social.css" %}" rel="stylesheet">
+		<link href="{% static "foundation/css/fonts/general.css" %}" rel="stylesheet">
 		<!--[if lt IE 9]>
-		<link  href="{% static "foundation/css/ie.css" %}" rel="stylesheet" >
+		<link href="{% static "foundation/css/ie.css" %}" rel="stylesheet" >
 		<![endif]-->
+		<link href="{% static "foundation/css/fonts/accessibility_ie7.css" %}" rel="stylesheet">
+		<link href="{% static "foundation/css/fonts/general_enclosed_ie7.css" %}" rel="stylesheet">
+		<link href="{% static "foundation/css/fonts/general_ie7.css" %}" rel="stylesheet">
+		<link href="{% static "foundation/css/fonts/social_ie7.css" %}" rel="stylesheet">
 	 	{% block extra_style %}{% endblock %}
     {% endblock %}
 	
@@ -50,7 +56,8 @@
         	<div class="attached">
             	<div class="row"> 	
         			<li class="name mobile-four">
-        				<a href="/"><span class="show-for-small glyph general">m</span>{{SITE_NAME}}</a><a href="#"></a>
+        				<a href="/"><i class="foundicon-home show-for-small"></i></a>
+        				<a href="/">{{SITE_NAME}}</a><a href="#"></a>
         			</li>
 					<ul class="nav-bar menu mobile-four">
 						{% block topbar %}
@@ -82,20 +89,26 @@
 			
 			{% block script_base %}
 				<script src="{% block jquery_src %}{% static "foundation/js/jquery.js" %}{% endblock %}"></script>
+				<script src="{% static "foundation/js/foundation.min.js" %}"></script>
+				<script src="{% static "foundation/js/jquery.js" %}"></script>
+				<script src="{% static "foundation/js/jquery.foundation.mediaQueryToggle.js" %}"></script>
+				<script src="{% static "foundation/js/jquery.foundation.forms.js" %}"></script>
 				<script src="{% static "foundation/js/jquery.foundation.reveal.js" %}"></script>
 				<script src="{% static "foundation/js/jquery.foundation.orbit.js" %}"></script>
 				<script src="{% static "foundation/js/jquery.foundation.navigation.js" %}"></script>
 				<script src="{% static "foundation/js/jquery.foundation.buttons.js" %}"></script>
 				<script src="{% static "foundation/js/jquery.foundation.tabs.js" %}"></script>
-				<script src="{% static "foundation/js/jquery.foundation.forms.js" %}"></script>
 				<script src="{% static "foundation/js/jquery.foundation.tooltips.js" %}"></script>
 				<script src="{% static "foundation/js/jquery.foundation.accordion.js" %}"></script>
-				<script src="{% static "foundation/js/jquery.foundation.alerts.js" %}"></script>
 				<script src="{% static "foundation/js/jquery.placeholder.js" %}"></script>
+				<script src="{% static "foundation/js/jquery.foundation.alerts.js" %}"></script>
+				<script src="{% static "foundation/js/jquery.foundation.topbar.js" %}"></script>
+				<script src="{% static "foundation/js/jquery.foundation.joyride.js" %}"></script>
+				<script src="{% static "foundation/js/jquery.foundation.clearing.js" %}"></script>
+				<script src="{% static "foundation/js/jquery.foundation.magellan.js" %}"></script>
 				<script src="{% static "foundation/js/responsive-tables.js" %}"></script>
-				<script src="{% static "foundation/js/foundation.js" %}"></script>
-				<script src="{% static "foundation/js/app.js" %}"></script>						
-	            {% block extra_script %}{% endblock %}
+				<script src="{% static "foundation/js/app.js" %}"></script>
+				{% block extra_script %}{% endblock %}
 	        {% endblock %}
 			
 			{% block extra_body_base %}
