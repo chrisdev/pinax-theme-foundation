@@ -1,29 +1,58 @@
-(function ($) {
-  
-  $.fn.foundationButtons = function(options) {    
+;(function ($, window, undefined) {
+  'use strict';
+
+  $.fn.foundationButtons = function (options) {
+    var $doc = $(document),
+      config = $.extend({
+        dropdownAsToggle:true,
+        activeClass:'active'
+      }, options),
+
+    // close all dropdowns except for the dropdown passed
+      closeDropdowns = function (dropdown) {
+        $('.button.dropdown').find('ul').not(dropdown).removeClass('show-dropdown');
+      },
+    // reset all toggle states except for the button passed
+      resetToggles = function (button) {
+        var buttons = $('.button.dropdown').not(button);
+        buttons.add($('> span.' + config.activeClass, buttons)).removeClass(config.activeClass);
+      };
+
     // Prevent event propagation on disabled buttons
-    $('.button.disabled', this).on('click.fndtn', function (event) {
-      event.preventDefault();
+    $doc.on('click.fndtn', '.button.disabled', function (e) {
+      e.preventDefault();
     });
-    
+
     $('.button.dropdown > ul', this).addClass('no-hover');
 
-    $('.button.dropdown', this).on('click.fndtn', function (e) {
-      e.stopPropagation();
-    });
-    $('.button.dropdown.split span', this).on('click.fndtn', function (e) {
+    // reset other active states
+    $doc.on('click.fndtn', '.button.dropdown:not(.split), .button.dropdown.split span', function (e) {
+      var $el = $(this),
+        button = $el.closest('.button.dropdown'),
+        dropdown = $('> ul', button);
       e.preventDefault();
-      $('.button.dropdown', this).not($(this).parent()).children('ul').removeClass('show-dropdown');
-      $(this).siblings('ul').toggleClass('show-dropdown');
+
+      // close other dropdowns
+      closeDropdowns(config.dropdownAsToggle ? dropdown : '');
+      dropdown.toggleClass('show-dropdown');
+
+      if (config.dropdownAsToggle) {
+        resetToggles(button);
+        $el.toggleClass(config.activeClass);
+      }
     });
-    $('.button.dropdown', this).not('.split').on('click.fndtn', function (e) {
-      $('.button.dropdown', this).not(this).children('ul').removeClass('show-dropdown');
-      $(this).children('ul').toggleClass('show-dropdown');
+
+    // close all dropdowns and deactivate all buttons
+    $doc.on('click.fndtn', 'body, html', function (e) {
+      // check original target instead of stopping event propagation to play nice with other events
+      if (!$(e.originalEvent.target).is('.button.dropdown:not(.split), .button.dropdown.split span')) {
+        closeDropdowns();
+        if (config.dropdownAsToggle) {
+          resetToggles();
+        }
+      }
     });
-    $('body, html').on('click.fndtn', function () {
-      $('.button.dropdown ul').removeClass('show-dropdown');
-    });
-    
+
     // Positioning the Flyout List
     var normalButtonHeight  = $('.button.dropdown:not(.large):not(.small):not(.tiny)', this).outerHeight() - 1,
         largeButtonHeight   = $('.button.large.dropdown', this).outerHeight() - 1,
@@ -39,7 +68,7 @@
     $('.button.dropdown.up.large > ul', this).css('top', 'auto').css('bottom', largeButtonHeight - 2);
     $('.button.dropdown.up.small > ul', this).css('top', 'auto').css('bottom', smallButtonHeight - 2);
     $('.button.dropdown.up.tiny > ul', this).css('top', 'auto').css('bottom', tinyButtonHeight - 2);
-    
+
   };
 
-})( jQuery );
+})( jQuery, this );
