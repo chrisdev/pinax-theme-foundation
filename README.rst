@@ -23,11 +23,11 @@ What's New
 -----------
 - We support the latest version of Foundation (3.2)
 - Updated the documentation
-- The project now supports the  `--template` argument for ``django-admin.py
+- The project now supports the  ``--template`` argument for ``django-admin.py
   startproject`` command
 - Removed more ``Pinax 0.9`` dependencies however, the project
-  should still be compatible with other with ``Pinax`` eco-system apps
-  such as `django-user-account`_
+  should still be compatible with the other apps in  the ``Pinax``
+  eco-system such as `django-user-account`_
 
 - Other bug fixes
 
@@ -48,7 +48,7 @@ We provide you with two Foundation based starter projects
 
 To use create a project based on the zero_ project run ::
 
-    django-admin.py startproject --template=https://github.com/pinax/pinax-project-zero/zipball/master mysite
+    django-admin.py startproject --template=https://github.com/chrisdev/foundation-project-zero/zipball/master mysite
 
 This will create a new Django project in the mysite directory with:
 
@@ -58,7 +58,8 @@ This will create a new Django project in the mysite directory with:
  - A home for your site's static files
  - A set of templates designed to work with the foundation theme
 
-Finally install the requirements and ::
+Finally install the requirements, sync your database and
+start the test server ::
 
     cd mysite
     pip install -r requirements.txt
@@ -73,7 +74,7 @@ take your Django project from having simple log in, log out and password reset
 to a full blown account management system. To create a project based on the
 account starter project ::
 
-    django-admin.py startproject --template=https://github.com/chrisdev/pinax-project-account/zipball/master mysite
+    django-admin.py startproject --template=https://github.com/chrisdev/foundation-project-account/zipball/master mysite
 
 
 .. _account: https://github.com/chrisdev/foundation-project-account/
@@ -86,15 +87,15 @@ Templates
 Your own templates should normally inherit from ``site_base.html``.
 You should provide your own "footer" template ``_footer.html``.
 
-Also change the Site name by editing *fixture/initial_data.json*
-you can also use the Admin app for this purpose.
+Also change the Site name by editing ``fixture/initial_data.json``.
+You can also use the Admin app for this purpose.
 
 The **url** name "home" should be defined as the homepage.
 
 
-Upgrading Previous Version
----------------------------
-To upgrade you site start by upgrading to the latest version
+Upgrading From Previous Versions
+--------------------------------
+To upgrade your site start by upgrading to the latest version
 on pinax-theme-foundation ::
 
     pip install -- upgrade pinax-theme-foundation
@@ -102,8 +103,8 @@ on pinax-theme-foundation ::
 The big change between Foundation 2 to 3 is the grid.
 In Foundation 3 you no longer have to use *.container*
 to define the grid. In Foundation 2 the grid was built around
-*.container > .row > .columns* in Foundation 3
-you now just have to use *.row > .columns*.
+``*.container > .row > .columns*``. In Foundation 3
+you now just need to use ``*.row > .columns*``.
 In Foundation 3 padding and borders no longer increase
 the width of an element,
 they only go inward so for example in Foundation 3 ``.three.columns``
