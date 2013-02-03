@@ -13,18 +13,17 @@
     		{% block head_title %}{% endblock %}
     	{% endblock %}
     </title>
-	
 	<!-- Set the viewport width to device width for mobile -->
 	{% block viewport %}
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	{% endblock %} 
+	{% endblock %}
 	<script src="{% static  "foundation/js/modernizr.foundation.js" %}"></script>
-	
+
 	<!-- IE Fix for HTML5 Tags -->
 	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<!--[endif]-->
 
-	{% block style_base %} 
+	{% block style_base %}
 		<link href="{% static "foundation/css/app.css" %}" rel="stylesheet">
 		<link href="{% static "foundation/css/foundation.css" %}" rel="stylesheet">
 		<link href="{% static "foundation/css/responsive-tables.css" %}" rel="stylesheet">
@@ -42,19 +41,19 @@
 		<link href="{% static "foundation/css/fonts/social_ie7.css" %}" rel="stylesheet">
 	 	{% block extra_style %}{% endblock %}
     {% endblock %}
-	
-    
-	
+
+
+
 	{% block extra_head_base %}
 		{% block extra_head %}{% endblock %}
 	{% endblock %}
 </head>
-    
+
     <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
-        
+
         {% block topbar_base %}
         	<div class="attached">
-            	<div class="row"> 	
+            	<div class="row">
         			<li class="name mobile-four">
         				<a href="/"><i class="foundicon-home show-for-small"></i></a>
         				<a href="/">{{SITE_NAME}}</a><a href="#"></a>
@@ -68,7 +67,7 @@
         		</div>
         	</div>
         {% endblock %}
-         
+
         <div id="mainContent">
 			{% block body_base %}
 			    <div class="row">
@@ -76,17 +75,17 @@
 						{% include "_messages.html" %}
 					</div>
 				</div>
-			    <div class="row">					
+			    <div class="row">
 					{% block body %}{% endblock %}
 				</div>
 			{% endblock %}
-			
+
 			{% block footer_base %}
 				<footer class="row">
 					{% block footer %}	{% endblock %}
 				</footer>
 			{% endblock %}
-			
+
 			{% block script_base %}
 				<script src="{% block jquery_src %}{% static "foundation/js/jquery.js" %}{% endblock %}"></script>
 				<script src="{% static "foundation/js/foundation.min.js" %}"></script>
@@ -110,7 +109,7 @@
 				<script src="{% static "foundation/js/app.js" %}"></script>
 				{% block extra_script %}{% endblock %}
 	        {% endblock %}
-			
+
 			{% block extra_body_base %}
 				{% block extra_body %}	{% endblock %}
 			{% endblock %}
