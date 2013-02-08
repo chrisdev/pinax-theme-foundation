@@ -10,17 +10,17 @@
     <div class="row">
         <div class="six columns">
             <form method="POST" action="{% url "account_login" %}" autocapitalize="off" class="form-horizontal"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
-                <legend>{% trans "Log in to an existing account" %}</legend>
                 <fieldset>
-                {% csrf_token %}
-                {{ form|as_foundation }}
-                {% if redirect_field_value %}
-                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <div class="form-actions">
-                    <a href="{% url "account_password_reset" %}" class="btn">{% trans "Forgot your password?" %}</a>
-                    <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
-                </div>
+                    <legend>{% trans "Log in to an existing account" %}</legend>
+                    {% csrf_token %}
+                    {{ form|as_foundation }}
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <div class="form-actions">
+                        <a href="{% url "account_password_reset" %}" class="btn">{% trans "Forgot your password?" %}</a>
+                        <button type="submit" class="button">{% trans "Log in" %}</button>
+                    </div>
                 </fieldset>
             </form>
         </div>
