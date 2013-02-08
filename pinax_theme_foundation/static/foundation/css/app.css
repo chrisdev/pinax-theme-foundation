@@ -46,7 +46,6 @@ input[type="password"], textarea {
     margin: 0 0 12px;
     padding: 6px;
     width: 100%;
-    max-width: 400px;
 }
 
 input[type="text"], textarea {
@@ -61,7 +60,6 @@ input[type="text"], textarea {
     margin: 0 0 12px;
     padding: 6px;
     width: 100%;
-    max-width: 400px;
 }
 
 fieldset {
