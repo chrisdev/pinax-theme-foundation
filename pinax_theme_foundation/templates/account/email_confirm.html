@@ -9,8 +9,8 @@
     <div class="row">
         <div class="twelve columns">
             <form method="post" action="{% url "account_confirm_email" key=confirmation.key %}" class="form-horizontal">
-                <legend>{% trans "Confirm Email" %}</legend>
                 <fieldset>
+                    <legend>{% trans "Confirm Email" %}</legend>
                     {% csrf_token %}
                     <p>{% blocktrans with email=confirmation.email_address.email %}Confirm email address <b>{{ email }}</b>?{% endblocktrans %}</p>
                     <div class="form-actions">

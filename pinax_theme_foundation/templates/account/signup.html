@@ -10,8 +10,8 @@
     <div class="row">
         <div class="six columns">
             <form id="signup_form" method="post" action="{% url "account_signup" %}" autocapitalize="off" class="form-horizontal"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
-                <legend>{% trans "Sign up" %}</legend>
                 <fieldset>
+                    <legend>{% trans "Sign up" %}</legend>
                     {% csrf_token %}
                     {{ form|as_foundation }}
                     {% if redirect_field_value %}
