@@ -8,16 +8,16 @@
 {% block body %}
     <div class="row">
         <div class="six columns">
-        	<fieldset>
             <form method="POST" action="{% url "account_logout" %}" class="form-horizontal">
-                <legend>{% trans "Log out" %}</legend>
+                <fieldset>
+                    <legend>{% trans "Log out" %}</legend>
                     {% csrf_token %}
                     <p>{% trans "Are you sure you want to log out?" %}</p>
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">{% trans "Log out" %}</button>
+                        <button type="submit" class="button small">{% trans "Log out" %}</button>
                     </div>
+                </fieldset>
             </form>
-            </fieldset>
         </div>
     </div>
 {% endblock %}
