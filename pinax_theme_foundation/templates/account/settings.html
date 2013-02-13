@@ -6,14 +6,14 @@
 {% block head_title %}Account{% endblock %}
 
 {% block body %}
-	<fieldset>
     <form method="POST" action="{% url "account_settings" %}">
-        <legend>Account</legend>
-        {% csrf_token %}
-        {{ form|as_foundation }}
-        <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Save</button>
-        </div>
+        <fieldset>
+            <legend>Account</legend>
+            {% csrf_token %}
+            {{ form|as_foundation }}
+            <div class="form-actions">
+                <button class="button" type="submit">Save</button>
+            </div>
+        </fieldset>
     </form>
-    </fieldset>
 {% endblock %}
