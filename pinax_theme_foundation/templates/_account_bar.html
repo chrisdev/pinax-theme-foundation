@@ -5,18 +5,18 @@
 		<a href="#">{{ user }}</a>
 		<a href="#" class="flyout-toggle"><span> </span></a>
 			<ul class="flyout">
-				<li><a href="{% url account_settings %}"><span class="glyph social">x</span>Account</a></i></li>
+				<li><a href="{% url account_settings %}">Account</a></i></li>
 				{% if user.is_staff %}
-				<li><a href="{% url admin:index %}"><span class="glyph general">a</span>Admin</a></li>
+				<li><a href="{% url admin:index %}">Admin</a></li>
 				{% endif %}
-				<li><a href="{% url account_logout %}"><span class="glyph general">]</span>Log&nbsp;out</a></li>
+				<li><a href="{% url account_logout %}">Log out</a></li>
 			</ul>
 	</li>
 {% else %}
 
-		<li><a href="{% url account_login %}"><span class="glyph general">\</span>Log In</a></li>
+		<li><a href="{% url account_login %}">Log In</a></li>
 		{% if ACCOUNT_OPEN_SIGNUP %}
-		<li><a href="{% url account_signup %}"><span class="glyph general">[</span>Sign Up</a></li>
+		<li><a href="{% url account_signup %}">Sign Up</a></li>
 		{% endif %}
 		
 {% endif %}
