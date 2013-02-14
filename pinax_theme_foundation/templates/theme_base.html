@@ -18,16 +18,17 @@
     {% block viewport %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% endblock %} 
-    <script src="{% static  "foundation/js/modernizr.foundation.js" %}"></script>
+    <script src="{% static "foundation/js/modernizr.foundation.js" %}"></script>
 
     <!-- IE Fix for HTML5 Tags -->
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <!--[endif]-->
 
     {% block style_base %} 
     <link href="{% static "foundation/css/app.css" %}" rel="stylesheet">
     <link href="{% static "foundation/css/foundation.css" %}" rel="stylesheet">
     <link href="{% static "foundation/css/responsive-tables.css" %}" rel="stylesheet">
+    <link href="{% static "foundation/css/offcanvas.css" %}" rel="stylesheet">
     <link href="{% static "foundation/css/fc-webicons.css" %}" rel="stylesheet">
     <link href="{% static "foundation/css/fonts/accessibility.css" %}" rel="stylesheet">
     <link href="{% static "foundation/css/fonts/general_enclosed.css" %}" rel="stylesheet">
