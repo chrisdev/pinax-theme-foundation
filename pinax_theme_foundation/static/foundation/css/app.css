@@ -66,6 +66,15 @@ fieldset {
 	padding: 8px;
 }
 
+.attached .row .mobile-four {
+	padding: 0;
+}
+
+#bottomMenu .nav-bar li {
+	text-align: center;
+	box-shadow: none;
+}
+
 #featured { background: #000 url(../images/foundation/spinner.gif) center center no-repeat; height: 400px; }
 #featured img { display: none; border-radius: 5px; }
 #featured.orbit { background: none; }
