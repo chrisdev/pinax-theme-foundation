@@ -1,0 +1,61 @@
+  // Create CSS Triangles in a Breeze
+
+  @mixin cssTriangle($triangleSize, $triangleColor, $triangleDirection) {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid $triangleSize;
+    @if ($triangleDirection == top) {
+      border-color: $triangleColor transparent transparent transparent;
+    }
+    @if ($triangleDirection == bottom) {
+      border-color: transparent transparent $triangleColor transparent;
+    }
+    @if ($triangleDirection == left) {
+      border-color: transparent transparent transparent $triangleColor;
+    }
+    @if ($triangleDirection == right) {
+      border-color: transparent $triangleColor transparent transparent;
+    }
+    // .example { @include cssTriangle(5px, #fff, bottom); }
+  }
+  
+    // Create CSS Triangles in a Breeze
+
+  @mixin cssTriangleAdvanced($color, $a, $b, $c, $direction : bottom, $rotatation : 0deg) {
+    content: "";
+    display: block;
+    line-height: 0px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 $a $b $c;
+    @if ($direction == top) {
+      border-color: $color transparent transparent transparent;
+      _border-color: #ffffff $color $color $color;
+    }
+    @if ($direction == bottom) {
+      border-color: transparent transparent $color transparent;
+      _border-color: $color $color #ffffff $color;
+    }
+    @if ($direction == left) {
+      border-color: transparent transparent transparent $color;
+      _border-color: $color $color $color #ffffff;
+    }
+    @if ($direction == right) {
+      border-color: transparent $color transparent transparent;
+      _border-color: $color #ffffff $color $color;
+    }
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='$color');
+    
+    //Rotation !
+    -webkit-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+    -o-transform: rotate($deg);
+    -ms-filter:rotate($deg);
+    -ms-transform:rotate($deg);
+    position: relative;
+    
+    // .example { @include myTriangle($white, 60px, 32px, 30px, 227deg); }
+  }
