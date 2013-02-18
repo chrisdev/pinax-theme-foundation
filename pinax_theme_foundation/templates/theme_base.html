@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load compressed %}
 <!DOCTYPE html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -25,23 +26,13 @@
     <!--[endif]-->
 
     {% block style_base %} 
-    {% load compressed %}
     {% compressed_css 'foundation' %}
-    <link href="{% static "foundation/css/app.css" %}" rel="stylesheet">
-    <link href="{% static "foundation/css/foundation.css" %}" rel="stylesheet">
-    <link href="{% static "foundation/css/responsive-tables.css" %}" rel="stylesheet">
-    <link href="{% static "foundation/css/fc-webicons.css" %}" rel="stylesheet">
-    <link href="{% static "foundation/css/fonts/accessibility.css" %}" rel="stylesheet">
-    <link href="{% static "foundation/css/fonts/general_enclosed.css" %}" rel="stylesheet">
-    <link href="{% static "foundation/css/fonts/social.css" %}" rel="stylesheet">
-    <link href="{% static "foundation/css/fonts/general.css" %}" rel="stylesheet">
     <!--[if lt IE 9]>
     <link href="{% static "foundation/css/ie.css" %}" rel="stylesheet" >
     <![endif]-->
-    <link href="{% static "foundation/css/fonts/accessibility_ie7.css" %}" rel="stylesheet">
-    <link href="{% static "foundation/css/fonts/general_enclosed_ie7.css" %}" rel="stylesheet">
-    <link href="{% static "foundation/css/fonts/general_ie7.css" %}" rel="stylesheet">
-    <link href="{% static "foundation/css/fonts/social_ie7.css" %}" rel="stylesheet">
+    <!--[if lt IE 8]>
+    {% compressed_css 'foundation_ie7' %}
+    <![endif]-->
     {% block extra_style %}{% endblock %}
     {% endblock %}
 
@@ -74,19 +65,17 @@
           {% include "_messages.html" %}
         </div>
       </div>
-      <div class="row">
-        {% block body %}{% endblock %}
-      </div>
-      {% endblock %}
+      {% block body %}{% endblock %}
 
-      {% block extra_body_base %}
+    {% block extra_body_base %}
       {% block extra_body %}	{% endblock %}
+    {% endblock %}
     </div>
     {% endblock %}
 
     {% block footer_base %}
     <footer class="row">
-    {% block footer %}	{% endblock %}
+    {% block footer %}{% include "_footer.html" %}{% endblock %}
     </footer>
     {% endblock %}
 
