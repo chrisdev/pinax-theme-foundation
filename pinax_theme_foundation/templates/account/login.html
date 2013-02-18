@@ -8,7 +8,7 @@
 
 {% block body %}
     <div class="row">
-        <div class="six columns">
+        <div class="eight columns">
             <form method="POST" action="{% url "account_login" %}" autocapitalize="off" class="form-horizontal"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
                 <fieldset>
                     <legend>{% trans "Log in to an existing account" %}</legend>
