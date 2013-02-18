@@ -1,54 +1,51 @@
-<!DOCTYPE html>
+{% load staticfiles %}
+{% extends theme_base.html %}
 
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8" />
-
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
-
-  <title>Welcome to Foundation | Banded</title>
-
-  <!-- Included CSS Files -->
-  <link rel="stylesheet" href="../stylesheets/templates.css">
-
-</head>
-<body>
-
-  <!-- Header and Nav -->
-
+{% block topbar_base %}
+<!-- Header and Nav -->
+  
   <div class="row">
     <div class="three columns">
-      <h1><img src="http://placehold.it/400x100&text=Logo" /></h1>
+      {% block logo %}<h1><img src="http://placehold.it/400x100&text=Logo" /></h1>{% endblock %}
     </div>
     <div class="nine columns">
       <ul class="nav-bar right">
+        {% block topbar %}
+        {% block nav %}
         <li><a href="#">Link 1</a></li>
         <li><a href="#">Link 2</a></li>
         <li><a href="#">Link 3</a></li>
         <li><a href="#">Link 4</a></li>
+        {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+        {% endblock %}
       </ul>
     </div>
   </div>
-
+  
   <!-- End Header and Nav -->
-
-
+{% endblock %}
+  
+{% block body_base %}
+  <div class="row">
+    <div class="twelve columns centered">{% include "_messages.html" %}</div>
+  </div>
+{% block body %}
+{% block first_band %}
   <!-- First Band (Image) -->
-
+    
   <div class="row">
     <div class="twelve columns">
       <img src="http://placehold.it/1000x400&text=[img]" />
-
       <hr />
     </div>
   </div>
-
-
+  
+  <!-- End First Band (Image) -->
+{% endblock %}
+ 
+{% block second_band %}
   <!-- Second Band (Image Left with Text) -->
-
+  
   <div class="row">
     <div class="four columns">
       <img src="http://placehold.it/400x300&text=[img]" />
@@ -65,28 +62,38 @@
       </div>
     </div>
   </div>
-
-
+  
+  <!-- Second Band (Image Left with Text) -->
+{% endblock %}
+  
+{% block third_band %}
   <!-- Third Band (Image Right with Text) -->
-
+  
   <div class="row">
     <div class="eight columns">
       <h4>This is a content section.</h4>
-
+      
       <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-
+      
       <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-
+          
     </div>
     <div class="four columns">
       <img src="http://placehold.it/400x300&text=[img]" />
     </div>
   </div>
+  
+  <!-- End Third Band (Image Right with Text) -->
+{% endblock %}
+{% endblock %}
+{% endblock %}
+  
 
-
+{% block footer_base %}
   <!-- Footer -->
-
+  
   <footer class="row">
+  {% block footer %}
     <div class="twelve columns">
       <hr />
       <div class="row">
@@ -94,7 +101,7 @@
           <p>&copy; Copyright no one at all. Go to town.</p>
         </div>
         <div class="six columns">
-          <ul class="inline-list right">
+          <ul class="link-list right">
             <li><a href="#">Link 1</a></li>
             <li><a href="#">Link 2</a></li>
             <li><a href="#">Link 3</a></li>
@@ -102,11 +109,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> 
+  {% endblock %}
   </footer>
-
-  <!-- Included JS Files -->
-  <script src="../public/assets/templates.js"></script>
-
-</body>
-</html>
+{% endblock %}
