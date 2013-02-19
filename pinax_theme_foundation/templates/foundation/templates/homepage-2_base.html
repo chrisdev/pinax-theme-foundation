@@ -1,27 +1,14 @@
-<!DOCTYPE html>
-
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8" />
-
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
-
-  <title>Welcome to Foundation | Orbit Homepage</title>
-
-  <!-- Included CSS Files -->
-  <link rel="stylesheet" href="../stylesheets/templates.css">
-
-</head>
-<body>
-
-  <!-- Nav and Banner -->
+{% extends 'theme_base.html' %}
+{% block topbar_base %}
+<!-- Nav and Banner -->
 
   <div class="row">
     <div class="twelve columns">
       <ul class="nav-bar">
+        {% block topbar %}
+        {% block nav %}{% endblock %}
+        {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+        {% endblock %}
         <li><a href="#">Link 1</a></li>
         <li><a href="#">Link 2</a></li>
         <li><a href="#">Link 3</a></li>
@@ -37,8 +24,9 @@
   </div>
 
   <!-- End Nav and Banner -->
+  {% endblock %}
 
-
+  {% block body %}
   <!-- Main Content Section -->
 
   <div class="row">
@@ -87,33 +75,4 @@
     </div>
   </div>
 
-
-  <!-- Footer -->
-
-  <footer class="row">
-    <div class="twelve columns">
-      <hr />
-      <div class="row">
-        <div class="six columns">
-          <p>&copy; Copyright no one at all. Go to town.</p>
-        </div>
-        <div class="six columns">
-          <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-            <li><a href="#">Link 5</a></li>
-            <li><a href="#">Link 6</a></li>
-            <li><a href="#">Link 7</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Included JS Files -->
-  <script src="../public/assets/templates.js"></script>
-
-</body>
-</html>
+  {% endblock %}

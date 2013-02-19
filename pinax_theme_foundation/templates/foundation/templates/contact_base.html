@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8" />
-
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
-
-  <title>Welcome to Foundation | Contact</title>
-
-  <!-- Included CSS Files -->
-  <link rel="stylesheet" href="../stylesheets/templates.css">
-
-</head>
-<body>
-
+{% extends 'theme_base.html' %}
+{% block topbar_base %}
   <!-- Top Bar -->
 
   <nav class="top-bar">
@@ -36,6 +19,10 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <li class="divider"></li>
+          {% block topbar %}
+          {% block nav %}{% endblock %}
+          {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+          {% endblock %}
         <li class="has-dropdown">
           <a href="#">Main Item 1</a>
           <ul class="dropdown">
@@ -80,8 +67,9 @@
   </nav>
 
   <!-- End Top Bar -->
+  {% endblock %}
 
-
+  {% block body %}
   <!-- Main Page Content and Sidebar -->
 
   <div class="row">
@@ -157,33 +145,9 @@
   </div>
 
   <!-- End Main Content and Sidebar -->
+  {% endblock %}
 
-
-  <!-- Footer -->
-
-  <footer class="row">
-    <div class="twelve columns">
-      <hr />
-      <div class="row">
-        <div class="six columns">
-          <p>&copy; Copyright no one at all. Go to town.</p>
-        </div>
-        <div class="six columns">
-          <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- End Footer -->
-
-
-
+  {% block modal %}
   <!-- Map Modal -->
 
   <div class="reveal-modal" id="mapModal">
@@ -193,10 +157,5 @@
     <!-- Any anchor with this class will close the modal. This also inherits certain styles, which can be overriden. -->
     <a href="#" class="close-reveal-modal">&times;</a>
   </div>
+  {% endblock %}
 
-  <!-- Included JS Files (Compressed) -->
-  <script src="../public/assets/templates.js"></script>
-
-  <!-- End Modal -->
-</body>
-</html>

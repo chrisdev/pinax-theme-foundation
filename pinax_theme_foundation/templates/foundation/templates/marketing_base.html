@@ -1,29 +1,10 @@
-<!DOCTYPE html>
-
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8" />
-
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
-
-  <title>Welcome to Foundation | Marketing</title>
-
-  <!-- Included CSS Files -->
-  <link rel="stylesheet" href="../stylesheets/templates.css">
-
-</head>
-
-</head>
-<body>
-
-    <!-- Navigation -->
+{% extends 'theme_base.html' %}
+{% block topbar_base %}
+<!-- Navigation -->
 
   <nav class="top-bar">
     <ul>
-      <li class="name"><h1><a href="#">Title</a></h1></li>
+      <li class="name"><h1><a href="#">{{ SITE_NAME }}</a></h1></li>
       <li class="toggle-topbar"><a href="#"></a></li>
     </ul>
 
@@ -37,8 +18,12 @@
       <ul class="right">
         <li class="has-dropdown">
           <a href="#">Link</a>
-
+          {% block topbar %}
+          {% block nav %}{% endblock %}
+          {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+          {% endblock %}
           <ul class="dropdown">
+
             <li><a href="#">Dropdown Link</a></li>
             <li><a href="#">Dropdown Link</a></li>
             <li><a href="#">Dropdown Link</a></li>
@@ -48,9 +33,10 @@
     </section>
   </nav>
 
-    <!-- End Navigation -->
+  <!-- End Navigation -->
+  {% endblock %}
 
-
+  {% block body %}
   <div class="row">
     <div class="twelve columns">
 
@@ -186,33 +172,12 @@
     <!-- End Content -->
 
 
-    <!-- Footer -->
-
-      <footer class="row">
-        <div class="twelve columns"><hr />
-            <div class="row">
-
-              <div class="six columns">
-                  <p>&copy; Copyright no one at all. Go to town.</p>
-              </div>
-
-              <div class="six columns">
-                  <ul class="link-list right">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                  </ul>
-              </div>
-
-            </div>
-        </div>
-      </footer>
-
-    <!-- End Footer -->
-
     </div>
   </div>
+
+  {% endblock %}
+
+  {% block extra_script %}
 
   <!-- Included JS Files -->
   <script src="../public/assets/templates.js"></script>
@@ -222,6 +187,4 @@
     });
   </script>
   <!-- End Footer -->
-
-</body>
-</html>
+  {% endblock %}

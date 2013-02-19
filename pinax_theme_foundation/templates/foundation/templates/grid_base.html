@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8" />
-
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
-
-  <title>Welcome to Foundation | Grid</title>
-
-  <!-- Included CSS Files -->
-  <link rel="stylesheet" href="../stylesheets/templates.css">
-
-</head>
-<body>
-
+{% extends 'theme_base.html' %}
+{% block topbar_base %}
   <!-- Header and Nav -->
 
   <nav class="top-bar">
@@ -25,11 +8,12 @@
       <li class="name">
         <h1>
           <a href="#">
-            Top Bar Title
+            {{ SITE_NAME }}
           </a>
         </h1>
       </li>
       <li class="toggle-topbar"><a href="#"></a></li>
+
     </ul>
 
     <section>
@@ -70,6 +54,10 @@
 
       <!-- Right Nav Section -->
       <ul class="right">
+        {% block topbar %}
+        {% block nav %}{% endblock %}
+        {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+        {% endblock %}
         <li class="divider"></li>
         <li class="has-dropdown">
           <a href="#">Main Item 4</a>
@@ -123,7 +111,9 @@
 
 
   <!-- End Header and Nav -->
+  {% endblock %}
 
+  {% block body %}
   <!-- Main Grid Section -->
 
   <div class="row">
@@ -227,32 +217,4 @@
   </div>
 
   <!-- End Grid Section -->
-
-
-
-  <!-- Footer -->
-
-  <footer class="row">
-    <div class="twelve columns">
-      <hr />
-      <div class="row">
-        <div class="six columns">
-          <p>&copy; Copyright no one at all. Go to town.</p>
-        </div>
-        <div class="six columns">
-          <ul class="inline-list right">
-            <li><a href="#">Section 1</a></li>
-            <li><a href="#">Section 2</a></li>
-            <li><a href="#">Section 3</a></li>
-            <li><a href="#">Section 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Included JS Files (Compressed) -->
-  <script src="../public/assets/templates.js"></script>
-
-</body>
-</html>
+  {% endblock %}

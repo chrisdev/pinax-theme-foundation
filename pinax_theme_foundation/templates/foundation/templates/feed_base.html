@@ -1,35 +1,19 @@
-<!DOCTYPE html>
-
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8" />
-
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
-
-  <title>Welcome to Foundation | Feed</title>
-
-  <!-- Included CSS Files -->
-  <link rel="stylesheet" href="../stylesheets/templates.css">
-
-</head>
-<body>
-
-  <!-- Header and Nav -->
+{% extends 'theme_base.html' %}
+{% block topbar_base %}
+<!-- Header and Nav -->
 
   <div class="row">
     <div class="twelve columns">
       <div class="panel">
-        <h1>Feed Template</h1>
+        <h1>{{ SITE_NAME }} Feed Template</h1>
       </div>
     </div>
   </div>
 
   <!-- End Header and Nav -->
+  {% endblock %}
 
-
+  {% block body %}
   <div class="row">
 
     <!-- Main Feed -->
@@ -128,33 +112,4 @@
     </aside>
 
   </div>
-
-
-  <!-- Footer -->
-
-  <footer class="row">
-    <div class="twelve columns">
-      <hr />
-      <div class="row">
-        <div class="six columns">
-          <p>&copy; Copyright no one at all. Go to town.</p>
-        </div>
-        <div class="six columns">
-          <ul class="inline-list right">
-            <li><a href="#">Section 1</a></li>
-            <li><a href="#">Section 2</a></li>
-            <li><a href="#">Section 3</a></li>
-            <li><a href="#">Section 4</a></li>
-            <li><a href="#">Section 5</a></li>
-            <li><a href="#">Section 6</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Included JS Files -->
-  <script src="../public/assets/templates.js"></script>
-
-</body>
-</html>
+  {% endblock %}
