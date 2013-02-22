@@ -1,5 +1,4 @@
 {% load staticfiles %}
-{% load compressed %}
 <!DOCTYPE html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -26,12 +25,24 @@
     <!--[endif]-->
 
     {% block style_base %} 
-    {% compressed_css 'foundation' %}
+
+    <link href="{% static "foundation/css/app.css" %}" rel="stylesheet">
+    <link href="{% static "foundation/css/foundation.css" %}" rel="stylesheet">
+    <link href="{% static "foundation/css/responsive-tables.css" %}" rel="stylesheet">
+    <link href="{% static "foundation/css/fc-webicons.css" %}" rel="stylesheet">
+    <link href="{% static "foundation/css/fonts/accessibility.css" %}" rel="stylesheet">
+    <link href="{% static "foundation/css/fonts/general_enclosed.css" %}" rel="stylesheet">
+    <link href="{% static "foundation/css/fonts/social.css" %}" rel="stylesheet">
+    <link href="{% static "foundation/css/fonts/general.css" %}" rel="stylesheet">
+
     <!--[if lt IE 9]>
     <link href="{% static "foundation/css/ie.css" %}" rel="stylesheet" >
     <![endif]-->
     <!--[if lt IE 8]>
-    {% compressed_css 'foundation_ie7' %}
+    <link href="{% static "foundation/css/fonts/accessibility_ie7.css" %}" rel="stylesheet">
+    <link href="{% static "foundation/css/fonts/general_enclosed_ie7.css" %}" rel="stylesheet">
+    <link href="{% static "foundation/css/fonts/general_ie7.css" %}" rel="stylesheet">
+    <link href="{% static "foundation/css/fonts/social_ie7.css" %}" rel="stylesheet">
     <![endif]-->
     {% block extra_style %}{% endblock %}
     {% endblock %}
@@ -82,8 +93,31 @@
     {% block modal %}{% endblock %}
 
     {% block script_base %}
-    {% compressed_js 'foundation' %}
-    {% block extra_script %}{% endblock %}
-    {% endblock %}
+    {% comment %}
+    Uncomment to use django-pipeline js compression/minification
+    {% compressed_js 'foundation' %}A
+    {% endcomment %}
+    <script src="{% block jquery_src %}{% static "foundation/js/jquery.js" %}{% endblock %}"></script>
+    <script src="{% static "foundation/js/foundation.min.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.mediaQueryToggle.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.forms.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.event.move.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.event.swipe.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.reveal.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.orbit.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.navigation.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.buttons.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.tabs.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.tooltips.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.accordion.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.placeholder.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.alerts.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.topbar.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.joyride.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.clearing.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.foundation.magellan.js" %}"></script>
+    <script src="{% static "foundation/js/responsive-tables.js" %}"></script>
+    <script src="{% static "foundation/js/app.js" %}"></script>
   </body>
 </html>
