@@ -74,8 +74,3 @@ fieldset {
 	text-align: center;
 	box-shadow: none;
 }
-
-#featured { background: #000 url(../images/foundation/spinner.gif) center center no-repeat; height: 400px; }
-#featured img { display: none; border-radius: 5px; }
-#featured.orbit { background: none; }
-#featured.orbit img { display: block; }
