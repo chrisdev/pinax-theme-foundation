@@ -93,10 +93,6 @@
     {% block modal %}{% endblock %}
 
     {% block script_base %}
-    {% comment %}
-    Uncomment to use django-pipeline js compression/minification
-    {% compressed_js 'foundation' %}A
-    {% endcomment %}
     <script src="{% block jquery_src %}{% static "foundation/js/jquery.js" %}{% endblock %}"></script>
     <script src="{% static "foundation/js/foundation.min.js" %}"></script>
     <script src="{% static "foundation/js/jquery.js" %}"></script>
@@ -119,5 +115,8 @@
     <script src="{% static "foundation/js/jquery.foundation.magellan.js" %}"></script>
     <script src="{% static "foundation/js/responsive-tables.js" %}"></script>
     <script src="{% static "foundation/js/app.js" %}"></script>
+    {% block extra_script %}{% endblock %}
+    {% endblock %}
+
   </body>
 </html>
