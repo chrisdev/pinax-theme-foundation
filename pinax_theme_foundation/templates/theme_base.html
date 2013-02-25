@@ -25,6 +25,7 @@
     <!--[endif]-->
 
     {% block style_base %} 
+
     <link href="{% static "foundation/css/app.css" %}" rel="stylesheet">
     <link href="{% static "foundation/css/foundation.css" %}" rel="stylesheet">
     <link href="{% static "foundation/css/responsive-tables.css" %}" rel="stylesheet">
@@ -33,13 +34,16 @@
     <link href="{% static "foundation/css/fonts/general_enclosed.css" %}" rel="stylesheet">
     <link href="{% static "foundation/css/fonts/social.css" %}" rel="stylesheet">
     <link href="{% static "foundation/css/fonts/general.css" %}" rel="stylesheet">
+
     <!--[if lt IE 9]>
     <link href="{% static "foundation/css/ie.css" %}" rel="stylesheet" >
     <![endif]-->
+    <!--[if lt IE 8]>
     <link href="{% static "foundation/css/fonts/accessibility_ie7.css" %}" rel="stylesheet">
     <link href="{% static "foundation/css/fonts/general_enclosed_ie7.css" %}" rel="stylesheet">
     <link href="{% static "foundation/css/fonts/general_ie7.css" %}" rel="stylesheet">
     <link href="{% static "foundation/css/fonts/social_ie7.css" %}" rel="stylesheet">
+    <![endif]-->
     {% block extra_style %}{% endblock %}
     {% endblock %}
 
@@ -72,21 +76,21 @@
           {% include "_messages.html" %}
         </div>
       </div>
-      <div class="row">
-        {% block body %}{% endblock %}
-      </div>
-      {% endblock %}
+      {% block body %}{% endblock %}
 
-      {% block extra_body_base %}
+    {% block extra_body_base %}
       {% block extra_body %}	{% endblock %}
+    {% endblock %}
     </div>
     {% endblock %}
 
     {% block footer_base %}
     <footer class="row">
-    {% block footer %}	{% endblock %}
+    {% block footer %}{% include "_footer.html" %}{% endblock %}
     </footer>
     {% endblock %}
+
+    {% block modal %}{% endblock %}
 
     {% block script_base %}
     <script src="{% block jquery_src %}{% static "foundation/js/jquery.js" %}{% endblock %}"></script>
@@ -94,6 +98,8 @@
     <script src="{% static "foundation/js/jquery.js" %}"></script>
     <script src="{% static "foundation/js/jquery.foundation.mediaQueryToggle.js" %}"></script>
     <script src="{% static "foundation/js/jquery.foundation.forms.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.event.move.js" %}"></script>
+    <script src="{% static "foundation/js/jquery.event.swipe.js" %}"></script>
     <script src="{% static "foundation/js/jquery.foundation.reveal.js" %}"></script>
     <script src="{% static "foundation/js/jquery.foundation.orbit.js" %}"></script>
     <script src="{% static "foundation/js/jquery.foundation.navigation.js" %}"></script>
@@ -111,5 +117,6 @@
     <script src="{% static "foundation/js/app.js" %}"></script>
     {% block extra_script %}{% endblock %}
     {% endblock %}
+
   </body>
 </html>
