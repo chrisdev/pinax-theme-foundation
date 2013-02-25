@@ -1,22 +1,24 @@
 {% load i18n %}
-	
+
 {% if user.is_authenticated %}
 	<li class="has-flyout">
 		<a href="#">{{ user }}</a>
 		<a href="#" class="flyout-toggle"><span> </span></a>
 			<ul class="flyout">
-				<li><a href="{% url account_settings %}">Account</a></i></li>
+
+				<li><a href="{% url account_settings %}"><i class="general foundicon-torso"></i>Account</a></i></li>
 				{% if user.is_staff %}
-				<li><a href="{% url admin:index %}">Admin</a></li>
+				<li><a href="{% url admin:index %}"><i class="general foundicon-settings"></i>Admin</a></li>
 				{% endif %}
-				<li><a href="{% url account_logout %}">Log out</a></li>
+				<li><a href="{% url account_logout %}"><i class="general foundicon-unlock"></i>Log&nbsp;out</a></li>
+
 			</ul>
 	</li>
 {% else %}
 
-		<li><a href="{% url account_login %}">Log In</a></li>
+		<li><a href="{% url account_login %}"><i class="general foundicon-lock"></i>Log In</a></li>
 		{% if ACCOUNT_OPEN_SIGNUP %}
-		<li><a href="{% url account_signup %}">Sign Up</a></li>
+		<li><a href="{% url account_signup %}"><i class="general foundicon-edit"></i>Sign Up</a></li>
 		{% endif %}
-		
+
 {% endif %}
