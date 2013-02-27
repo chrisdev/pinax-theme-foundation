@@ -37,7 +37,7 @@ Getting Started
 Start by creating a new virtualenv for your project and install Django 1.4 ::
 
     mkvirtualenv mysite
-    pip install Django==1.4.1
+    pip install Django==1.4.5
 
 Next, use the ``startproject`` management command
 to create a new Django project
@@ -49,7 +49,7 @@ We provide you with two Foundation based starter projects
 
 To use create a project based on the zero_ project run ::
 
-    django-admin.py startproject --template=https://github.com/chrisdev/foundation-project-zero/zipball/master mysite
+    django-admin.py startproject mysite --template=https://github.com/chrisdev/foundation-project-zero/zipball/master
 
 This will create a new Django project in the mysite directory with:
 

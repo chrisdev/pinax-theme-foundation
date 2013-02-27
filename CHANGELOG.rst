@@ -1,9 +1,32 @@
 ==========
 CHANGELOG
 ==========
+0.2.3 (2013/02/26)
+------------------
+Changes are mainly from our new
+contributor `Justin Hamade <https://github.com/justhamade>`_
+
+- Updated all the foundation css classes and included support for the new icon fonts
+  To create an icon apply the appropriate classes that match the icon you want to use.
+  ::
+
+    <i class="foundicon-[icon]"></i>
+
+- Added demos from the ZURB playground,
+  these make a nice visual test to make sure things were working:
+
+    - `Responsive Tables <http://www.zurb.com/playground/responsive-tables>`_
+    - `Off canvas layouts <http://www.zurb.com/playground/off-canvas-layouts>`_
+    - `Icon Fonts 2 <http://www.zurb.com/playground/foundation-icons>`_
+
+- Added all of the templates from http://foundation.zurb.com/templates.php
+- Removed minimized ccs/js in favour of using an inline compressor like django-pipeline.
+  This is has currently been implemented in `Account Template <https://github.com/chrisdev/foundation-project-account/>`_
+- Fixes for the orbit slider
+
 0.2a2 (2012/11/02)
 ------------------
-- Supports the  `--template` for ``django-admin.py startproject``
+- Provide supports the  `--template` for ``django-admin.py startproject``
 - Removed ``Pinax`` dependency. Although it will still work with other
   pinax style apps such as django-user-account
 
@@ -47,8 +70,8 @@ CHANGELOG
 - Inclusion of CSS to support the `Responsive Design Patterns`_
   originally discussed by `Joshnua Johson`_ and implemented
   by `Matt Reimer`_
-- Updated documentation and set up a
- `demo site <http://foundation.chrisdev.com>`_ based on a Pinax basic
+- Updated documentation and set up a `demo site <http://foundation.chrisdev.com>`_
+  based on a Pinax basic
   project
 - Some reorganization of the *theme\_base.html* including:
 
