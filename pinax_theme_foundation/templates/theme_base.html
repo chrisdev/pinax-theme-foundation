@@ -53,8 +53,7 @@
     <div class="attached">
       <div class="row"> 	
         <li class="name mobile-four">
-        <a href="/"><i class="foundicon-home show-for-small"></i></a>
-        <a href="/">{{SITE_NAME}}</a><a href="#"></a>
+        	<a href="/"><i class="general foundicon-home show-for-small"></i>{{SITE_NAME}}</a><a href="#"></a>
         </li>
         <ul class="nav-bar menu mobile-four">
           {% block topbar %}
@@ -86,7 +85,6 @@
     	
     	{% block script_base %}
     		<script src="{% block jquery_src %}{% static "foundation/js/jquery.js" %}{% endblock %}"></script>
-    		<script src="{% static "foundation/js/foundation.min.js" %}"></script>
     		<script src="{% static "foundation/js/jquery.js" %}"></script>
     		<script src="{% static "foundation/js/jquery.foundation.mediaQueryToggle.js" %}"></script>
     		<script src="{% static "foundation/js/jquery.foundation.forms.js" %}"></script>
