@@ -8,7 +8,7 @@
 
 {% block body %}
     <div class="row">
-        <div class="eight columns">
+        <div class="large-8 columns">
             <form id="signup_form" method="post" action="{% url "account_signup" %}" autocapitalize="off" class="form-horizontal"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
                 <fieldset>
                     <legend>{% trans "Sign up" %}</legend>
@@ -23,7 +23,7 @@
                 </fieldset>
             </form>
         </div>
-        <div class="four columns">
+        <div class="large-4 columns">
             {% include "account/_signup_sidebar.html" %}
         </div>
     </div>

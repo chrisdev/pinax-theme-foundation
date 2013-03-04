@@ -18,14 +18,15 @@
     {% block viewport %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% endblock %} 
-    <script src="{% static "foundation/js/modernizr.foundation.js" %}"></script>
+    <script src="{% static "foundation/js/custom.modernizr.js" %}"></script>
 
     <!-- IE Fix for HTML5 Tags -->
     <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <!--[endif]-->
 
-    {% block style_base %} 
-    	<link href="{% static "foundation/css/app.css" %}" rel="stylesheet">
+    {% block style_base %}
+    	<link href="{% static "foundation/css/app.css" %}" rel="stylesheet"> 
+    	<link href="{% static "foundation/css/normalize.css" %}" rel="stylesheet">
     	<link href="{% static "foundation/css/foundation.css" %}" rel="stylesheet">
     	<link href="{% static "foundation/css/responsive-tables.css" %}" rel="stylesheet">
     	<link href="{% static "foundation/css/fc-webicons.css" %}" rel="stylesheet">
@@ -50,25 +51,30 @@
   
   <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
     {% block topbar_base %}
-    <div class="attached">
-      <div class="row"> 	
-        <li class="name mobile-four">
-        	<a href="/"><i class="general foundicon-home show-for-small"></i>{{SITE_NAME}}</a><a href="#"></a>
-        </li>
-        <ul class="nav-bar menu mobile-four">
-          {% block topbar %}
-          {% block nav %}{% endblock %}
-          {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
-          {% endblock %}
-        </ul>
+    <nav class="top-bar" style="border-bottom: 3px solid #08C;">
+      <div class="row"> 
+      	<div class="large-10 large-centered columns">
+	      	<ul class="title-area">	
+	        	<li class="name mobile-four"><a href="/"><i class="general foundicon-home show-for-small"></i>{{SITE_NAME}}</a><a href="#"></a></li>
+	        	 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	        </ul>
+	        <section class="top-bar-section">
+	        	<ul class="right menu mobile-four">
+			          {% block topbar %}
+			          {% block nav %}{% endblock %}
+			          {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+			          {% endblock %}
+	        	</ul>
+	        </section>
+	      </div>
       </div>
-    </div>
+    </nav>
     {% endblock %}
 
     <div id="mainContent">
     	{% block body_base %}
     	    <div class="row">
-    			<div class="ten columns centered">
+    			<div class="large-10 large-centered columns">
     				{% include "_messages.html" %}
     			</div>
     		</div>
@@ -85,24 +91,22 @@
     	
     	{% block script_base %}
     		<script src="{% block jquery_src %}{% static "foundation/js/jquery.js" %}{% endblock %}"></script>
-    		<script src="{% static "foundation/js/jquery.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.mediaQueryToggle.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.forms.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.reveal.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.orbit.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.navigation.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.buttons.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.tabs.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.tooltips.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.accordion.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.placeholder.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.alerts.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.topbar.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.joyride.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.clearing.js" %}"></script>
-    		<script src="{% static "foundation/js/jquery.foundation.magellan.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.alerts.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.clearing.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.cookie.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.dropdown.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.forms.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.joyride.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.magellan.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.orbit.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.placeholder.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.reveal.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.section.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.tooltips.js" %}"></script>
+    		<script src="{% static "foundation/js/foundation.topbar.js" %}"></script>
     		<script src="{% static "foundation/js/responsive-tables.js" %}"></script>
-    		<script src="{% static "foundation/js/app.js" %}"></script>
+    		<script src="{% static "foundation/js/offcanvas.js" %}"></script>
     		{% block extra_script %}{% endblock %}
         {% endblock %}
     	

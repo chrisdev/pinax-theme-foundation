@@ -1,21 +1,5 @@
-.attached {
-	background-color: #4D4D4D;
-	border-bottom: 3px solid #2BA6CB;	
+.top-bar {
 	margin-bottom: 15px;
-	z-index: 999;
-	left: 0;
-	right: 0;
-}
-
-.nav-bar.menu {
-	background: none;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	float: right;
-}
-
-.nav-bar i {
-  line-height: 1;
 }
 
 li.name {
@@ -32,10 +16,6 @@ li.name {
 
 li.name a{
 	color: #fff;
-}
-
-.attached .mobile-four {
-	padding: 0;
 }
 
 select { background-color: white; font-family: inherit; border: 1px solid #cccccc; -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; -o-border-radius: 2px; border-radius: 2px; -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); color: rgba(0, 0, 0, 0.75); display: block; font-size: 14px; margin: 0 0 12px 0; padding: 6px; height: 32px; width: 100%; -webkit-transition: all 0.15s linear; -moz-transition: all 0.15s linear; -o-transition: all 0.15s linear; transition: all 0.15s linear; }
@@ -59,10 +39,6 @@ fieldset {
 	padding: 8px;
 }
 
-.attached .row .mobile-four {
-	padding: 0;
-}
-
 #bottomMenu .nav-bar li {
 	text-align: center;
 	box-shadow: none;
@@ -77,4 +53,19 @@ fieldset {
   padding-right: 8px;
   margin-left: -8px;
   line-height: 1;
+}
+
+.section-container {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color #CCCCCC #CCCCCC;
+    border-image: none;
+    border-right: 1px solid #CCCCCC;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    display: block;
+    margin-bottom: 1.25em;
+    width: 100%;
 }

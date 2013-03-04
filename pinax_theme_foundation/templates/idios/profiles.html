@@ -14,7 +14,7 @@
     {% autopaginate profiles %}
 		<div class="row">
 		{% for profile in profiles %}
-			<div class="five columns">
+			<div class="large-5 columns">
 				<div class="panel">
 					{% include "profiles/_profile_item.html" %}
 				</div>
@@ -24,7 +24,7 @@
 				<div class="row">
 			{% endif %}
 		{% empty %}
-    		<div class="eight columns centered">
+    		<div class="large-8 large-centered columns">
     			<h5>Sorry, no Profiles in this list!</h5>
     		</div>
 		{% endfor %}
