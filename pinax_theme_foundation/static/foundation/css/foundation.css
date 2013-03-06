@@ -1913,7 +1913,7 @@ form.custom {
 /* Wrapped around .top-bar to contain to grid width */
 .contain-to-grid {
   width: 100%;
-  background: #111111; }
+  background: #333333; }
 
 .fixed {
   width: 100%;
@@ -2100,7 +2100,7 @@ form.custom {
 
 @media only screen and (min-width: 58.75em) {
   .top-bar {
-    background: #333333;
+    background: none;
     *zoom: 1;
     overflow: visible; }
     .top-bar:before, .top-bar:after {
@@ -2144,7 +2144,7 @@ form.custom {
           display: none; }
     .top-bar-section li a:not(.button) {
       padding: 0 15px;
-      line-height: 37px;
+      line-height: 40px;
       background: #333333; }
       .top-bar-section li a:not(.button):hover {
         background: #2b2b2b; }

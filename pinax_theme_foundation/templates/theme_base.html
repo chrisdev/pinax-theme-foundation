@@ -51,24 +51,22 @@
   
   <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
     {% block topbar_base %}
-    <nav class="top-bar" style="border-bottom: 3px solid #08C;">
-      <div class="row"> 
-      	<div class="large-10 large-centered columns">
-	      	<ul class="title-area">	
-	        	<li class="name mobile-four"><a href="/"><i class="general foundicon-home show-for-small"></i>{{SITE_NAME}}</a><a href="#"></a></li>
-	        	 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-	        </ul>
-	        <section class="top-bar-section">
-	        	<ul class="right menu mobile-four">
-			          {% block topbar %}
-			          {% block nav %}{% endblock %}
-			          {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
-			          {% endblock %}
-	        	</ul>
-	        </section>
-	      </div>
-      </div>
-    </nav>
+    <div class="contain-to-grid sticky" style="border-bottom: 3px solid #08C;">
+	    <nav class="top-bar">
+		      	<ul class="title-area">	
+		        	<li class="name mobile-four"><a href="/">{{SITE_NAME}}</a><a href="#"></a></li>
+		        	 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+		        </ul>
+		        <section class="top-bar-section">
+		        	<ul class="right menu mobile-four">
+				          {% block topbar %}
+				          {% block nav %}{% endblock %}
+				          {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+				          {% endblock %}
+		        	</ul>
+		        </section>
+	    </nav>
+    </div>
     {% endblock %}
 
     <div id="mainContent">
