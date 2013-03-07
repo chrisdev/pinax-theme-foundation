@@ -1927,7 +1927,8 @@ form.custom {
   height: 42px;
   line-height: 42px;
   position: relative;
-  background: #333333; }
+  background: #333333;
+  margin-bottom: 0; }
   .top-bar ul {
     margin-bottom: 0;
     list-style: none; }
@@ -1975,7 +1976,7 @@ form.custom {
     .top-bar .toggle-topbar.menu-icon {
       right: 15px;
       top: 50%;
-      margin-top: -16px;
+      margin-top: 4px;
       padding-left: 40px; }
       .top-bar .toggle-topbar.menu-icon a {
         text-indent: -48px;
