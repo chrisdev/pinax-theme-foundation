@@ -18,7 +18,7 @@
     {% block viewport %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% endblock %} 
-    <script src="{% static "foundation/js/custom.modernizr.js" %}"></script>
+    <script src="{% static "vendor/custom.modernizr.js" %}"></script>
 
     <!-- IE Fix for HTML5 Tags -->
     <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -88,7 +88,13 @@
     	{% endblock %}
     	
     	{% block script_base %}
-    		<script src="{% block jquery_src %}{% static "foundation/js/jquery.js" %}{% endblock %}"></script>
+    		<script>
+    		document.write('<script src=' +
+    		('__proto__' in {} ? '/site_media/static/vendor/zepto' : '/site_media/static/vendor/jquery') +
+    		'.js><\/script>')
+    		</script>
+    		
+    		<script src="{% block jquery_src %}{% static "vendor/jquery.js" %}{% endblock %}"></script>
     		<script src="{% static "foundation/js/foundation.js" %}"></script>
     		<script src="{% static "foundation/js/foundation.alerts.js" %}"></script>
     		<script src="{% static "foundation/js/foundation.clearing.js" %}"></script>
@@ -105,7 +111,13 @@
     		<script src="{% static "foundation/js/foundation.topbar.js" %}"></script>
     		<script src="{% static "foundation/js/responsive-tables.js" %}"></script>
     		<script src="{% static "foundation/js/offcanvas.js" %}"></script>
-    		{% block extra_script %}{% endblock %}
+    		
+    		<script>
+    		    $(document).foundation();
+    		</script>
+    	
+    		{% block extra_script %}
+    		{% endblock %}
         {% endblock %}
     	
     	{% block extra_body_base %}
