@@ -121,6 +121,17 @@
         {% endblock %}
     	
     	{% block extra_body_base %}
+    		<script>
+    		    $(document)
+    			.foundation('topbar', {
+    				  index : 0,
+    				  stickyClass : 'sticky',
+    				  custom_back_text: true,   		    
+    				  back_text: 'Back',   		    
+    				  init : false
+    				},
+    				'reveal', {};)
+    		  </script>
     		{% block extra_body %}	{% endblock %}
     	{% endblock %}
     </div>
