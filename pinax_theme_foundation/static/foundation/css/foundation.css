@@ -2156,9 +2156,9 @@ form.custom {
         display: block;
         width: 0;
         height: 0;
-        border: solid 5px;
-        border-color: rgba(255, 255, 255, 0.5) transparent transparent transparent;
-        margin-top: -2.5px; }
+        border: solid 4px;
+        border-color: rgba(255, 255, 255, 1) transparent transparent transparent;
+        margin-top: -1.5px; }
     .top-bar-section .has-dropdown.moved {
       position: relative; }
       .top-bar-section .has-dropdown.moved > .dropdown {
