@@ -15,14 +15,14 @@ Foundation and how to use  it for rapid prototyping in this `article`_.
 Contributors
 -------------
 * `Christopher Clarke <https://github.com/chrisdev>`_
-* `Kewsi Aguillera <https://github.com/kaguillera>`_
 * `Lendl R Smith <https://github.com/ilendl2>`_
+* `Kewsi Aguillera <https://github.com/kaguillera>`_
 * `Justin Hamade <https://github.com/justhamade>`_
 
 
 What's New
 -----------
-- We support the latest version of Foundation (3.2)
+- We support the latest version of Foundation (4.0.9)
 - Updated the documentation
 - The project now supports the  ``--template`` argument for ``django-admin.py
   startproject`` command
