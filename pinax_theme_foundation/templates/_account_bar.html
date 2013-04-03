@@ -3,7 +3,6 @@
 {% if user.is_authenticated %}
 	<li class="has-dropdown">
 		<a href="#">{{ user }}</a>
-		<a href="#" class="dropdown-toggle"><span> </span></a>
 			<ul class="dropdown">
 				<li><a href="{% url account_settings %}"><i class="general foundicon-torso"></i>Account</a></i></li>
 				{% if user.is_staff %}
