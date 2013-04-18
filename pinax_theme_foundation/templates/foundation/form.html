@@ -4,23 +4,5 @@
     </div>
 {% endif %}
 {% for field in form %}
-    {% if field.is_hidden %}
-        {{ field }}
-    {% else %}
-        <div class="form-field {% if field.errors %} error{% endif %}">
-            {% if field.label %}
-                <label for="{{ field.auto_id }}" {% if field.field.required %}class="requiredField"{% endif %}>
-                    {{ field.label|safe }}
-                </label>
-                    {{ field }}           
-                    {% for error in field.errors %}
-                        <medium>{{ error }}</medium>
-                    {% endfor %}
-                    {% if field.help_text %}
-                        <medium>{{ field.help_text|safe }}</medium>
-                    {% endif %}
-            {% endif %}
-        </div>
-    {% endif %}
+    {% include "foundation/_foundation_form_field.html" %}
 {% endfor %}
-

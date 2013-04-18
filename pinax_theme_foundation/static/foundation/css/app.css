@@ -65,3 +65,11 @@ fieldset {
     margin-bottom: 1.25em;
     width: 100%;
 }
+
+small.error.chk {
+    margin-top: 0;
+}
+
+.required {
+	color: red;
+}
