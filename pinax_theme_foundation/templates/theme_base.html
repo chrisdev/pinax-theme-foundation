@@ -21,8 +21,9 @@
     <script src="{% static "vendor/custom.modernizr.js" %}"></script>
 
     <!-- IE Fix for HTML5 Tags -->
-    <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <!--[endif]-->
+    	<!--[if lt IE 9]>
+    		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    	<![endif]-->
 
     {% block style_base %}
     	<link href="{% static "foundation/css/app.css" %}" rel="stylesheet"> 
