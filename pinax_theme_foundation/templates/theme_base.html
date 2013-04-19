@@ -26,9 +26,9 @@
     	<![endif]-->
 
     {% block style_base %}
-    	<link href="{% static "foundation/css/app.css" %}" rel="stylesheet"> 
     	<link href="{% static "foundation/css/normalize.css" %}" rel="stylesheet">
     	<link href="{% static "foundation/css/foundation.css" %}" rel="stylesheet">
+    	<link href="{% static "foundation/css/app.css" %}" rel="stylesheet"> 
     	<link href="{% static "foundation/css/responsive-tables.css" %}" rel="stylesheet">
     	<link href="{% static "foundation/css/fc-webicons.css" %}" rel="stylesheet">
     	<link href="{% static "foundation/css/fonts/accessibility.css" %}" rel="stylesheet">
@@ -52,7 +52,7 @@
   
   <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
     {% block topbar_base %}
-    <div class="contain-to-grid sticky" style="border-bottom: 3px solid #08C; margin-bottom: 20px;">
+    <div class="contain-to-grid sticky">
 	    <nav class="top-bar">
 		      	<ul class="title-area">	
 		        	<li class="name mobile-four"><a href="/">{{SITE_NAME}}</a><a href="#"></a></li>
