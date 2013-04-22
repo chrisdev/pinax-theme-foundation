@@ -2,10 +2,9 @@
 <!DOCTYPE html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]> 	<html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]-->
   <head>
     <meta charset="utf-8" />
     <title>
@@ -18,7 +17,7 @@
     <!-- Set the viewport width to device width for mobile -->
     {% block viewport %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% endblock %} 
+    {% endblock %}
     <script src="{% static "vendor/custom.modernizr.js" %}"></script>
 
     <!-- IE Fix for HTML5 Tags -->
@@ -29,7 +28,7 @@
     {% block style_base %}
     	<link href="{% static "foundation/css/normalize.css" %}" rel="stylesheet">
     	<link href="{% static "foundation/css/foundation.css" %}" rel="stylesheet">
-    	<link href="{% static "foundation/css/app.css" %}" rel="stylesheet"> 
+    	<link href="{% static "foundation/css/app.css" %}" rel="stylesheet">
     	<link href="{% static "foundation/css/responsive-tables.css" %}" rel="stylesheet">
     	<link href="{% static "foundation/css/fc-webicons.css" %}" rel="stylesheet">
     	<link href="{% static "foundation/css/fonts/accessibility.css" %}" rel="stylesheet">
@@ -50,12 +49,12 @@
     {% block extra_head %}{% endblock %}
     {% endblock %}
   </head>
-  
+
   <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
     {% block topbar_base %}
     <div class="contain-to-grid sticky">
 	    <nav class="top-bar">
-		      	<ul class="title-area">	
+		      	<ul class="title-area">
 		        	<li class="name mobile-four"><a href="/">{{SITE_NAME}}</a><a href="#"></a></li>
 		        	 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 		        </ul>
@@ -78,24 +77,24 @@
     				{% include "_messages.html" %}
     			</div>
     		</div>
-    	    <div class="row">					
+    	    <div class="row">
     			{% block body %}{% endblock %}
     		</div>
     	{% endblock %}
-    	
+
     	{% block footer_base %}
     		<footer class="row">
     			{% block footer %}	{% endblock %}
     		</footer>
     	{% endblock %}
-    	
+
     	{% block script_base %}
     		<script>
     		document.write('<script src=' +
     		('__proto__' in {} ? '/site_media/static/vendor/zepto' : '/site_media/static/vendor/jquery') +
     		'.js><\/script>')
     		</script>
-    		
+
     		<script src="{% block jquery_src %}{% static "vendor/jquery.js" %}{% endblock %}"></script>
     		<script src="{% static "foundation/js/foundation.js" %}"></script>
     		<script src="{% static "foundation/js/foundation.alerts.js" %}"></script>
@@ -107,29 +106,33 @@
     		<script src="{% static "foundation/js/foundation.magellan.js" %}"></script>
     		<script src="{% static "foundation/js/foundation.orbit.js" %}"></script>
     		<script src="{% static "foundation/js/foundation.placeholder.js" %}"></script>
-    		<script src="{% static "foundation/js/foundation.reveal.js" %}"></script>
+            <script src="{% static "foundation/js/foundation.reveal.js" %}"></script>
     		<script src="{% static "foundation/js/foundation.section.js" %}"></script>
     		<script src="{% static "foundation/js/foundation.tooltips.js" %}"></script>
     		<script src="{% static "foundation/js/foundation.topbar.js" %}"></script>
     		<script src="{% static "foundation/js/responsive-tables.js" %}"></script>
+            <script src="{% static "foundation/js/offcanvas.js" %}"></script>
+            {% comment %}
+            <script src="{% static "foundation/js/foundation.min.js" %}"></script>
+            <script src="{% static "foundation/js/responsive-tables.js" %}"></script>
     		<script src="{% static "foundation/js/offcanvas.js" %}"></script>
-    		
+            {% endcomment %}
     		<script>
     		    $(document).foundation();
     		</script>
-    	
+
     		{% block extra_script %}
     		{% endblock %}
         {% endblock %}
-    	
+
     	{% block extra_body_base %}
     		<script>
     		    $(document)
     			.foundation('topbar', {
     				  index : 0,
     				  stickyClass : 'sticky',
-    				  custom_back_text: true,   		    
-    				  back_text: 'Back',   		    
+    				  custom_back_text: true,
+    				  back_text: 'Back',
     				  init : false
     				},
     				'orbit',{},
@@ -141,6 +144,6 @@
     		{% block extra_body %}	{% endblock %}
     	{% endblock %}
     </div>
-        
+
   </body>
 </html>
