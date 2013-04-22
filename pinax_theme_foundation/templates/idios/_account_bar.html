@@ -1,10 +1,10 @@
 {% load i18n %}
 	
 {% if user.is_authenticated %}
-	<li class="has-flyout">
+	<li class="has-dropdown">
 		<a href="#">{{ user }}</a>
-		<a href="#" class="flyout-toggle"><span> </span></a>
-			<ul class="flyout">
+		<a href="#" class="dropdown-toggle"><span> </span></a>
+			<ul class="dropdown">
 				<li><a href="{% url account_settings %}">Account</a></i></li>
 				{% if user.is_staff %}
 				<li><a href="{% url admin:index %}">Admin</a></li>

@@ -22,7 +22,7 @@
         
         {% for date in notices_by_date %}
         	<div class="row display">
-				<div class="twelve columns">
+				<div class="large-10 large-centered columns">
 					<h3 class="notice_date">{{ date.grouper|naturalday:_("MONTH_DAY_FORMAT")|capfirst }}</h3>
 					
 					{% for notice in date.list %}

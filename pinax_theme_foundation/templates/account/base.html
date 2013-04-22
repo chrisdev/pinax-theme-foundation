@@ -6,10 +6,26 @@
 {% block body_class %}account{% endblock %}
 
 {% block subnav %}
-	<h5 class="subheader">ACCOUNT</h5>
-    <ul class="nav-bar vertical">
-        <li><a href="{% url "account_settings" %}">{% trans "Settings" %}</a></li>
-        <li><a href="{% url "account_password" %}">{% trans "Change password" %}</a></li>
-        <li><a href="{% url "account_delete" %}">{% trans "Delete account" %}</a></li>
-    </ul>
-{% endblock %}
+	
+		<h4 class="subheader">ACCOUNT</h4>
+		<div class="section-container">
+	    <ul class="side-nav" style="padding: 0;">
+	        <section class="section ">
+	        	<p class="title" style="left: 0px;">
+	        		<a href="{% url "account_settings" %}">{% trans "Settings" %}</a>
+	        	</p>
+	        </section>
+	        <section class="section ">
+	        	<p class="title" style="left: 0px;">
+					<a href="{% url "account_password" %}">{% trans "Change password" %}</a>
+				</p>
+			</section>
+			<section class="section ">
+				<p class="title" style="left: 0px;">
+					<a href="{% url "account_delete" %}">{% trans "Delete account" %}</a>
+				</p>
+			</section>
+	    </ul>
+		</div>
+    
+ {% endblock %}

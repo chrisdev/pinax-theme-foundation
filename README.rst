@@ -15,32 +15,14 @@ Foundation and how to use  it for rapid prototyping in this `article`_.
 Contributors
 -------------
 * `Christopher Clarke <https://github.com/chrisdev>`_
-* `Kewsi Aguillera <https://github.com/kaguillera>`_
 * `Lendl R Smith <https://github.com/ilendl2>`_
+* `Kewsi Aguillera <https://github.com/kaguillera>`_
 * `Justin Hamade <https://github.com/justhamade>`_
 
 
 What's New
 -----------
-- Updated all the foundation CSS classes and included support for the new style icon fonts
-   To create an icon apply use the *i* tag and the appropriate class that match the icon you want to use.
-   ::
-
-    <i class="foundicon-[icon]"></i>
-
-- Removed minimized ccs/js in favor of using an inline compressor like django-pipeline.
-  This is has currently been implemented in account_ template project.
-
-- Added demos from the ZURB playground,
-  these make a nice visual test to make sure things were working:
-
-    - `Responsive Tables <http://www.zurb.com/playground/responsive-tables>`_
-    - `Off canvas layouts <http://www.zurb.com/playground/off-canvas-layouts>`_
-    - `Icon Fonts 2 <http://www.zurb.com/playground/foundation-icons>`_
-
-- Added all of the templates from http://foundation.zurb.com/templates.php
-
-- Fixes for the orbit slider
+This version supports Foundation 4 \o/
 
 
 Getting Started

@@ -1,54 +1,97 @@
-{% extends 'theme_base.html' %}
-{% block topbar_base %}
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Welcome to Foundation | Marketing</title>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.css">
+
+  <script src="js/vendor/custom.modernizr.js"></script>
+</head>
+<body>
+
 <!-- Navigation -->
 
   <nav class="top-bar">
-    <ul>
-      <li class="name"><h1><a href="#">{{ SITE_NAME }}</a></h1></li>
-      <li class="toggle-topbar"><a href="#"></a></li>
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>
+          <a href="#">
+            Top Bar Title
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
     </ul>
-
-    <section>
-      <ul class="left">
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-      </ul>
-
+ 
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
       <ul class="right">
+        <li class="divider"></li>
         <li class="has-dropdown">
-          <a href="#">Link</a>
-          {% block topbar %}
-          {% block nav %}{% endblock %}
-          {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
-          {% endblock %}
+          <a href="#">Main Item 1</a>
           <ul class="dropdown">
-
-            <li><a href="#">Dropdown Link</a></li>
-            <li><a href="#">Dropdown Link</a></li>
-            <li><a href="#">Dropdown Link</a></li>
+            <li><label>Section Name</label></li>
+            <li class="has-dropdown">
+              <a href="#" class="">Has Dropdown, Level 1</a>
+              <ul class="dropdown">
+                <li><a href="#">Dropdown Options</a></li>
+                <li><a href="#">Dropdown Options</a></li>
+                <li><a href="#">Level 2</a></li>
+                <li><a href="#">Subdropdown Option</a></li>
+                <li><a href="#">Subdropdown Option</a></li>
+                <li><a href="#">Subdropdown Option</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li class="divider"></li>
+            <li><label>Section Name</label></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li class="divider"></li>
+            <li><a href="#">See all &rarr;</a></li>
+          </ul>
+        </li>
+        <li class="divider"></li>
+        <li><a href="#">Main Item 2</a></li>
+        <li class="divider"></li>
+        <li class="has-dropdown">
+          <a href="#">Main Item 3</a>
+          <ul class="dropdown">
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li class="divider"></li>
+            <li><a href="#">See all &rarr;</a></li>
           </ul>
         </li>
       </ul>
     </section>
   </nav>
+ 
+  <!-- End Top Bar -->
 
-  <!-- End Navigation -->
-  {% endblock %}
-
-  {% block body %}
   <div class="row">
-    <div class="twelve columns">
+    <div class="large-12 columns">
 
     <!-- Content Slider -->
 
       <div class="row">
-        <div class="twelve columns hide-for-small">
+        <div class="large-12 hide-for-small">
 
-          <div id="featured">
-              <img src="http://placehold.it/1200x500&text=Slide Image" alt="slide image">
-              <img src="http://placehold.it/1200x500&text=Slide Image" alt="slide image">
-              <img src="http://placehold.it/1200x500&text=Slide Image" alt="slide image">
+          <div id="featured" data-orbit>
+              <img src="http://placehold.it/1200x500&text=Slide Image 1" alt="slide image">
+              <img src="http://placehold.it/1200x500&text=Slide Image 2" alt="slide image">
+              <img src="http://placehold.it/1200x500&text=Slide Image 3" alt="slide image">
             </div>
 
       </div>
@@ -59,7 +102,7 @@
     <!-- Mobile Header -->
 
       <div class="row">
-        <div class="twelve columns show-for-small">
+        <div class="large-12 columns show-for-small">
 
           <img src="http://placehold.it/1200x700&text=Mobile Header">
 
@@ -70,77 +113,73 @@
 
 
       <div class="row">
-        <div class="twelve columns">
+        <div class="large-12 columns">
           <div class="row">
+            <!-- Shows -->
+            <div class="large-4 small-6 columns">
 
-    <!-- Shows -->
-
-            <div class="four mobile-two push-two-mobile columns">
-
-              <h4>Upcoming Shows</h4><hr/>
+              <h4>Upcoming Shows</h4><hr>
 
               <div class="row">
-                <div class="one column">
-                  <img src="http://placehold.it/50x50&text=[img]" />
+                <div class="large-1 column">
+                  <img src="http://placehold.it/50x50&amp;text=[img]">
                 </div>
 
-                <div class="nine columns">
+                <div class="large-9 columns">
                   <h5><a href="#">Venue Name</a></h5>
                   <h6 class="subheader show-for-small">Doors at 00:00pm</h6>
                 </div>
-              </div><hr/>
+              </div><hr>
 
               <div class="hide-for-small">
                 <div class="row">
-                  <div class="one column">
-                    <img src="http://placehold.it/50x50&text=[img]" />
+                  <div class="large-1 column">
+                    <img src="http://placehold.it/50x50&amp;text=[img]">
                   </div>
 
-                  <div class="nine columns">
+                  <div class="large-9 columns">
                     <h5 class="subheader"><a href="#">Venue Name</a></h5>
                   </div>
-                </div><hr/>
+                </div><hr>
 
                 <div class="row">
-                  <div class="one column">
-                    <img src="http://placehold.it/50x50&text=[img]" />
+                  <div class="large-1 column">
+                    <img src="http://placehold.it/50x50&amp;text=[img]">
                   </div>
 
-                  <div class="nine columns">
+                  <div class="large-9 columns">
                     <h5 class="subheader"><a href="#">Venue Name</a></h5>
                   </div>
-                </div><hr/>
+                </div><hr>
 
                 <div class="row">
-                  <div class="one column">
-                    <img src="http://placehold.it/50x50&text=[img]" />
+                  <div class="large-1 column">
+                    <img src="http://placehold.it/50x50&amp;text=[img]">
                   </div>
 
-                  <div class="nine columns">
+                  <div class="large-9 columns">
                     <h5 class="subheader"><a href="#">Venue Name</a></h5>
                   </div>
                 </div>
               </div>
+            </div>
+            <!-- End Shows -->
 
+
+            <!-- Image -->
+
+            <div class="large-4 small-6 columns">
+              <img src="http://placehold.it/300x465&amp;text=Image">
             </div>
 
-    <!-- End Shows -->
+            <!-- End Image -->
 
 
-    <!-- Image -->
+            <!-- Feed -->
 
-            <div class="four mobile-two pull-two-mobile columns">
-              <img src="http://placehold.it/300x465&text=Image" />
-            </div>
+            <div class="large-4 small-12 columns">
 
-  <!-- End Image -->
-
-
-    <!-- Feed -->
-
-            <div class="four mobile-four columns">
-
-              <h4>Blog</h4><hr/>
+              <h4>Blog</h4><hr>
               <div class="panel">
                 <h5><a href="#">Post Title 1</a></h5>
 
@@ -163,7 +202,7 @@
 
             </div>
 
-    <!-- End Feed -->
+            <!-- End Feed -->
 
           </div>
         </div>
@@ -172,19 +211,59 @@
     <!-- End Content -->
 
 
+    <!-- Footer -->
+
+      <footer class="row">
+        <div class="large-12 columns"><hr>
+            <div class="row">
+
+              <div class="large-6 columns">
+                  <p>&copy; Copyright no one at all. Go to town.</p>
+              </div>
+
+              <div class="large-6 small-12 columns">
+                  <ul class="inline-list right">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                  </ul>
+              </div>
+
+            </div>
+        </div>
+      </footer>
+
+    <!-- End Footer -->
+
     </div>
   </div>
 
-  {% endblock %}
-
-  {% block extra_script %}
-
   <!-- Included JS Files -->
-  <script src="../public/assets/templates.js"></script>
-  <script type="text/javascript">
-    $(window).load(function() {
-      $('#featured').orbit({ fluid: '2x1' });
-    });
+  <!-- Included JS Files (Uncompressed) -->
+
+  <script src="js/vendor/zepto.js"></script>
+  <script src="js/foundation/foundation.js"></script>
+  <script src="js/foundation/foundation.cookie.js"></script>
+  <script src="js/foundation/foundation.alerts.js"></script>
+  <script src="js/foundation/foundation.clearing.js"></script>
+  <script src="js/foundation/foundation.dropdown.js"></script>
+  <script src="js/foundation/foundation.forms.js"></script>
+  <script src="js/foundation/foundation.joyride.js"></script>
+  <script src="js/foundation/foundation.magellan.js"></script>
+  <script src="js/foundation/foundation.orbit.js"></script>
+  <script src="js/foundation/foundation.placeholder.js"></script>
+  <script src="js/foundation/foundation.reveal.js"></script>
+  <script src="js/foundation/foundation.section.js"></script>
+  <script src="js/foundation/foundation.tooltips.js"></script>
+  <script src="js/foundation/foundation.topbar.js"></script>
+  <!-- Application Javascript, safe to override -->
+
+  <script src="js/foundation/index.js"></script>
+  <script>
+    $(document).foundation().foundation('joyride', 'start');
   </script>
-  <!-- End Footer -->
-  {% endblock %}
+<!-- End Footer -->
+
+</body>
+</html>

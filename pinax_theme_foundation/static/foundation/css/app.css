@@ -1,21 +1,29 @@
-.attached {
-	background-color: #4D4D4D;
-	border-bottom: 3px solid #2BA6CB;	
-	margin-bottom: 15px;
-	z-index: 999;
-	left: 0;
-	right: 0;
+/*
+
+.contain-to-grid {
+	border-bottom: 3px solid #08C;
+	background: none repeat scroll 0 0 #333333;
 }
 
-.nav-bar.menu {
-	background: none;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	float: right;
+.top-bar {
+	background: none repeat scroll 0 0 transparent;
+	height: 40px;
+	margin-bottom: 0;
 }
 
-.nav-bar i {
-  line-height: 1;
+.top-bar li {
+	max-height: 40px;
+}
+
+.top-bar .toggle-topbar.menu-icon {
+	margin-top: 0;
+}
+
+.top-bar-section li a:not(.button) {
+	background: none repeat scroll 0 0 transparent;
+	max-height: 40px;
+	line-height: 40px;
+	padding-top: 0;
 }
 
 li.name {
@@ -34,47 +42,52 @@ li.name a{
 	color: #fff;
 }
 
-.attached .mobile-four {
-	padding: 0;
+.top-bar-section ul:first-of-type {
+	background: none repeat scroll 0 0 transparent;
 }
 
-select { background-color: white; font-family: inherit; border: 1px solid #cccccc; -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; -o-border-radius: 2px; border-radius: 2px; -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); color: rgba(0, 0, 0, 0.75); display: block; font-size: 14px; margin: 0 0 12px 0; padding: 6px; height: 32px; width: 100%; -webkit-transition: all 0.15s linear; -moz-transition: all 0.15s linear; -o-transition: all 0.15s linear; transition: all 0.15s linear; }
-input[type="password"],
-input[type="text"], 
-textarea {
-    -moz-transition: all 0.15s linear 0s;
-    border: 1px solid #CCCCCC;
-    border-radius: 2px 2px 2px 2px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
-    color: rgba(0, 0, 0, 0.75);
-    display: block;
-    font-size: 14px;
-    height: 32px;
-    margin: 0 0 12px;
-    padding: 6px;
-    width: 100%;
+.top-bar-section ul.right li .dropdown {
+	background: #333;
+	border-top: 3px solid #08C;
 }
+
+.top-bar-section ul.right li .dropdown {
+	border-top: 0px solid #08C;
+}
+*/
+
+select { border: 1px solid #cccccc;
+		 color: rgba(0, 0, 0, 0.75);
+		 display: block;
+		 font-size: 14px;
+		 margin: 0 0 12px 0;
+		 padding: 6px;
+		 height: 32px;
+		 width: 100%;}
 
 fieldset {
 	padding: 8px;
 }
 
-.attached .row .mobile-four {
-	padding: 0;
+.section-container {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color #CCCCCC #CCCCCC;
+    border-image: none;
+    border-right: 1px solid #CCCCCC;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    display: block;
+    margin-bottom: 1.25em;
+    width: 100%;
 }
 
-#bottomMenu .nav-bar li {
-	text-align: center;
-	box-shadow: none;
+small.error.chk {
+    margin-top: 0;
 }
 
-#featured { background: #000 url(../images/foundation/spinner.gif) center center no-repeat; height: 400px; }
-#featured img { display: none; border-radius: 5px; }
-#featured.orbit { background: none; }
-#featured.orbit img { display: block; }
-[class*="foundicon-"] {
-  padding-left: 0px;
-  padding-right: 8px;
-  margin-left: -8px;
-  line-height: 1;
+.required {
+	color: red;
 }

@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
@@ -11,58 +9,58 @@
 
   <title>Welcome to Foundation | So Boxy</title>
 
-  <!-- Included CSS Files -->
-  <link rel="stylesheet" href="../stylesheets/templates.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.css">
 
-</head>
+  <script src="js/vendor/custom.modernizr.js"></script>
 
 </head>
 <body>
 
   <div class="row">
-    <div class="twelve columns">
-
+    <div class="large-12 columns">
+ 
       <!-- Navigation -->
-
-          <ul class="nav-bar">
-          <li class="active"><a href="#">Nav Item 1</a></li>
-          <li><a href="#">Nav Item 2</a></li>
-          <li><a href="#">Nav Item 3</a></li>
+ 
+        <ul class="button-group">
+          <li><a href="#" class="button">Nav Item 1</a></li>
+          <li><a href="#" class="button">Nav Item 2</a></li>
+          <li><a href="#" class="button">Nav Item 3</a></li>
         </ul>
-
+ 
       <!-- End Navigation -->
-
-
+ 
+ 
       <!-- Header Content -->
-
+ 
         <div class="row">
-
-          <div class="six columns">
-
+ 
+          <div class="large-6 columns">
+ 
             <img src="http://placehold.it/500x500&text=Image"><br>
-
+ 
           </div>
-
-
-          <div class="six columns">
-
+ 
+ 
+          <div class="large-6 columns">
+ 
             <h3 class="show-for-small">Header<hr/></h3>
-
+ 
             <div class="panel">
               <h4 class="hide-for-small">Header<hr/></h4>
             <h5 class="subheader">Fusce ullamcorper mauris in eros dignissim molestie posuere felis blandit. Aliquam erat volutpat. Mauris ultricies posuere vehicula. Sed sit amet posuere erat. Quisque in ipsum non augue euismod dapibus non et eros. Pellentesque consectetur tempus mi iaculis bibendum. Ut vel dolor sed eros tincidunt volutpat ac eget leo.</h5>
             </div>
-
+ 
           <div class="row">
-              <div class="six mobile-two columns">
+              <div class="large-6 small-6 columns">
                 <div class="panel">
                   <h5>Header</h5>
                 <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
                 <a href="#" class="small button">BUTTON TIME!</a>
                 </div>
               </div>
-
-              <div class="six mobile-two columns">
+ 
+              <div class="large-6 small-6 columns">
                 <div class="panel">
                   <h5>Header</h5>
                 <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
@@ -70,113 +68,142 @@
                 </div>
               </div>
           </div>
-
+ 
           </div>
-
+ 
         </div>
-
+ 
       <!-- End Header Content -->
-
-
+ 
+ 
       <!-- Search Bar -->
-
+ 
         <div class="row">
-
-          <div class="twelve columns">
+ 
+          <div class="large-12 columns">
             <div class="radius panel">
-
+ 
             <form>
               <div class="row collapse">
-
-                <div class="ten mobile-three columns">
+ 
+                <div class="large-10 small-8 columns">
                   <input type="text" />
                 </div>
-
-                <div class="two mobile-one columns">
+ 
+                <div class="large-2 small-3 columns">
                   <a href="#" class="postfix button expand">Search</a>
                 </div>
-
+ 
               </div>
             </form>
-
+ 
           </div>
           </div>
-
+ 
         </div>
-
+ 
       <!-- End Search Bar -->
-
-
+ 
+ 
       <!-- Thumbnails -->
-
+ 
         <div class="row">
-
-          <div class="twelve show-for-small columns">
+ 
+          <div class="large-12 show-for-small columns">
           <h3>Header</h3><hr>
         </div>
-
-          <div class="three mobile-two columns">
+ 
+          <div class="large-3 small-6 columns">
             <img src="http://placehold.it/500x500&text=Thumbnail">
             <div class="panel">
               <p>Description</p>
             </div>
           </div>
-
-          <div class="three mobile-two columns">
+ 
+          <div class="large-3 small-6 columns">
             <img src="http://placehold.it/500x500&text=Thumbnail">
             <div class="panel">
               <p>Description</p>
             </div>
           </div>
-
-          <div class="three mobile-two columns">
+ 
+          <div class="large-3 small-6 columns">
             <img src="http://placehold.it/500x500&text=Thumbnail">
             <div class="panel">
               <p>Description</p>
             </div>
           </div>
-
-          <div class="three mobile-two columns">
+ 
+          <div class="large-3 small-6 columns">
             <img src="http://placehold.it/500x500&text=Thumbnail">
             <div class="panel">
               <p>Description</p>
             </div>
           </div>
-
+ 
         </div>
-
+ 
       <!-- End Thumbnails -->
-
-
+ 
+ 
       <!-- Footer -->
-
+ 
         <footer class="row">
-        <div class="twelve columns"><hr />
+        <div class="large-12 columns"><hr />
             <div class="row">
-
-              <div class="six columns">
+ 
+              <div class="large-6 columns">
                   <p>&copy; Copyright no one at all. Go to town.</p>
               </div>
-
-              <div class="six columns">
-                  <ul class="link-list right">
+ 
+              <div class="large-6 columns">
+                  <ul class="inline-list right">
                     <li><a href="#">Link 1</a></li>
                     <li><a href="#">Link 2</a></li>
                     <li><a href="#">Link 3</a></li>
                     <li><a href="#">Link 4</a></li>
                   </ul>
               </div>
-
+ 
             </div>
         </div>
       </footer>
-
+ 
       <!-- End Footer -->
-
-
+ 
+ 
     </div>
   </div>
-  <!-- Included JS Files -->
-  <script src="../public/assets/templates.js"></script>
+    <!-- Included JS Files -->
+  <!-- Included JS Files (Uncompressed) -->
+
+  <script src="js/vendor/zepto.js"></script>
+  <script src="js/foundation/foundation.js"></script>
+  <script src="js/foundation/foundation.cookie.js"></script>
+  <script src="js/foundation/foundation.alerts.js"></script>
+  <script src="js/foundation/foundation.clearing.js"></script>
+  <script src="js/foundation/foundation.dropdown.js"></script>
+  <script src="js/foundation/foundation.forms.js"></script>
+  <script src="js/foundation/foundation.joyride.js"></script>
+  <script src="js/foundation/foundation.magellan.js"></script>
+  <script src="js/foundation/foundation.orbit.js"></script>
+  <script src="js/foundation/foundation.placeholder.js"></script>
+  <script src="js/foundation/foundation.reveal.js"></script>
+  <script src="js/foundation/foundation.section.js"></script>
+  <script src="js/foundation/foundation.tooltips.js"></script>
+  <script src="js/foundation/foundation.topbar.js"></script>
+  <!-- Application Javascript, safe to override -->
+
+  <script src="js/foundation/index.js"></script>
+  <script>
+    $(document).foundation().foundation('joyride', 'start');
+  </script>
+  <script type="text/javascript">
+    $(window).load(function() {
+      $('#featured').orbit({ fluid: '2x1' });
+    });
+  </script>
+  <!-- End Footer -->
+
 </body>
 </html>
