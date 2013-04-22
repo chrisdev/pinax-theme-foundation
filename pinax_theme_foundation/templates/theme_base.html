@@ -54,12 +54,14 @@
     {% block topbar_base %}
     <div class="contain-to-grid sticky">
 	    <nav class="top-bar">
-		      	<ul class="title-area">
-		        	<li class="name mobile-four"><a href="/">{{SITE_NAME}}</a><a href="#"></a></li>
-		        	 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-		        </ul>
+	    		<ul class="title-area">
+	    		    <li class="name">
+	    		      <h1><a href="/">{{SITE_NAME}}</a></h1>
+	    		    </li>
+	    		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	    		</ul>
 		        <section class="top-bar-section">
-		        	<ul class="right menu mobile-four">
+		        	<ul class="right menu">
 				          {% block topbar %}
 				          {% block nav %}{% endblock %}
 				          {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
