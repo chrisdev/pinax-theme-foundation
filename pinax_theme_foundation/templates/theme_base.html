@@ -82,37 +82,17 @@
     	{% endblock %}
 
     	{% block script_base %}
-    		<script>
-    		document.write('<script src=' +
+    		<script>document.write('<script src=' +
     		('__proto__' in {} ? '/site_media/static/js/vendor/zepto' : '/site_media/static/js/vendor/jquery') +
-    		'.js><\/script>')
-    		</script>
+    		'.js><\/script>')</script>
 
     		<script src="{% block jquery_src %}{% static "js/vendor/jquery.js" %}{% endblock %}"></script>
     		
     		<script src="{% static "js/foundation.min.js" %}"></script>
-    		
-    		<!--<script src="{% static "js/foundation/foundation.js" %}"></script>
-    		<script src="{% static "js/foundation/foundation.alerts.js" %}"></script>
-    		<script src="{% static "js/foundation/foundation.clearing.js" %}"></script>
-    		<script src="{% static "js/foundation/foundation.cookie.js" %}"></script>
-    		<script src="{% static "js/foundation/foundation.dropdown.js" %}"></script>
-    		<script src="{% static "js/foundation/foundation.forms.js" %}"></script>
-    		<script src="{% static "js/foundation/foundation.joyride.js" %}"></script>
-    		<script src="{% static "js/foundation/foundation.magellan.js" %}"></script>
-    		<script src="{% static "js/foundation/foundation.orbit.js" %}"></script>
-    		<script src="{% static "js/foundation/foundation.placeholder.js" %}"></script>
-            <script src="{% static "js/foundation/foundation.reveal.js" %}"></script>
-    		<script src="{% static "js/foundation/foundation.section.js" %}"></script>
-    		<script src="{% static "js/foundation/foundation.tooltips.js" %}"></script>
-    		<script src="{% static "js/foundation/foundation.topbar.js" %}"></script>-->
             
-    		<script>
-    		    $(document).foundation();
-    		</script>
-
-    		{% block extra_script %}
-    		{% endblock %}
+    		<script>$(document).foundation();</script>
+    		
+    		{% block extra_script %} {% endblock %}
         {% endblock %}
 
     	{% block extra_body_base %}
@@ -131,8 +111,10 @@
     				'clearing',{},
     				'magellan',{};)
     		  </script>
+    		
     		{% block extra_body %}	{% endblock %}
     	{% endblock %}
+    	
     </div>
 
   </body>
