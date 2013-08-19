@@ -2,13 +2,13 @@
 
 {% load url from future %}
 {% load i18n %}
-{% load foundations_tags %}
+{% load foundation_tags %}
 
 {% block head_title %}{% trans "Log in" %}{% endblock %}
 
 {% block body %}
     <div class="row">
-        <div class="large-8 large-centered columns">
+        <div class="large-6 large-centered columns">
             <form method="POST" action="{% url "account_login" %}" autocapitalize="off" class="form-horizontal"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
                 <fieldset>
                     <legend>{% trans "Log in to an existing account" %}</legend>
@@ -23,9 +23,6 @@
                     </div>
                 </fieldset>
             </form>
-        </div>
-        <div class="large-4 columns">
-            {% include "account/_login_sidebar.html" %}
         </div>
     </div>
 {% endblock %}
