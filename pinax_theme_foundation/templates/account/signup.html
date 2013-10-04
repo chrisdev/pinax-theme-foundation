@@ -2,13 +2,13 @@
 
 {% load url from future %}
 {% load i18n %}
-{% load foundations_tags %}
+{% load foundation_tags %}
 
 {% block head_title %}{% trans "Sign up" %}{% endblock %}
 
 {% block body %}
     <div class="row">
-        <div class="large-8 columns">
+        <div class="large-6 large-centered columns">
             <form id="signup_form" method="post" action="{% url "account_signup" %}" autocapitalize="off" class="form-horizontal"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
                 <fieldset>
                     <legend>{% trans "Sign up" %}</legend>
@@ -22,9 +22,6 @@
                     </div>
                 </fieldset>
             </form>
-        </div>
-        <div class="large-4 columns">
-            {% include "account/_signup_sidebar.html" %}
         </div>
     </div>
 {% endblock %}

@@ -1,6 +1,7 @@
 from django.template import Context
 from django.template.loader import get_template
 from django import template
+from django.forms import CheckboxInput 
 
 
 register = template.Library()
