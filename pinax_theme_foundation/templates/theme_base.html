@@ -18,7 +18,7 @@
     {% block viewport %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% endblock %}
-    <script src="{% static "js/modernizr.js" %}"></script>
+    <script src="{% static "js/vendor/modernizr.js" %}"></script>
 
     <!-- IE Fix for HTML5 Tags -->
     	<!--[if lt IE 9]>
@@ -83,7 +83,7 @@
 
     	{% block script_base %}
 
-    		<script src="{% static "js/jquery.js" %}"></script>
+    		<script src="{% static "js/vendor/jquery.js" %}"></script>
     		
     		<script src="{% static "js/foundation.min.js" %}"></script>
             
@@ -95,22 +95,6 @@
         {% endblock %}
 
     	{% block extra_body_base %}
-    		<!--<script>
-    		    $(document)
-    			.foundation('topbar', {
-    				  index : 0,
-    				  stickyClass : 'sticky',
-    				  custom_back_text: true,
-    				  back_text: 'Back',
-    				  init : false
-    				},
-    				'orbit',{},
-    				'reveal', {},
-    				'tooltip',{},
-    				'clearing',{},
-    				'magellan',{};)
-    		  </script>-->
-    		
     		{% block extra_body %}	{% endblock %}
     	{% endblock %}
     	
