@@ -22,7 +22,7 @@ Contributors
 
 What's New
 -----------
-- We support the latest version of Foundation (4.0.9)
+- We support the latest version of Foundation (5.1.1)
 - Updated the documentation
 - The project now supports the  ``--template`` argument for ``django-admin.py
   startproject`` command
@@ -34,18 +34,11 @@ What's New
 
 Getting Started
 ----------------
-Start by creating a new virtualenv for your project and install Django 1.4 ::
+Start by creating a new virtualenv for your project and install Django 1.6.2 ::
 
     mkvirtualenv mysite
-    pip install Django==1.4.1
+    pip install Django==1.6.2
 
-Next, use the ``startproject`` management command
-to create a new Django project
-with a layout as specified in starter project (template URL).
-We provide you with two Foundation based starter projects
-
-- zero_
-- account_
 
 To use create a project based on the zero_ project run ::
 
