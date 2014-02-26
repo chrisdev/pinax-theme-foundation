@@ -18,7 +18,7 @@
     {% block viewport %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% endblock %}
-    <script src="{% static "js/vendor/custom.modernizr.js" %}"></script>
+    <script src="{% static "js/vendor/modernizr.js" %}"></script>
 
     <!-- IE Fix for HTML5 Tags -->
     	<!--[if lt IE 9]>
@@ -28,8 +28,8 @@
     {% block style_base %}
     	<link href="{% static "css/normalize.css" %}" rel="stylesheet">
     	<link href="{% static "css/foundation.css" %}" rel="stylesheet">
+    	<link href="{% static "css/foundation-icons.css" %}" rel="stylesheet">
     	<link href="{% static "css/app.css" %}" rel="stylesheet">
-    	<link href="{% static "css/fc-webicons.css" %}" rel="stylesheet">
     	<!--[if lt IE 9]>
     	<link href="{% static "css/ie.css" %}" rel="stylesheet" >
     	<![endif]-->
@@ -44,7 +44,7 @@
   <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
     {% block topbar_base %}
     <div class="contain-to-grid sticky">
-	    <nav class="top-bar">
+	    <nav class="top-bar" data-topbar>
 	    		<ul class="title-area">
 	    		    <li class="name">
 	    		      <h1><a href="/">{{SITE_NAME}}</a></h1>
@@ -52,7 +52,7 @@
 	    		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 	    		</ul>
 		        <section class="top-bar-section">
-		        	<ul class="right menu">
+		        	<ul class="right">
 				          {% block topbar %}
 				          {% block nav %}{% endblock %}
 				          {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
@@ -82,36 +82,19 @@
     	{% endblock %}
 
     	{% block script_base %}
-    		<script>document.write('<script src=' +
-    		('__proto__' in {} ? '/site_media/static/js/vendor/zepto' : '/site_media/static/js/vendor/jquery') +
-    		'.js><\/script>')</script>
 
-    		<script src="{% block jquery_src %}{% static "js/vendor/jquery.js" %}{% endblock %}"></script>
+    		<script src="{% static "js/vendor/jquery.js" %}"></script>
     		
     		<script src="{% static "js/foundation.min.js" %}"></script>
             
-    		<script>$(document).foundation();</script>
+    		<script>
+    		    $(document).foundation();
+    		</script>
     		
     		{% block extra_script %} {% endblock %}
         {% endblock %}
 
     	{% block extra_body_base %}
-    		<script>
-    		    $(document)
-    			.foundation('topbar', {
-    				  index : 0,
-    				  stickyClass : 'sticky',
-    				  custom_back_text: true,
-    				  back_text: 'Back',
-    				  init : false
-    				},
-    				'orbit',{},
-    				'reveal', {},
-    				'tooltip',{},
-    				'clearing',{},
-    				'magellan',{};)
-    		  </script>
-    		
     		{% block extra_body %}	{% endblock %}
     	{% endblock %}
     	
