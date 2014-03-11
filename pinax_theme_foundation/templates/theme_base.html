@@ -18,21 +18,16 @@
     {% block viewport %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% endblock %}
-    <script src="{% static "js/vendor/modernizr.js" %}"></script>
+    <script src="{% static "js/vendor/modernizr.min.js" %}"></script>
 
     <!-- IE Fix for HTML5 Tags -->
-    	<!--[if lt IE 9]>
-    		<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    	<![endif]-->
+	<!--[if lt IE 9]>
+	<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 
     {% block style_base %}
-    	<link href="{% static "css/normalize.css" %}" rel="stylesheet">
-    	<link href="{% static "css/foundation.css" %}" rel="stylesheet">
+    	<link href="{% static "css/foundation.min.css" %}" rel="stylesheet">
     	<link href="{% static "css/foundation-icons.css" %}" rel="stylesheet">
-    	<link href="{% static "css/app.css" %}" rel="stylesheet">
-    	<!--[if lt IE 9]>
-    	<link href="{% static "css/ie.css" %}" rel="stylesheet" >
-    	<![endif]-->
      	{% block extra_style %}{% endblock %}
     {% endblock %}
 
@@ -83,7 +78,7 @@
 
     	{% block script_base %}
 
-    		<script src="{% static "js/vendor/jquery.js" %}"></script>
+    		<script src="{% static "js/vendor/jquery.min.js" %}"></script>
     		
     		<script src="{% static "js/foundation.min.js" %}"></script>
             
