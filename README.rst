@@ -22,23 +22,24 @@ Contributors
 
 What's New
 -----------
-This version supports Foundation 4 \o/
+This version supports Foundation 5
+=======
+- We support the latest version of Foundation (5.2.1)
+- Updated the documentation
+- The project now supports the  ``--template`` argument for ``django-admin.py
+  startproject`` command
+- Removed more ``Pinax 0.9`` dependencies however, the project
+  should still be compatible with the other apps in  the ``Pinax``
+  eco-system such as `django-user-account`_
 
 
 Getting Started
 ----------------
-Start by creating a new virtualenv for your project and install Django 1.4 ::
+Start by creating a new virtualenv for your project and install Django 1.6.2 ::
 
     mkvirtualenv mysite
-    pip install Django==1.4.5
+    pip install Django==1.6.2
 
-Next, use the ``startproject`` management command
-to create a new Django project
-with a layout as specified in starter project (template URL).
-We provide you with two Foundation based starter projects
-
-- zero_
-- account_
 
 To use create a project based on the zero_ project run ::
 

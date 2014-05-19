@@ -18,30 +18,16 @@
     {% block viewport %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% endblock %}
-    <script src="{% static "vendor/custom.modernizr.js" %}"></script>
+    <script src="{% static "js/vendor/modernizr.js" %}"></script>
 
     <!-- IE Fix for HTML5 Tags -->
-    	<!--[if lt IE 9]>
-    		<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    	<![endif]-->
+	<!--[if lt IE 9]>
+	<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 
     {% block style_base %}
-    	<link href="{% static "foundation/css/normalize.css" %}" rel="stylesheet">
-    	<link href="{% static "foundation/css/foundation.css" %}" rel="stylesheet">
-    	<link href="{% static "foundation/css/app.css" %}" rel="stylesheet">
-    	<link href="{% static "foundation/css/responsive-tables.css" %}" rel="stylesheet">
-    	<link href="{% static "foundation/css/fc-webicons.css" %}" rel="stylesheet">
-    	<link href="{% static "foundation/css/fonts/accessibility.css" %}" rel="stylesheet">
-    	<link href="{% static "foundation/css/fonts/general_enclosed.css" %}" rel="stylesheet">
-    	<link href="{% static "foundation/css/fonts/social.css" %}" rel="stylesheet">
-    	<link href="{% static "foundation/css/fonts/general.css" %}" rel="stylesheet">
-    	<!--[if lt IE 9]>
-    	<link href="{% static "foundation/css/ie.css" %}" rel="stylesheet" >
-    	<![endif]-->
-    	<link href="{% static "foundation/css/fonts/accessibility_ie7.css" %}" rel="stylesheet">
-    	<link href="{% static "foundation/css/fonts/general_enclosed_ie7.css" %}" rel="stylesheet">
-    	<link href="{% static "foundation/css/fonts/general_ie7.css" %}" rel="stylesheet">
-    	<link href="{% static "foundation/css/fonts/social_ie7.css" %}" rel="stylesheet">
+    	<link href="{% static "css/foundation.css" %}" rel="stylesheet">
+    	<link href="{% static "css/foundation-icons.css" %}" rel="stylesheet">
      	{% block extra_style %}{% endblock %}
     {% endblock %}
 
@@ -53,13 +39,15 @@
   <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
     {% block topbar_base %}
     <div class="contain-to-grid sticky">
-	    <nav class="top-bar">
-		      	<ul class="title-area">
-		        	<li class="name mobile-four"><a href="/">{{SITE_NAME}}</a><a href="#"></a></li>
-		        	 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-		        </ul>
+	    <nav class="top-bar" data-topbar>
+	    		<ul class="title-area">
+	    		    <li class="name">
+	    		      <h1><a href="/">{{SITE_NAME}}</a></h1>
+	    		    </li>
+	    		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	    		</ul>
 		        <section class="top-bar-section">
-		        	<ul class="right menu mobile-four">
+		        	<ul class="right">
 				          {% block topbar %}
 				          {% block nav %}{% endblock %}
 				          {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
@@ -89,60 +77,22 @@
     	{% endblock %}
 
     	{% block script_base %}
-    		<script>
-    		document.write('<script src=' +
-    		('__proto__' in {} ? '/site_media/static/vendor/zepto' : '/site_media/static/vendor/jquery') +
-    		'.js><\/script>')
-    		</script>
 
-    		<script src="{% block jquery_src %}{% static "vendor/jquery.js" %}{% endblock %}"></script>
-    		<script src="{% static "foundation/js/foundation.js" %}"></script>
-    		<script src="{% static "foundation/js/foundation.alerts.js" %}"></script>
-    		<script src="{% static "foundation/js/foundation.clearing.js" %}"></script>
-    		<script src="{% static "foundation/js/foundation.cookie.js" %}"></script>
-    		<script src="{% static "foundation/js/foundation.dropdown.js" %}"></script>
-    		<script src="{% static "foundation/js/foundation.forms.js" %}"></script>
-    		<script src="{% static "foundation/js/foundation.joyride.js" %}"></script>
-    		<script src="{% static "foundation/js/foundation.magellan.js" %}"></script>
-    		<script src="{% static "foundation/js/foundation.orbit.js" %}"></script>
-    		<script src="{% static "foundation/js/foundation.placeholder.js" %}"></script>
-            <script src="{% static "foundation/js/foundation.reveal.js" %}"></script>
-    		<script src="{% static "foundation/js/foundation.section.js" %}"></script>
-    		<script src="{% static "foundation/js/foundation.tooltips.js" %}"></script>
-    		<script src="{% static "foundation/js/foundation.topbar.js" %}"></script>
-    		<script src="{% static "foundation/js/responsive-tables.js" %}"></script>
-            <script src="{% static "foundation/js/offcanvas.js" %}"></script>
-            {% comment %}
-            <script src="{% static "foundation/js/foundation.min.js" %}"></script>
-            <script src="{% static "foundation/js/responsive-tables.js" %}"></script>
-    		<script src="{% static "foundation/js/offcanvas.js" %}"></script>
-            {% endcomment %}
+    		<script src="{% static "js/vendor/jquery.js" %}"></script>
+    		
+    		<script src="{% static "js/foundation.min.js" %}"></script>
+            
     		<script>
     		    $(document).foundation();
     		</script>
-
-    		{% block extra_script %}
-    		{% endblock %}
+    		
+    		{% block extra_script %} {% endblock %}
         {% endblock %}
 
     	{% block extra_body_base %}
-    		<script>
-    		    $(document)
-    			.foundation('topbar', {
-    				  index : 0,
-    				  stickyClass : 'sticky',
-    				  custom_back_text: true,
-    				  back_text: 'Back',
-    				  init : false
-    				},
-    				'orbit',{},
-    				'reveal', {},
-    				'tooltip',{},
-    				'clearing',{},
-    				'magellan',{};)
-    		  </script>
     		{% block extra_body %}	{% endblock %}
     	{% endblock %}
+    	
     </div>
 
   </body>
