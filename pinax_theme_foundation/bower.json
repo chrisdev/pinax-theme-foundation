@@ -1,0 +1,7 @@
+{
+  "name": "pinax-theme-foundation",
+  "dependencies": {
+    "foundation": "~5.5.2",
+    "foundation-icon-fonts": "*"
+  }
+}
