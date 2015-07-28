@@ -1,6 +1,6 @@
-======================================
+=======================================
 A Foundation Theme for Django Projects
-======================================
+=======================================
 
 A Pinax theme based on `Zurb Foundation`_.
 Foundation is a popular CSS framework that is light weight, but includes
@@ -21,9 +21,10 @@ Contributors
 
 
 What's New
------------
+===================================
+
 This version supports Foundation 5
-=======
+-----------------------------------
 - We support the latest version of Foundation (5.2.1)
 - Updated the documentation
 - The project now supports the  ``--template`` argument for ``django-admin.py
@@ -78,7 +79,7 @@ account starter project ::
 .. _pip: http://www.pip-installer.org/en/latest/
 
 Templates
-^^^^^^^^^^
+------------
 Your own templates should normally inherit from ``site_base.html``.
 You should provide your own "footer" template ``_footer.html``.
 
